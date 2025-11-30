@@ -140,7 +140,7 @@ body.pricing-page .section {
 
 .pricing-plans-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
 }
@@ -225,7 +225,7 @@ body.pricing-page .section {
 }
 
 .pricing-plan-features li {
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
   display: flex;
   align-items: start;
   gap: 0.5rem;
@@ -248,20 +248,46 @@ body.pricing-page .section {
 
 .pricing-plan-cta {
   margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
 }
 
 .pricing-plan-cta .btn {
   width: 100%;
   text-align: center;
-  background: #374151;
-  color: #ffffff;
-  border: none;
   font-weight: 600;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9375rem;
 }
 
-.pricing-plan-cta .btn:hover {
+.pricing-plan-cta .btn-primary {
+  background: #374151;
+  color: #ffffff;
+}
+
+.pricing-plan-cta .btn-primary:hover {
   background: #1f2937;
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(55, 65, 81, 0.3);
+}
+
+.pricing-plan-cta .btn-secondary {
+  background: #ffffff;
+  color: #374151;
+  border: 2px solid #374151;
+}
+
+.pricing-plan-cta .btn-secondary:hover {
+  background: #f9fafb;
+  color: #1f2937;
+  border-color: #1f2937;
 }
 
 .pricing-whats-included {

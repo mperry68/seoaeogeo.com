@@ -1,128 +1,79 @@
 {
-  "plans": {
-    "starter": {
-      "name": "Starter",
-      "description": "Perfect for small businesses",
-      "features": [
-        "Basic SEO optimization",
-        "Monthly keyword tracking",
-        "Monthly performance report",
-        "Email support",
-        "Up to 10 pages optimized"
-      ],
+  "toolkits": {
+    "seo-classic": {
+      "name": "SEO Classic",
       "pricing": {
         "monthly": {
-          "USD": 999,
-          "CAD": 1349
+          "CAD": 1099
         },
         "yearly": {
-          "USD": 9990,
-          "CAD": 13490
-        }
-      },
-      "yearlyDiscount": 17
-    },
-    "professional": {
-      "name": "Professional",
-      "description": "For growing businesses",
-      "popular": true,
-      "features": [
-        "Full SEO + AEO optimization",
-        "Weekly keyword tracking",
-        "Bi-weekly performance reports",
-        "Priority support",
-        "Unlimited pages optimized",
-        "Content strategy included",
-        "Monthly strategy call"
-      ],
-      "pricing": {
-        "monthly": {
-          "USD": 2499,
-          "CAD": 3374
-        },
-        "yearly": {
-          "USD": 24990,
-          "CAD": 33740
-        }
-      },
-      "yearlyDiscount": 17
-    },
-    "enterprise": {
-      "name": "Enterprise",
-      "description": "For large organizations",
-      "features": [
-        "Complete SEO + AEO + GEO",
-        "Daily monitoring & tracking",
-        "Weekly performance reports",
-        "Dedicated account manager",
-        "Unlimited pages & content",
-        "Advanced analytics & insights",
-        "Weekly strategy calls",
-        "Custom reporting dashboard"
-      ],
-      "pricing": {
-        "monthly": {
-          "USD": 4999,
-          "CAD": 6749
-        },
-        "yearly": {
-          "USD": 49990,
-          "CAD": 67490
-        }
-      },
-      "yearlyDiscount": 17
-    }
-  },
-  "services": {
-    "seo": {
-      "name": "SEO Services",
-      "pricing": {
-        "monthly": {
-          "USD": 799,
-          "CAD": 1079
-        },
-        "yearly": {
-          "USD": 7990,
-          "CAD": 10790
+          "CAD": 999
         }
       }
     },
-    "aeo": {
-      "name": "AEO Services",
+    "aeo-classic": {
+      "name": "AEO Classic",
       "pricing": {
         "monthly": {
-          "USD": 899,
-          "CAD": 1214
+          "CAD": 1099
         },
         "yearly": {
-          "USD": 8990,
-          "CAD": 12140
+          "CAD": 999
         }
       }
     },
-    "geo": {
-      "name": "GEO Services",
+    "geo-classic": {
+      "name": "GEO Classic",
       "pricing": {
         "monthly": {
-          "USD": 699,
-          "CAD": 944
+          "CAD": 1099
         },
         "yearly": {
-          "USD": 6990,
-          "CAD": 9440
+          "CAD": 999
         }
       }
     },
-    "web-development": {
-      "name": "Web Development",
+    "ai-visibility": {
+      "name": "AI Visibility",
       "pricing": {
         "monthly": {
-          "USD": 1299,
-          "CAD": 1754
+          "CAD": 1099
         },
         "yearly": {
-          "USD": 12990,
-          "CAD": 17540
+          "CAD": 999
+        }
+      }
+    },
+    "local": {
+      "name": "Local",
+      "pricing": {
+        "monthly": {
+          "CAD": 1099
+        },
+        "yearly": {
+          "CAD": 999
+        }
+      }
+    },
+    "social": {
+      "name": "Social",
+      "pricing": {
+        "monthly": {
+          "CAD": 1099
+        },
+        "yearly": {
+          "CAD": 999
+        }
+      }
+    },
+    "bundle": {
+      "name": "Complete Bundle",
+      "pricing": {
+        "monthly": {
+          "CAD": 3199
+        },
+        "yearly": {
+          "CAD": 2899
         }
       }
     }

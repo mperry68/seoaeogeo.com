@@ -57,46 +57,58 @@ class PricingManager {
   }
 
   /**
-   * Get price for a plan or service
-   * @param {string} type - 'plan' or 'service'
-   * @param {string} id - plan/service ID
+   * Get price for a toolkit
+   * @param {string} toolkitId - toolkit ID (e.g., 'seo-classic', 'bundle')
+   * @param {string} cycle - 'monthly' or 'yearly' (optional, uses current billing cycle)
    * @param {string} currency - 'USD' or 'CAD' (optional, uses detector if available)
    */
-  async getPrice(type, id, currency = null) {
+  async getPrice(toolkitId, cycle = null, currency = null) {
     await this.loadPricingData();
-    if (!this.pricingData) return null;
+    if (!this.pricingData || !this.pricingData.toolkits) return null;
 
-    const currencyToUse = currency || (this.currencyDetector ? this.currencyDetector.getCurrency() : 'USD');
-    const data = this.pricingData[type === 'plan' ? 'plans' : 'services'][id];
+    const cycleToUse = cycle || this.billingCycle;
+    const currencyToUse = currency || (this.currencyDetector ? this.currencyDetector.getCurrency() : 'CAD');
+    const toolkit = this.pricingData.toolkits[toolkitId];
     
-    if (!data || !data.pricing) return null;
+    if (!toolkit || !toolkit.pricing) return null;
 
-    return data.pricing[this.billingCycle][currencyToUse];
+    return toolkit.pricing[cycleToUse]?.[currencyToUse] || null;
   }
 
   /**
    * Get formatted price for display
-   * @param {string} type - 'plan' or 'service'
-   * @param {string} id - plan/service ID
+   * @param {string} toolkitId - toolkit ID
+   * @param {string} cycle - 'monthly' or 'yearly' (optional)
    * @param {string} currency - 'USD' or 'CAD' (optional)
    */
-  async getFormattedPrice(type, id, currency = null) {
-    const price = await this.getPrice(type, id, currency);
+  async getFormattedPrice(toolkitId, cycle = null, currency = null) {
+    const price = await this.getPrice(toolkitId, cycle, currency);
     if (price === null) return 'N/A';
 
-    const currencyToUse = currency || (this.currencyDetector ? this.currencyDetector.getCurrency() : 'USD');
+    const currencyToUse = currency || (this.currencyDetector ? this.currencyDetector.getCurrency() : 'CAD');
+    const cycleToUse = cycle || this.billingCycle;
     
     if (this.currencyDetector) {
-      return this.currencyDetector.formatPrice(price);
+      const formatted = this.currencyDetector.formatPrice(price);
+      // Add "/month" for yearly plans since they're per month
+      if (cycleToUse === 'yearly') {
+        return `${formatted}/month`;
+      }
+      return formatted;
     } else {
       // Fallback formatting
       const locale = currencyToUse === 'CAD' ? 'en-CA' : 'en-US';
-      return new Intl.NumberFormat(locale, {
+      const formatted = new Intl.NumberFormat(locale, {
         style: 'currency',
         currency: currencyToUse,
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
       }).format(price);
+      // Add "/month" for yearly plans since they're per month
+      if (cycleToUse === 'yearly') {
+        return `${formatted}/month`;
+      }
+      return formatted;
     }
   }
 

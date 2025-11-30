@@ -120,6 +120,8 @@ class PricingPage {
     // Update page title
     const titles = {
       'seo-classic': 'SEO Classic Plans',
+      'aeo-classic': 'AEO Classic Plans',
+      'geo-classic': 'GEO Classic Plans',
       'ai-visibility': 'AI Visibility Plans',
       'local': 'Local Plans',
       'social': 'Social Plans'
@@ -135,8 +137,7 @@ class PricingPage {
       console.error('[PricingPage] Title element not found!');
     }
 
-    // For now, load placeholder content
-    // You'll provide the actual pricing data structure
+    // Render plans
     console.log('[PricingPage] Rendering plans...');
     this.renderPlans(toolkit);
     console.log('[PricingPage] Rendering comparison...');
@@ -153,61 +154,114 @@ class PricingPage {
     }
     console.log('[PricingPage] Plans container found, rendering...');
 
-    // Placeholder - you'll provide actual plan data
+    // Toolkit content data
+    const toolkitData = {
+      'seo-classic': {
+        title: 'SEO Classic',
+        description: 'Traditional search engine optimization to improve your visibility and rankings on Google and other search engines.',
+        highlights: [
+          'Comprehensive keyword research and optimization',
+          'Technical SEO audits and performance improvements',
+          'Monthly reporting and strategy adjustments'
+        ],
+        learnMoreLink: '/en/what-is-seo.html'
+      },
+      'aeo-classic': {
+        title: 'AEO Classic',
+        description: 'Answer Engine Optimization to ensure your business is recommended by AI-powered search systems and voice assistants.',
+        highlights: [
+          'AI-friendly content structure and optimization',
+          'Authority building for AI trust signals',
+          'Conversational query optimization'
+        ],
+        learnMoreLink: '/en/what-is-aeo.html'
+      },
+      'geo-classic': {
+        title: 'GEO Classic',
+        description: 'Geographic Engine Optimization to dominate local search results and capture high-intent local customers.',
+        highlights: [
+          'Google Business Profile optimization',
+          'Local citation building and NAP consistency',
+          'Location-specific content creation'
+        ],
+        learnMoreLink: '/en/what-is-geo.html'
+      },
+      'ai-visibility': {
+        title: 'AI Visibility',
+        description: 'Advanced AI search optimization for ChatGPT, Google AI Overview, and emerging AI platforms.',
+        highlights: [
+          'Multi-platform AI optimization strategy',
+          'AI content parsing and structure optimization',
+          'Real-time AI recommendation tracking'
+        ],
+        learnMoreLink: '/en/what-is-aeo.html'
+      },
+      'local': {
+        title: 'Local',
+        description: 'Comprehensive local search optimization to capture "near me" searches and dominate your local market.',
+        highlights: [
+          'Local Pack optimization and ranking',
+          'Review management and reputation building',
+          'Mobile-first local search strategy'
+        ],
+        learnMoreLink: '/en/what-is-geo.html'
+      },
+      'social': {
+        title: 'Social',
+        description: 'Social media optimization and integration to amplify your SEO, AEO, and GEO efforts across platforms.',
+        highlights: [
+          'Social signal optimization for search',
+          'Content amplification across platforms',
+          'Social engagement and community building'
+        ],
+        learnMoreLink: '/en/what-is-seo.html'
+      }
+    };
+
+    const currentToolkit = toolkitData[toolkit] || toolkitData['seo-classic'];
+    const cycleText = this.billingCycle === 'yearly' ? 'annually' : 'monthly';
+
+    // Render 2 tiles: Selected toolkit + Bundle
     plansContainer.innerHTML = `
+      <!-- Selected Toolkit Tile -->
       <div class="pricing-plan-card">
         <div class="pricing-plan-header">
-          <h3 class="pricing-plan-title">Base</h3>
-          <p class="pricing-plan-description">For small businesses</p>
+          <h3 class="pricing-plan-title">${currentToolkit.title}</h3>
+          <p class="pricing-plan-description">${currentToolkit.description}</p>
         </div>
         <div class="pricing-plan-price">
-          <div class="pricing-plan-price-amount" data-plan="base" data-cycle="${this.billingCycle}">Loading...</div>
-          <div class="pricing-plan-price-period">billed ${this.billingCycle === 'yearly' ? 'annually' : 'monthly'}</div>
+          <div class="pricing-plan-price-amount" data-toolkit="${toolkit}" data-cycle="${this.billingCycle}">Loading...</div>
+          <div class="pricing-plan-price-period">billed ${cycleText}</div>
         </div>
         <ul class="pricing-plan-features">
-          <li>Feature 1</li>
-          <li>Feature 2</li>
-          <li>Feature 3</li>
+          <li>${currentToolkit.highlights[0]}</li>
+          <li>${currentToolkit.highlights[1]}</li>
+          <li>${currentToolkit.highlights[2]}</li>
         </ul>
         <div class="pricing-plan-cta">
-          <a href="/en/contact" class="btn">Subscribe</a>
+          <a href="${currentToolkit.learnMoreLink}" class="btn btn-secondary">Learn More</a>
+          <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
         </div>
       </div>
+
+      <!-- Bundle Tile -->
       <div class="pricing-plan-card popular">
         <div class="pricing-plan-header">
-          <h3 class="pricing-plan-title">Pro</h3>
-          <p class="pricing-plan-description">For growing businesses</p>
+          <h3 class="pricing-plan-title">Complete Bundle</h3>
+          <p class="pricing-plan-description">SEO + AEO + GEO combined for comprehensive digital visibility across all search platforms.</p>
         </div>
         <div class="pricing-plan-price">
-          <div class="pricing-plan-price-amount" data-plan="pro" data-cycle="${this.billingCycle}">Loading...</div>
-          <div class="pricing-plan-price-period">billed ${this.billingCycle === 'yearly' ? 'annually' : 'monthly'}</div>
+          <div class="pricing-plan-price-amount" data-toolkit="bundle" data-cycle="${this.billingCycle}">Loading...</div>
+          <div class="pricing-plan-price-period">billed ${cycleText}</div>
         </div>
         <ul class="pricing-plan-features">
-          <li>All Base features plus:</li>
-          <li>Feature 4</li>
-          <li>Feature 5</li>
-          <li>Feature 6</li>
+          <li>Full SEO, AEO, and GEO optimization</li>
+          <li>Unified strategy across all search platforms</li>
+          <li>Maximum visibility and conversion potential</li>
         </ul>
         <div class="pricing-plan-cta">
-          <a href="/en/contact" class="btn">Subscribe</a>
-        </div>
-      </div>
-      <div class="pricing-plan-card">
-        <div class="pricing-plan-header">
-          <h3 class="pricing-plan-title">Business</h3>
-          <p class="pricing-plan-description">For large businesses</p>
-        </div>
-        <div class="pricing-plan-price">
-          <div class="pricing-plan-price-amount">Let's talk</div>
-        </div>
-        <ul class="pricing-plan-features">
-          <li>All Pro features plus:</li>
-          <li>Custom pricing and billing cycle</li>
-          <li>Customizable limits</li>
-          <li>Priority customer support</li>
-        </ul>
-        <div class="pricing-plan-cta">
-          <a href="/en/contact" class="btn">Contact Sales</a>
+          <a href="/en/what-is-seo.html" class="btn btn-secondary">Learn More</a>
+          <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
         </div>
       </div>
     `;
@@ -220,7 +274,7 @@ class PricingPage {
 
   async updatePrices() {
     console.log('[PricingPage] Updating prices...');
-    const priceElements = document.querySelectorAll('.pricing-plan-price-amount[data-plan]');
+    const priceElements = document.querySelectorAll('.pricing-plan-price-amount[data-toolkit]');
     console.log('[PricingPage] Found price elements:', priceElements.length);
     
     if (!this.pricingManager) {
@@ -228,28 +282,33 @@ class PricingPage {
       return;
     }
 
+    // Set billing cycle on pricing manager
+    this.pricingManager.setBillingCycle(this.billingCycle);
+
     for (const element of priceElements) {
-      const planId = element.getAttribute('data-plan');
+      const toolkit = element.getAttribute('data-toolkit');
       const cycle = element.getAttribute('data-cycle');
-      console.log('[PricingPage] Updating price for plan:', planId, 'cycle:', cycle);
+      console.log('[PricingPage] Updating price for toolkit:', toolkit, 'cycle:', cycle);
       
-      if (planId && cycle) {
+      if (toolkit && cycle) {
         try {
-          // This will be updated when you provide the actual pricing structure
-          // For now, it's a placeholder
-          const price = await this.pricingManager.getFormattedPrice('plan', planId);
-          console.log('[PricingPage] Got price for', planId, ':', price);
+          // Get price directly from toolkit data
+          const price = await this.pricingManager.getFormattedPrice(toolkit, cycle);
+          
+          console.log('[PricingPage] Got price for', toolkit, ':', price);
           if (price && price !== 'N/A') {
             element.textContent = price;
             console.log('[PricingPage] Updated price element');
           } else {
-            console.warn('[PricingPage] Invalid price returned:', price);
+            element.textContent = 'Contact Sales';
+            console.warn('[PricingPage] Invalid price returned, using Contact Sales');
           }
         } catch (error) {
-          console.error('[PricingPage] Error updating price for', planId, ':', error);
+          console.error('[PricingPage] Error updating price for', toolkit, ':', error);
+          element.textContent = 'Contact Sales';
         }
       } else {
-        console.warn('[PricingPage] Missing planId or cycle:', { planId, cycle });
+        console.warn('[PricingPage] Missing toolkit or cycle:', { toolkit, cycle });
       }
     }
     console.log('[PricingPage] Price updates complete');

@@ -408,6 +408,105 @@ body.pricing-page .section {
   }
 }
 
+/* Service Details Section */
+.pricing-service-details {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+}
+
+.pricing-service-details-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-service-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-service-details-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #374151;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pricing-service-details-list li:last-child {
+  border-bottom: none;
+}
+
+.pricing-service-details-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+/* Add-On Backlinks Section */
+.pricing-addon-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.pricing-addon-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.pricing-addon-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-addon-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.pricing-addon-section .btn {
+  background: #60a5fa;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.pricing-addon-section .btn:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
 @media (max-width: 768px) {
   .pricing-plans-grid {
     grid-template-columns: 1fr;
@@ -420,6 +519,26 @@ body.pricing-page .section {
   .pricing-comparison-table th,
   .pricing-comparison-table td {
     padding: 0.75rem 0.5rem;
+  }
+
+  .pricing-service-details {
+    padding: 1.5rem;
+  }
+
+  .pricing-service-details-title {
+    font-size: 1.5rem;
+  }
+
+  .pricing-addon-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-addon-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .pricing-addon-price {
+    font-size: 1.25rem;
   }
 }
 

@@ -139,7 +139,9 @@ class PricingPage {
 
     // Render plans
     console.log('[PricingPage] Rendering plans...');
-    this.renderPlans(toolkit);
+    await this.renderPlans(toolkit);
+    console.log('[PricingPage] Rendering service details...');
+    this.renderServiceDetails(toolkit);
     console.log('[PricingPage] Rendering comparison...');
     this.renderComparison(toolkit);
     console.log('[PricingPage] Toolkit content loaded');
@@ -220,7 +222,6 @@ class PricingPage {
     };
 
     const currentToolkit = toolkitData[toolkit] || toolkitData['seo-classic'];
-    const cycleText = this.billingCycle === 'yearly' ? 'annually' : 'monthly';
 
     // Special handling for Free Website section
     if (toolkit === 'free-website') {
@@ -280,7 +281,7 @@ class PricingPage {
           </div>
           <div class="pricing-plan-price">
             <div class="pricing-plan-price-amount" data-toolkit="${toolkit}" data-cycle="${this.billingCycle}">Loading...</div>
-            <div class="pricing-plan-price-period">billed ${cycleText}</div>
+            <div class="pricing-plan-price-period">${this.billingCycle === 'yearly' ? 'with 12 month commitment' : 'billed monthly'}</div>
           </div>
           <ul class="pricing-plan-features">
             <li>${currentToolkit.highlights[0]}</li>
@@ -301,7 +302,7 @@ class PricingPage {
           </div>
           <div class="pricing-plan-price">
             <div class="pricing-plan-price-amount" data-toolkit="bundle" data-cycle="${this.billingCycle}">Loading...</div>
-            <div class="pricing-plan-price-period">billed ${cycleText}</div>
+            <div class="pricing-plan-price-period">${this.billingCycle === 'yearly' ? 'with 12 month commitment' : 'billed monthly'}</div>
           </div>
           <ul class="pricing-plan-features">
             <li>Full SEO, AEO, and GEO optimization</li>
@@ -362,6 +363,130 @@ class PricingPage {
       }
     }
     console.log('[PricingPage] Price updates complete');
+  }
+
+  renderServiceDetails(toolkit) {
+    console.log('[PricingPage] Rendering service details for toolkit:', toolkit);
+    const detailsContainer = document.getElementById('pricing-service-details');
+    if (!detailsContainer) {
+      console.warn('[PricingPage] #pricing-service-details container not found.');
+      return;
+    }
+
+    // Service details for each toolkit
+    const serviceDetails = {
+      'seo-classic': {
+        title: 'SEO Classic Services Included',
+        services: [
+          'Manage Focus Keyword (2%-3%)',
+          'Content Writer',
+          'Improve content to reflect the focus words of the site while maintaining the core message',
+          'Reduce the AI generated text',
+          'Adapt changes to French language',
+          'Fix broken links and remove low quality links',
+          'Fix Critical site Errors',
+          'Review site speed with a Speed Target of approximately 2 seconds',
+          'Improve mobile friendliness for added credibility',
+          'Simplify Redirections for crawler transparency',
+          'Image Optimization',
+          'Meta tag: Title and Descriptions',
+          'Sitemap & Robot',
+          'New Reputable Backlinks (Upon Request. $70 USD/month per backlink)',
+          'Two (2) New Blogs Created per Month',
+          'Open Graph Protocol',
+          'Google Analytics Addition',
+          'Monthly progress report (With option to send middle of the month if requested)'
+        ]
+      },
+      'aeo-classic': {
+        title: 'AEO Classic Services Included',
+        services: [
+          'AI-friendly content structure and optimization',
+          'Authority building for AI trust signals',
+          'Conversational query optimization',
+          'Content optimization for AI platforms (ChatGPT, Google AI Overview)',
+          'Structured data markup for AI parsing',
+          'Entity recognition and knowledge graph optimization',
+          'Voice search optimization',
+          'Natural language processing enhancements',
+          'AI platform content formatting',
+          'Monthly AI visibility tracking and reporting',
+          'Content updates to maintain AI relevance',
+          'Multi-platform AI optimization strategy'
+        ]
+      },
+      'geo-classic': {
+        title: 'GEO Classic Services Included',
+        services: [
+          'Google Business Profile optimization',
+          'Local citation building and NAP consistency',
+          'Location-specific content creation',
+          'Local keyword research and optimization',
+          'Google Maps optimization',
+          'Local directory submissions',
+          'Review management and reputation building',
+          'Local schema markup implementation',
+          'Neighborhood-specific content',
+          'Local link building',
+          'Mobile-first local search strategy',
+          'Local search ranking tracking and reporting'
+        ]
+      },
+      'free-website': {
+        title: 'Free Website Redesign Services Included',
+        services: [
+          'Professional website redesign consultation',
+          'Modern, responsive design implementation',
+          'Brand-consistent visual identity',
+          'User experience (UX) optimization',
+          'Mobile-responsive layout',
+          'Basic SEO structure setup',
+          'Content migration and organization',
+          'Contact form and basic functionality',
+          'Website performance optimization',
+          'Basic analytics setup'
+        ]
+      },
+      'local': {
+        title: 'Local Services Included',
+        services: [
+          'Local Pack optimization and ranking',
+          'Review management and reputation building',
+          'Mobile-first local search strategy',
+          'Google Business Profile management',
+          'Local citation building',
+          'NAP (Name, Address, Phone) consistency',
+          'Local keyword optimization',
+          'Location-based content creation',
+          'Local link building',
+          'Local search analytics and reporting'
+        ]
+      },
+      'social': {
+        title: 'Social Services Included',
+        services: [
+          'Social signal optimization for search',
+          'Content amplification across platforms',
+          'Social engagement and community building',
+          'Social media profile optimization',
+          'Cross-platform content strategy',
+          'Social sharing optimization',
+          'Social media analytics integration',
+          'Brand consistency across social platforms',
+          'Social content calendar management',
+          'Social media performance reporting'
+        ]
+      }
+    };
+
+    const details = serviceDetails[toolkit] || serviceDetails['seo-classic'];
+    
+    detailsContainer.innerHTML = `
+      <h2 class="pricing-service-details-title">${details.title}</h2>
+      <ul class="pricing-service-details-list">
+        ${details.services.map(service => `<li>${service}</li>`).join('')}
+      </ul>
+    `;
   }
 
   renderComparison(toolkit) {

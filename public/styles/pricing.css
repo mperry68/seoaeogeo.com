@@ -83,6 +83,39 @@ body.pricing-page .section {
   font-weight: 500;
 }
 
+.pricing-sidebar-menu a.pricing-promo {
+  position: relative;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  font-weight: 600;
+  border: 1px solid #fbbf24;
+}
+
+.pricing-sidebar-menu a.pricing-promo:hover {
+  background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+  color: #78350f;
+  border-color: #f59e0b;
+}
+
+.pricing-sidebar-menu a.pricing-promo.active {
+  background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+  color: #78350f;
+  border-color: #f59e0b;
+}
+
+.pricing-promo-badge {
+  display: inline-block;
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
 .pricing-content {
   flex: 1;
   max-width: 1000px;
@@ -539,6 +572,73 @@ body.pricing-page .section {
 
   .pricing-addon-price {
     font-size: 1.25rem;
+  }
+}
+
+/* FAQ Section */
+.pricing-faq-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+}
+
+.pricing-faq-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pricing-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pricing-faq-item {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.pricing-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pricing-faq-question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.pricing-faq-answer {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .pricing-faq-section {
+    padding: 1.5rem;
+  }
+
+  .pricing-faq-title {
+    font-size: 1.5rem;
+  }
+
+  .pricing-faq-question {
+    font-size: 1rem;
+  }
+
+  .pricing-faq-answer {
+    font-size: 0.875rem;
   }
 }
 

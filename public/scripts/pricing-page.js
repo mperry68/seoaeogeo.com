@@ -218,13 +218,79 @@ class PricingPage {
           'Social engagement and community building'
         ],
         learnMoreLink: '/en/what-is-seo.html'
+      },
+      'social-one-time': {
+        title: 'Social One-Time Optimization',
+        description: 'Professional one-time optimization of your social media accounts to improve visibility, engagement, and brand consistency.',
+        highlights: [
+          'Profile optimization across all platforms',
+          'Content strategy development',
+          'Brand consistency audit'
+        ],
+        learnMoreLink: '/en/what-is-seo.html'
+      },
+      'social-management': {
+        title: 'Social Management',
+        description: 'Ongoing social media management to keep your accounts active, engaging, and aligned with your business goals. Includes 2 posts per month.',
+        highlights: [
+          '2 posts per month per account',
+          'Content creation and scheduling',
+          'Engagement monitoring and response',
+          'Performance tracking and reporting'
+        ],
+        learnMoreLink: '/en/what-is-seo.html'
       }
     };
 
     const currentToolkit = toolkitData[toolkit] || toolkitData['seo-classic'];
 
-    // Special handling for Free Website section
-    if (toolkit === 'free-website') {
+    // Special handling for Social section
+    if (toolkit === 'social') {
+      plansContainer.innerHTML = `
+        <!-- Social One-Time Optimization Tile -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-header">
+            <h3 class="pricing-plan-title">Social One-Time Optimization</h3>
+            <p class="pricing-plan-description">Professional one-time optimization of your social media accounts to improve visibility, engagement, and brand consistency across all platforms.</p>
+          </div>
+          <div class="pricing-plan-price">
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199 CAD</div>
+            <div class="pricing-plan-price-period">per social account (one-time)</div>
+          </div>
+          <ul class="pricing-plan-features">
+            <li>Profile optimization across all platforms</li>
+            <li>Content strategy development</li>
+            <li>Brand consistency audit</li>
+          </ul>
+          <div class="pricing-plan-cta">
+            <a href="/en/what-is-seo.html" class="btn btn-secondary">Learn More</a>
+            <a href="/en/contact.html" class="btn btn-primary">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Social Management Tile -->
+        <div class="pricing-plan-card popular">
+          <div class="pricing-plan-header">
+            <h3 class="pricing-plan-title">Social Management</h3>
+            <p class="pricing-plan-description">Ongoing social media management to keep your accounts active, engaging, and aligned with your business goals. $199 includes 2 posts per month.</p>
+          </div>
+          <div class="pricing-plan-price">
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199 CAD</div>
+            <div class="pricing-plan-price-period">per month</div>
+          </div>
+          <ul class="pricing-plan-features">
+            <li>2 posts per month per account</li>
+            <li>Content creation and scheduling</li>
+            <li>Engagement monitoring and response</li>
+            <li>Performance tracking and reporting</li>
+          </ul>
+          <div class="pricing-plan-cta">
+            <a href="/en/what-is-seo.html" class="btn btn-secondary">Learn More</a>
+            <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
+          </div>
+        </div>
+      `;
+    } else if (toolkit === 'free-website') {
       plansContainer.innerHTML = `
         <!-- Free Website Redesign Tile -->
         <div class="pricing-plan-card">
@@ -465,16 +531,17 @@ class PricingPage {
       'social': {
         title: 'Social Services Included',
         services: [
+          'Social media profile optimization (One-Time plan)',
+          'Content strategy development',
+          'Brand consistency audit',
+          '2 posts per month per account (Management plan)',
+          'Content creation and scheduling',
+          'Engagement monitoring and response',
+          'Performance tracking and reporting',
           'Social signal optimization for search',
           'Content amplification across platforms',
-          'Social engagement and community building',
-          'Social media profile optimization',
-          'Cross-platform content strategy',
-          'Social sharing optimization',
           'Social media analytics integration',
-          'Brand consistency across social platforms',
-          'Social content calendar management',
-          'Social media performance reporting'
+          'Cross-platform content strategy'
         ]
       }
     };

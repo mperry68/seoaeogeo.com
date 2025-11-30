@@ -12,19 +12,28 @@ class PricingPage {
   }
 
   async init() {
-    // Wait for currency detector and pricing manager
-    if (window.currencyDetector) {
-      this.currencyDetector = window.currencyDetector;
-    }
+    try {
+      // Wait for currency detector and pricing manager
+      if (window.currencyDetector) {
+        this.currencyDetector = window.currencyDetector;
+      }
 
-    if (window.PricingManager) {
-      this.pricingManager = new PricingManager();
-      this.pricingManager.setCurrencyDetector(this.currencyDetector);
-      await this.pricingManager.loadPricingData();
-    }
+      if (window.PricingManager) {
+        this.pricingManager = new PricingManager();
+        if (this.currencyDetector) {
+          this.pricingManager.setCurrencyDetector(this.currencyDetector);
+        }
+        await this.pricingManager.loadPricingData();
+      }
 
-    this.attachEventListeners();
-    this.loadToolkitContent(this.currentToolkit);
+      this.attachEventListeners();
+      this.loadToolkitContent(this.currentToolkit);
+    } catch (error) {
+      console.error('Error in pricing page init:', error);
+      // Still render the page even if pricing data fails to load
+      this.attachEventListeners();
+      this.loadToolkitContent(this.currentToolkit);
+    }
   }
 
   attachEventListeners() {
@@ -217,16 +226,25 @@ class PricingPage {
   }
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const pricingPage = new PricingPage();
-    pricingPage.init();
-    window.pricingPage = pricingPage;
-  });
-} else {
+// Initialize when DOM is ready and all scripts are loaded
+function initPricingPage() {
+  // Wait for currency detector and other dependencies
+  if (typeof window.currencyDetector === 'undefined' || typeof window.PricingManager === 'undefined') {
+    setTimeout(initPricingPage, 100);
+    return;
+  }
+
   const pricingPage = new PricingPage();
-  pricingPage.init();
+  pricingPage.init().catch(error => {
+    console.error('Error initializing pricing page:', error);
+  });
   window.pricingPage = pricingPage;
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPricingPage);
+} else {
+  // If DOM is already loaded, wait a bit for scripts to load
+  setTimeout(initPricingPage, 100);
 }
 

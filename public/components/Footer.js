@@ -82,29 +82,29 @@ class Footer {
             <div class="footer-section">
               <h3 class="footer-title">${t.services}</h3>
               <ul class="footer-links">
-                <li><a href="/${this.language}/services#seo">SEO Services</a></li>
-                <li><a href="/${this.language}/services#aeo">AEO Services</a></li>
-                <li><a href="/${this.language}/services#geo">GEO Services</a></li>
-                <li><a href="/${this.language}/services#webdev">Web Development</a></li>
+                <li><a href="/${this.language}/services.html#seo">SEO Services</a></li>
+                <li><a href="/${this.language}/services.html#aeo">AEO Services</a></li>
+                <li><a href="/${this.language}/services.html#geo">GEO Services</a></li>
+                <li><a href="/${this.language}/services.html#webdev">Web Development</a></li>
               </ul>
             </div>
             
             <div class="footer-section">
               <h3 class="footer-title">${t.resources}</h3>
               <ul class="footer-links">
-                <li><a href="/${this.language}/blog">${t.blog}</a></li>
-                <li><a href="/${this.language}/insights">${t.insights}</a></li>
-                <li><a href="/${this.language}/case-studies">${t.caseStudies}</a></li>
-                <li><a href="/${this.language}/pricing">${t.pricing}</a></li>
+                <li><a href="/${this.language}/blog.html">${t.blog}</a></li>
+                <li><a href="/${this.language}/insights.html">${t.insights}</a></li>
+                <li><a href="/${this.language}/case-studies.html">${t.caseStudies}</a></li>
+                <li><a href="/${this.language}/pricing.html">${t.pricing}</a></li>
               </ul>
             </div>
             
             <div class="footer-section">
               <h3 class="footer-title">${t.company}</h3>
               <ul class="footer-links">
-                <li><a href="/${this.language}/about">${t.about}</a></li>
-                <li><a href="/${this.language}/portfolio">${t.portfolio}</a></li>
-                <li><a href="/${this.language}/success-stories">${t.successStories}</a></li>
+                <li><a href="/${this.language}/about.html">${t.about}</a></li>
+                <li><a href="/${this.language}/portfolio.html">${t.portfolio}</a></li>
+                <li><a href="/${this.language}/success-stories.html">${t.successStories}</a></li>
               </ul>
             </div>
             
@@ -124,9 +124,9 @@ class Footer {
                 © ${currentYear} Digital Relevance. ${t.copyright}
               </p>
               <div class="footer-legal">
-                <a href="/${this.language}/privacy">${t.privacy}</a>
+                <a href="/${this.language}/privacy.html">${t.privacy}</a>
                 <span class="footer-separator">|</span>
-                <a href="/${this.language}/terms">${t.terms}</a>
+                <a href="/${this.language}/terms.html">${t.terms}</a>
               </div>
             </div>
           </div>

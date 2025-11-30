@@ -56,7 +56,7 @@ class Header {
       <header class="header" role="banner">
         <div class="header-container">
           <div class="header-logo">
-            <a href="/${this.language}/" aria-label="${t.home}" class="logo-link">
+            <a href="/${this.language}/index.html" aria-label="${t.home}" class="logo-link">
               <img src="/assets/images/Logo20.png" alt="Digital Relevance" class="logo-img" />
               <span class="logo-text">Digital Relevance</span>
             </a>
@@ -75,30 +75,30 @@ class Header {
             </button>
             
             <ul class="nav-menu" id="nav-menu">
-              <li><a href="/${this.language}/" class="nav-link">${t.home}</a></li>
-              <li><a href="/${this.language}/services" class="nav-link">${t.services}</a></li>
-              <li><a href="/${this.language}/pricing" class="nav-link">${t.pricing}</a></li>
+              <li><a href="/${this.language}/index.html" class="nav-link">${t.home}</a></li>
+              <li><a href="/${this.language}/services.html" class="nav-link">${t.services}</a></li>
+              <li><a href="/${this.language}/pricing.html" class="nav-link">${t.pricing}</a></li>
               <li class="nav-dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="resources-toggle">${t.resources} <span class="dropdown-arrow">▼</span></a>
                 <ul class="dropdown-menu" id="resources-dropdown">
-                  <li><a href="/${this.language}/blog" class="dropdown-link">${t.blog}</a></li>
-                  <li><a href="/${this.language}/insights" class="dropdown-link">${t.insights}</a></li>
-                  <li><a href="/${this.language}/case-studies" class="dropdown-link">${t.caseStudies}</a></li>
+                  <li><a href="/${this.language}/blog.html" class="dropdown-link">${t.blog}</a></li>
+                  <li><a href="/${this.language}/insights.html" class="dropdown-link">${t.insights}</a></li>
+                  <li><a href="/${this.language}/case-studies.html" class="dropdown-link">${t.caseStudies}</a></li>
                 </ul>
               </li>
               <li class="nav-dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="company-toggle">${t.company} <span class="dropdown-arrow">▼</span></a>
                 <ul class="dropdown-menu" id="company-dropdown">
-                  <li><a href="/${this.language}/about" class="dropdown-link">${t.about}</a></li>
-                  <li><a href="/${this.language}/portfolio" class="dropdown-link">${t.portfolio}</a></li>
-                  <li><a href="/${this.language}/success-stories" class="dropdown-link">${t.successStories}</a></li>
+                  <li><a href="/${this.language}/about.html" class="dropdown-link">${t.about}</a></li>
+                  <li><a href="/${this.language}/portfolio.html" class="dropdown-link">${t.portfolio}</a></li>
+                  <li><a href="/${this.language}/success-stories.html" class="dropdown-link">${t.successStories}</a></li>
                 </ul>
               </li>
-              <li><a href="/${this.language}/contact" class="btn btn-nav">${t.contact}</a></li>
+              <li><a href="/${this.language}/contact.html" class="btn btn-nav">${t.contact}</a></li>
               <li class="language-switcher">
-                <a href="/en${window.location.pathname.replace(/^\/(en|fr)/, '')}" class="lang-link ${this.language === 'en' ? 'active' : ''}">EN</a>
+                <a href="/en${window.location.pathname.replace(/^\/(en|fr)/, '').replace(/\.html$/, '')}.html" class="lang-link ${this.language === 'en' ? 'active' : ''}">EN</a>
                 <span class="lang-separator">|</span>
-                <a href="/fr${window.location.pathname.replace(/^\/(en|fr)/, '')}" class="lang-link ${this.language === 'fr' ? 'active' : ''}">FR</a>
+                <a href="/fr${window.location.pathname.replace(/^\/(en|fr)/, '').replace(/\.html$/, '')}.html" class="lang-link ${this.language === 'fr' ? 'active' : ''}">FR</a>
               </li>
             </ul>
           </nav>

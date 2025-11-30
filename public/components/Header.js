@@ -95,13 +95,6 @@ class Header {
                 </ul>
               </li>
               <li><a href="/${this.language}/contact" class="btn btn-nav">${t.contact}</a></li>
-              <li class="currency-switcher" id="currency-switcher">
-                <span class="currency-label">USD</span>
-                <div class="currency-dropdown" id="currency-dropdown">
-                  <button class="currency-option" data-currency="CAD">CAD</button>
-                  <button class="currency-option active" data-currency="USD">USD</button>
-                </div>
-              </li>
               <li class="language-switcher">
                 <a href="/en${window.location.pathname.replace(/^\/(en|fr)/, '')}" class="lang-link ${this.language === 'en' ? 'active' : ''}">EN</a>
                 <span class="lang-separator">|</span>
@@ -135,9 +128,6 @@ class Header {
       });
     }
 
-    // Currency switcher
-    this.attachCurrencyListeners();
-    
     // Dropdown menus
     this.attachDropdownListeners();
 
@@ -160,63 +150,6 @@ class Header {
         navMenu.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  attachCurrencyListeners() {
-    const currencySwitcher = document.getElementById('currency-switcher');
-    const currencyDropdown = document.getElementById('currency-dropdown');
-    const currencyLabel = currencySwitcher?.querySelector('.currency-label');
-    const currencyOptions = currencyDropdown?.querySelectorAll('.currency-option');
-
-    if (!currencySwitcher || !currencyDropdown || !window.currencyDetector) return;
-
-    // Toggle dropdown
-    currencyLabel?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      currencyDropdown.classList.toggle('active');
-    });
-
-    // Handle currency selection
-    currencyOptions?.forEach(option => {
-      option.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const currency = option.getAttribute('data-currency');
-        window.currencyDetector.setCurrency(currency);
-        currencyDropdown.classList.remove('active');
-        this.updateCurrencyDisplay();
-      });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!currencySwitcher.contains(e.target)) {
-        currencyDropdown.classList.remove('active');
-      }
-    });
-
-    // Update display when currency changes
-    window.currencyDetector.onCurrencyChange(() => {
-      this.updateCurrencyDisplay();
-    });
-  }
-
-  updateCurrencyDisplay() {
-    const currencyLabel = document.querySelector('.currency-label');
-    const currencyOptions = document.querySelectorAll('.currency-option');
-    const currentCurrency = window.currencyDetector?.getCurrency();
-
-    if (currencyLabel && currentCurrency) {
-      currencyLabel.textContent = currentCurrency;
-    }
-
-    currencyOptions?.forEach(option => {
-      const currency = option.getAttribute('data-currency');
-      if (currency === currentCurrency) {
-        option.classList.add('active');
-      } else {
-        option.classList.remove('active');
       }
     });
   }

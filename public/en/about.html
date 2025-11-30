@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/styles/header.css">
   <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/price.css">
+  <link rel="stylesheet" href="/styles/pricing.css">
 </head>
 <body>
   <div id="header"></div>
@@ -327,5 +328,34 @@
   <script src="/components/Footer.js"></script>
   <script src="/components/PriceDisplay.js"></script>
   <script src="/scripts/main.js"></script>
+  <script>
+    // Initialize FAQ accordion
+    function initAboutFAQ() {
+      const faqItems = document.querySelectorAll('.pricing-faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.pricing-faq-question');
+        const answer = item.querySelector('.pricing-faq-answer');
+        const icon = question.querySelector('.pricing-faq-icon');
+
+        if (question && answer && icon) {
+          question.addEventListener('click', () => {
+            const isOpen = item.classList.toggle('active');
+            const answerWrapper = item.querySelector('.pricing-faq-answer-wrapper');
+            if (answerWrapper) {
+              answerWrapper.style.maxHeight = isOpen ? answerWrapper.scrollHeight + 'px' : '0';
+            }
+            question.setAttribute('aria-expanded', isOpen);
+            icon.textContent = isOpen ? '−' : '+';
+          });
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAboutFAQ);
+    } else {
+      setTimeout(initAboutFAQ, 100);
+    }
+  </script>
 </body>
 </html>

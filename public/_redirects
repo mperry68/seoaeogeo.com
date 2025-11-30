@@ -1,0 +1,3 @@
+# Simple redirect: root to English homepage
+/ /en/index.html 301
+

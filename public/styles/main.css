@@ -309,7 +309,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 0.875rem 1.25rem;
-  background: #1e3a8a;
+  background: #1e40af;
   color: #ffffff;
   border: none;
   border-radius: 50px;
@@ -321,14 +321,8 @@ img {
 }
 
 .toolkit-btn:hover {
-  background: #1e40af;
-}
-
-.toolkit-btn.active {
   background: #ffffff;
   color: #1e3a8a;
-  border: none;
-  font-weight: 600;
 }
 
 .section-dark {
@@ -372,13 +366,7 @@ img {
 }
 
 .hero-unified {
-  background: #1e3a8a !important;
   padding: 4rem 0 6rem !important;
-}
-
-.hero-unified::before,
-.hero-unified::after {
-  display: none;
 }
 
 .hero::before {

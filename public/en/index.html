@@ -17,8 +17,10 @@
   
   <main>
     <!-- Hero Section -->
-    <section class="hero hero-unified" style="background: #1e3a8a; color: #ffffff; padding: 4rem 0 6rem; border-radius: 0 0 60px 60px;">
-      <div class="container" style="max-width: 1000px;">
+    <section class="hero hero-unified" style="background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 30%, #1e3a8a 70%, #172554 100%); color: #ffffff; padding: 4rem 0 6rem; border-radius: 0 0 60px 60px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px); pointer-events: none; z-index: 0;"></div>
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%); pointer-events: none; z-index: 0;"></div>
+      <div class="container" style="max-width: 1000px; position: relative; z-index: 1;">
         <div style="text-align: center; margin-bottom: 3rem;">
           <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: #ffffff; font-weight: 600;">Win digital <span class="highlight" style="color: #93c5fd;">brand visibility</span>, everywhere it matters.</h1>
           <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto 2rem;">We help businesses achieve digital relevance through expert SEO, AEO, and GEO services that drive measurable results.</p>
@@ -58,7 +60,7 @@
           <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #ffffff; font-weight: 600;">Toolkits to make your brand seen, trusted and unstoppable</h2>
           
           <div class="toolkit-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            <a href="/en/services#seo" class="toolkit-btn active">
+            <a href="/en/services#seo" class="toolkit-btn">
               <span>SEO</span>
             </a>
             <a href="/en/services#aeo" class="toolkit-btn">

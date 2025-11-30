@@ -75,7 +75,6 @@ class Header {
             </button>
             
             <ul class="nav-menu" id="nav-menu">
-              <li><a href="/${this.language}/index.html" class="nav-link">${t.home}</a></li>
               <li class="nav-dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="services-toggle">${t.services} <span class="dropdown-arrow">▼</span></a>
                 <ul class="dropdown-menu" id="services-dropdown">

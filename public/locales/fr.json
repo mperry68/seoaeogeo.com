@@ -1,0 +1,37 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "footer": {
+    "followUs": "Suivez-nous",
+    "quickLinks": "Liens rapides",
+    "legal": "Légal",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "copyright": "Tous droits réservés.",
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "readMore": "Lire la suite",
+    "learnMore": "En savoir plus"
+  },
+  "currency": {
+    "cad": "CAD",
+    "usd": "USD",
+    "currency": "Devise",
+    "switchCurrency": "Changer de devise",
+    "pricesIn": "Prix en",
+    "detectedLocation": "Emplacement détecté"
+  }
+}
+

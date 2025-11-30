@@ -82,10 +82,9 @@ class Footer {
             <div class="footer-section">
               <h3 class="footer-title">${t.services}</h3>
               <ul class="footer-links">
-                <li><a href="/${this.language}/services.html#seo">SEO Services</a></li>
-                <li><a href="/${this.language}/services.html#aeo">AEO Services</a></li>
-                <li><a href="/${this.language}/services.html#geo">GEO Services</a></li>
-                <li><a href="/${this.language}/services.html#webdev">Web Development</a></li>
+                <li><a href="/${this.language}/what-is-seo.html">What is SEO?</a></li>
+                <li><a href="/${this.language}/what-is-aeo.html">What is AEO?</a></li>
+                <li><a href="/${this.language}/what-is-geo.html">What is GEO?</a></li>
               </ul>
             </div>
             

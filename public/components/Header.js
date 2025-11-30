@@ -76,7 +76,14 @@ class Header {
             
             <ul class="nav-menu" id="nav-menu">
               <li><a href="/${this.language}/index.html" class="nav-link">${t.home}</a></li>
-              <li><a href="/${this.language}/services.html" class="nav-link">${t.services}</a></li>
+              <li class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="services-toggle">${t.services} <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu" id="services-dropdown">
+                  <li><a href="/${this.language}/what-is-seo.html" class="dropdown-link">What is SEO?</a></li>
+                  <li><a href="/${this.language}/what-is-aeo.html" class="dropdown-link">What is AEO?</a></li>
+                  <li><a href="/${this.language}/what-is-geo.html" class="dropdown-link">What is GEO?</a></li>
+                </ul>
+              </li>
               <li><a href="/${this.language}/pricing.html" class="nav-link">${t.pricing}</a></li>
               <li class="nav-dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="resources-toggle">${t.resources} <span class="dropdown-arrow">▼</span></a>
@@ -155,16 +162,29 @@ class Header {
   }
 
   attachDropdownListeners() {
+    const servicesToggle = document.getElementById('services-toggle');
+    const servicesDropdown = document.getElementById('services-dropdown');
     const resourcesToggle = document.getElementById('resources-toggle');
     const resourcesDropdown = document.getElementById('resources-dropdown');
     const companyToggle = document.getElementById('company-toggle');
     const companyDropdown = document.getElementById('company-dropdown');
+
+    // Services dropdown
+    if (servicesToggle && servicesDropdown) {
+      servicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        servicesDropdown.classList.toggle('active');
+        resourcesDropdown?.classList.remove('active');
+        companyDropdown?.classList.remove('active');
+      });
+    }
 
     // Resources dropdown
     if (resourcesToggle && resourcesDropdown) {
       resourcesToggle.addEventListener('click', (e) => {
         e.preventDefault();
         resourcesDropdown.classList.toggle('active');
+        servicesDropdown?.classList.remove('active');
         companyDropdown?.classList.remove('active');
       });
     }
@@ -174,6 +194,7 @@ class Header {
       companyToggle.addEventListener('click', (e) => {
         e.preventDefault();
         companyDropdown.classList.toggle('active');
+        servicesDropdown?.classList.remove('active');
         resourcesDropdown?.classList.remove('active');
       });
     }
@@ -181,6 +202,7 @@ class Header {
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.nav-dropdown')) {
+        servicesDropdown?.classList.remove('active');
         resourcesDropdown?.classList.remove('active');
         companyDropdown?.classList.remove('active');
       }

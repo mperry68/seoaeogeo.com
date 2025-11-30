@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Digital Relevance - Get in touch to discuss your SEO, AEO, and GEO needs.">
+  <title>Contact Us - Digital Relevance</title>
+  
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/price.css">
+</head>
+<body>
+  <div id="header"></div>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Let's discuss how we can help you achieve digital relevance</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="gap: 4rem; align-items: start;">
+          <!-- Contact Form -->
+          <div class="card">
+            <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <div>
+                <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name *</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 0.875rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit;">
+              </div>
+              
+              <div>
+                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email *</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 0.875rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit;">
+              </div>
+              
+              <div>
+                <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone</label>
+                <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.875rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit;">
+              </div>
+              
+              <div>
+                <label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Service Interest</label>
+                <select id="service" name="service" style="width: 100%; padding: 0.875rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit; background: white;">
+                  <option value="">Select a service</option>
+                  <option value="seo">SEO Services</option>
+                  <option value="aeo">AEO Services</option>
+                  <option value="geo">GEO Services</option>
+                  <option value="webdev">Web Development</option>
+                  <option value="package">Full Package</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message *</label>
+                <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.875rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+              </div>
+              
+              <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <div class="card" style="margin-bottom: 2rem;">
+              <h3 style="margin-bottom: 1.5rem;">Contact Information</h3>
+              
+              <div style="margin-bottom: 2rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-light); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Phone</h4>
+                <p style="font-size: 1.125rem;"><a href="tel:514-437-1864" style="color: var(--primary-color); text-decoration: none;">514-437-1864</a></p>
+              </div>
+              
+              <div style="margin-bottom: 2rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-light); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Email</h4>
+                <p style="font-size: 1.125rem;"><a href="mailto:marc@infradevconsulting.com" style="color: var(--primary-color); text-decoration: none;">marc@infradevconsulting.com</a></p>
+              </div>
+              
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-light); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Address</h4>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                  4-186 Pl. Sutton<br>
+                  Beaconsfield, QC H9W 5S3<br>
+                  Canada
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom: 1.5rem;">Business Hours</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                  <span>Monday - Friday</span>
+                  <strong>9:00 AM - 6:00 PM</strong>
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                  <span>Saturday</span>
+                  <strong>10:00 AM - 4:00 PM</strong>
+                </li>
+                <li style="padding: 0.75rem 0; display: flex; justify-content: space-between;">
+                  <span>Sunday</span>
+                  <strong>Closed</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer"></div>
+  
+  <script src="/scripts/i18n.js"></script>
+  <script src="/scripts/currency.js"></script>
+  <script src="/components/Header.js"></script>
+  <script src="/components/Footer.js"></script>
+  <script src="/components/PriceDisplay.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real implementation, you would send this to a server
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+

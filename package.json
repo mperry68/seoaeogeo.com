@@ -1,0 +1,17 @@
+{
+  "name": "seoaeogeo-website",
+  "version": "1.0.0",
+  "description": "Website with multilanguage support for Cloudflare Pages",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "dev": "echo 'Use a local server like: npx serve public'"
+  },
+  "keywords": [
+    "website",
+    "multilanguage",
+    "cloudflare-pages"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

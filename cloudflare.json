@@ -1,0 +1,15 @@
+{
+  "build": {
+    "command": "",
+    "cwd": ".",
+    "watch": []
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/en",
+      "statusCode": 301
+    }
+  ]
+}
+

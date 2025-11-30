@@ -12,7 +12,7 @@
 .pricing-sidebar {
   width: 250px;
   flex-shrink: 0;
-  background: var(--bg-light);
+  background: #374151;
   border-radius: 12px;
   padding: 2rem 0;
   height: fit-content;
@@ -24,7 +24,8 @@
   padding: 0 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
-  color: var(--text-color);
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .pricing-sidebar-menu {
@@ -40,21 +41,21 @@
 .pricing-sidebar-menu a {
   display: block;
   padding: 0.875rem 1.5rem;
-  color: var(--text-color);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: all 0.2s ease;
   border-left: 3px solid transparent;
 }
 
 .pricing-sidebar-menu a:hover {
-  background: rgba(30, 58, 138, 0.05);
-  color: var(--primary-color);
+  background: rgba(31, 41, 55, 0.5);
+  color: #ffffff;
 }
 
 .pricing-sidebar-menu a.active {
-  background: rgba(30, 58, 138, 0.1);
-  color: var(--primary-color);
-  border-left-color: var(--primary-color);
+  background: #1f2937;
+  color: #60a5fa;
+  border-left-color: #60a5fa;
   font-weight: 600;
 }
 
@@ -88,7 +89,7 @@
 
 .pricing-toggle-switch {
   display: flex;
-  background: var(--bg-light);
+  background: #374151;
   border-radius: 8px;
   padding: 4px;
   gap: 4px;
@@ -98,7 +99,7 @@
   padding: 0.625rem 1.25rem;
   border: none;
   background: transparent;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.9375rem;
   font-weight: 500;
   border-radius: 6px;
@@ -106,9 +107,14 @@
   transition: all 0.2s ease;
 }
 
-.pricing-toggle-btn.active {
-  background: var(--primary-color);
+.pricing-toggle-btn:hover {
   color: #ffffff;
+}
+
+.pricing-toggle-btn.active {
+  background: #1f2937;
+  color: #60a5fa;
+  font-weight: 600;
 }
 
 .pricing-plans-grid {
@@ -120,7 +126,7 @@
 
 .pricing-plan-card {
   background: #ffffff;
-  border: 2px solid var(--border-color);
+  border: 2px solid #e5e7eb;
   border-radius: 12px;
   padding: 2rem;
   transition: all 0.3s ease;
@@ -129,15 +135,16 @@
 }
 
 .pricing-plan-card:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+  border-color: #374151;
+  box-shadow: 0 10px 25px rgba(55, 65, 81, 0.15);
   transform: translateY(-2px);
 }
 
 .pricing-plan-card.popular {
-  border-color: var(--primary-color);
+  border-color: #374151;
   border-width: 2px;
   position: relative;
+  background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
 }
 
 .pricing-plan-card.popular::before {
@@ -146,7 +153,7 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--primary-color);
+  background: #374151;
   color: #ffffff;
   padding: 0.25rem 1rem;
   border-radius: 20px;
@@ -178,7 +185,7 @@
 .pricing-plan-price-amount {
   font-size: 2.5rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: #1f2937;
   line-height: 1;
   margin-bottom: 0.25rem;
 }
@@ -211,7 +218,7 @@
 
 .pricing-plan-features li::before {
   content: '✓';
-  color: #10b981;
+  color: #374151;
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 0.125rem;
@@ -224,6 +231,15 @@
 .pricing-plan-cta .btn {
   width: 100%;
   text-align: center;
+  background: #374151;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+}
+
+.pricing-plan-cta .btn:hover {
+  background: #1f2937;
+  color: #ffffff;
 }
 
 .pricing-whats-included {
@@ -244,18 +260,19 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
+  border: 1px solid #e5e7eb;
 }
 
 .pricing-comparison-table thead {
-  background: var(--bg-light);
+  background: #374151;
 }
 
 .pricing-comparison-table th {
   padding: 1rem;
   text-align: left;
   font-weight: 600;
-  color: var(--text-color);
-  border-bottom: 2px solid var(--border-color);
+  color: #ffffff;
+  border-bottom: 2px solid #1f2937;
 }
 
 .pricing-comparison-table th:first-child {
@@ -273,7 +290,7 @@
 }
 
 .pricing-comparison-table .checkmark {
-  color: #10b981;
+  color: #374151;
   font-weight: 700;
   font-size: 1.125rem;
 }
@@ -281,7 +298,7 @@
 .pricing-bundled-plan {
   margin-top: 4rem;
   padding: 3rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%);
   border-radius: 16px;
   color: #ffffff;
   text-align: center;
@@ -303,13 +320,14 @@
 }
 
 .pricing-bundled-plan .btn {
-  background: #ffffff;
-  color: var(--primary-color);
+  background: #60a5fa;
+  color: #ffffff;
   font-weight: 600;
+  border: none;
 }
 
 .pricing-bundled-plan .btn:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: #3b82f6;
 }
 
 @media (max-width: 1024px) {
@@ -343,7 +361,7 @@
 
   .pricing-sidebar-menu a.active {
     border-left: none;
-    border-bottom-color: var(--primary-color);
+    border-bottom-color: #60a5fa;
   }
 }
 

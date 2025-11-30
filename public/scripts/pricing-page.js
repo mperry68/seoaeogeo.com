@@ -118,14 +118,14 @@ class PricingPage {
       }
     });
 
-    // Show/hide discount badge based on cycle and toolkit
-    const discountBadge = document.getElementById('pricing-discount-badge');
-    const showDiscountBadge = ['seo-classic', 'aeo-classic', 'geo-classic'].includes(this.currentToolkit) && cycle === 'yearly';
-    if (discountBadge) {
-      if (showDiscountBadge) {
-        discountBadge.style.display = 'flex';
+    // Show/hide save badge based on cycle and toolkit
+    const saveBadge = document.getElementById('pricing-save-badge');
+    const showSaveBadge = ['seo-classic', 'aeo-classic', 'geo-classic'].includes(this.currentToolkit) && cycle === 'yearly';
+    if (saveBadge) {
+      if (showSaveBadge) {
+        saveBadge.style.display = 'inline-block';
       } else {
-        discountBadge.style.display = 'none';
+        saveBadge.style.display = 'none';
       }
     }
 
@@ -154,14 +154,14 @@ class PricingPage {
       console.error('[PricingPage] Title element not found!');
     }
 
-    // Show/hide discount badge for SEO, AEO, GEO
-    const discountBadge = document.getElementById('pricing-discount-badge');
-    const showDiscountBadge = ['seo-classic', 'aeo-classic', 'geo-classic'].includes(toolkit);
-    if (discountBadge) {
-      if (showDiscountBadge && this.billingCycle === 'yearly') {
-        discountBadge.style.display = 'flex';
+    // Show/hide save badge for SEO, AEO, GEO
+    const saveBadge = document.getElementById('pricing-save-badge');
+    const showSaveBadge = ['seo-classic', 'aeo-classic', 'geo-classic'].includes(toolkit);
+    if (saveBadge) {
+      if (showSaveBadge && this.billingCycle === 'yearly') {
+        saveBadge.style.display = 'inline-block';
       } else {
-        discountBadge.style.display = 'none';
+        saveBadge.style.display = 'none';
       }
     }
 

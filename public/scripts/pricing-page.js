@@ -43,12 +43,18 @@ class PricingPage {
       console.log('[PricingPage] Loading toolkit content:', this.currentToolkit);
       this.loadToolkitContent(this.currentToolkit);
       console.log('[PricingPage] Initialization complete');
+      
+      // Initialize FAQ accordion
+      setTimeout(() => this.initFAQ(), 100);
     } catch (error) {
       console.error('[PricingPage] Error in init:', error);
       console.error('[PricingPage] Error stack:', error.stack);
       // Still render the page even if pricing data fails to load
       this.attachEventListeners();
       this.loadToolkitContent(this.currentToolkit);
+      
+      // Initialize FAQ accordion even on error
+      setTimeout(() => this.initFAQ(), 100);
     }
   }
 
@@ -112,6 +118,17 @@ class PricingPage {
       }
     });
 
+    // Show/hide discount badge based on cycle and toolkit
+    const discountBadge = document.getElementById('pricing-discount-badge');
+    const showDiscountBadge = ['seo-classic', 'aeo-classic', 'geo-classic'].includes(this.currentToolkit) && cycle === 'yearly';
+    if (discountBadge) {
+      if (showDiscountBadge) {
+        discountBadge.style.display = 'flex';
+      } else {
+        discountBadge.style.display = 'none';
+      }
+    }
+
     this.loadToolkitContent(this.currentToolkit);
   }
 
@@ -137,6 +154,17 @@ class PricingPage {
       console.error('[PricingPage] Title element not found!');
     }
 
+    // Show/hide discount badge for SEO, AEO, GEO
+    const discountBadge = document.getElementById('pricing-discount-badge');
+    const showDiscountBadge = ['seo-classic', 'aeo-classic', 'geo-classic'].includes(toolkit);
+    if (discountBadge) {
+      if (showDiscountBadge && this.billingCycle === 'yearly') {
+        discountBadge.style.display = 'flex';
+      } else {
+        discountBadge.style.display = 'none';
+      }
+    }
+
     // Render plans
     console.log('[PricingPage] Rendering plans...');
     await this.renderPlans(toolkit);
@@ -145,6 +173,28 @@ class PricingPage {
     console.log('[PricingPage] Rendering comparison...');
     this.renderComparison(toolkit);
     console.log('[PricingPage] Toolkit content loaded');
+  }
+
+  initFAQ() {
+    const faqQuestions = document.querySelectorAll('.pricing-faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.closest('.pricing-faq-item');
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.pricing-faq-item').forEach(item => {
+          item.classList.remove('active');
+          item.querySelector('.pricing-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
   }
 
   async renderPlans(toolkit) {
@@ -385,7 +435,12 @@ class PricingPage {
 
     // Update prices if pricing manager is available
     if (this.pricingManager) {
-      await this.updatePrices();
+      // Use setTimeout to ensure DOM is fully rendered before updating prices
+      setTimeout(async () => {
+        await this.updatePrices();
+      }, 100);
+    } else {
+      console.warn('[PricingPage] PricingManager not available, prices will not update');
     }
   }
 
@@ -448,7 +503,6 @@ class PricingPage {
           'Content Writer',
           'Improve content to reflect the focus words of the site while maintaining the core message',
           'Reduce the AI generated text',
-          'Adapt changes to French language',
           'Fix broken links and remove low quality links',
           'Fix Critical site Errors',
           'Review site speed with a Speed Target of approximately 2 seconds',
@@ -457,7 +511,6 @@ class PricingPage {
           'Image Optimization',
           'Meta tag: Title and Descriptions',
           'Sitemap & Robot',
-          'New Reputable Backlinks (Upon Request. $70 USD/month per backlink)',
           'Two (2) New Blogs Created per Month',
           'Open Graph Protocol',
           'Google Analytics Addition',

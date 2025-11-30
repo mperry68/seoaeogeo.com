@@ -97,3 +97,6 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = PriceDisplay;
 }
 
+// Make available globally
+window.PriceDisplay = PriceDisplay;
+

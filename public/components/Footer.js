@@ -148,3 +148,6 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = Footer;
 }
 
+// Make available globally
+window.Footer = Footer;
+

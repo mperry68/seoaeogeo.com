@@ -6,8 +6,8 @@
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', async () => {
   // Initialize currency detector first
-  if (typeof CurrencyDetector !== 'undefined') {
-    window.currencyDetector = new CurrencyDetector();
+  if (window.CurrencyDetector) {
+    window.currencyDetector = new window.CurrencyDetector();
     // Wait for currency detection to complete
     await window.currencyDetector.detect();
   }
@@ -17,22 +17,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   const currentLang = pathMatch ? pathMatch[1] : 'en';
 
   // Initialize Header
-  if (document.getElementById('header')) {
-    const Header = window.Header || require('./components/Header.js');
-    const header = new Header(currentLang);
+  if (document.getElementById('header') && window.Header) {
+    const header = new window.Header(currentLang);
     header.init();
   }
 
   // Initialize Footer
-  if (document.getElementById('footer')) {
-    const Footer = window.Footer || require('./components/Footer.js');
-    const footer = new Footer(currentLang);
+  if (document.getElementById('footer') && window.Footer) {
+    const footer = new window.Footer(currentLang);
     footer.init();
   }
 
   // Initialize Price Display
-  if (typeof PriceDisplay !== 'undefined' && window.currencyDetector) {
-    const priceDisplay = new PriceDisplay(window.currencyDetector);
+  if (window.PriceDisplay && window.currencyDetector) {
+    const priceDisplay = new window.PriceDisplay(window.currencyDetector);
     priceDisplay.init();
     window.priceDisplay = priceDisplay;
   }

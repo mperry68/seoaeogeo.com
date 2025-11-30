@@ -260,3 +260,6 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = Header;
 }
 
+// Make available globally
+window.Header = Header;
+

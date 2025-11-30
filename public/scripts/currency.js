@@ -322,3 +322,6 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = CurrencyDetector;
 }
 
+// Make available globally
+window.CurrencyDetector = CurrencyDetector;
+

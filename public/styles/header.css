@@ -101,7 +101,7 @@
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--logo-blue);
   background-color: var(--bg-light);
 }
 
@@ -166,7 +166,7 @@
 }
 
 .btn-nav {
-  background-color: var(--primary-color);
+  background-color: var(--logo-blue);
   color: #ffffff !important;
   padding: 0.625rem 1.5rem;
   border-radius: 8px;
@@ -175,7 +175,7 @@
 }
 
 .btn-nav:hover {
-  background-color: var(--primary-dark);
+  background-color: #2563eb;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -200,7 +200,7 @@
 
 .currency-label:hover {
   background-color: #f0f0f0;
-  color: #007bff;
+  color: var(--logo-blue);
 }
 
 .currency-dropdown {
@@ -249,7 +249,7 @@
 }
 
 .currency-option.active {
-  background-color: #007bff;
+  background-color: var(--logo-blue);
   color: #ffffff;
   font-weight: 600;
 }
@@ -273,7 +273,7 @@
 
 .lang-link:hover,
 .lang-link.active {
-  color: #007bff;
+  color: var(--logo-blue);
 }
 
 .lang-separator {

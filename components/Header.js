@@ -20,7 +20,10 @@ class Header {
         services: 'Services',
         pricing: 'Pricing',
         blog: 'Blog',
+        insights: 'Insights',
         resources: 'Resources',
+        company: 'Company',
+        portfolio: 'Portfolio',
         successStories: 'Success Stories',
         caseStudies: 'Case Studies',
         contact: 'Contact',
@@ -33,7 +36,10 @@ class Header {
         services: 'Services',
         pricing: 'Tarification',
         blog: 'Blog',
+        insights: 'Aperçus',
         resources: 'Ressources',
+        company: 'Entreprise',
+        portfolio: 'Portfolio',
         successStories: 'Histoires de succès',
         caseStudies: 'Études de cas',
         contact: 'Contact',
@@ -72,11 +78,22 @@ class Header {
               <li><a href="/${this.language}/" class="nav-link">${t.home}</a></li>
               <li><a href="/${this.language}/services" class="nav-link">${t.services}</a></li>
               <li><a href="/${this.language}/pricing" class="nav-link">${t.pricing}</a></li>
+              <li class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="resources-toggle">${t.resources} <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu" id="resources-dropdown">
+                  <li><a href="/${this.language}/blog" class="dropdown-link">${t.blog}</a></li>
+                  <li><a href="/${this.language}/insights" class="dropdown-link">${t.insights}</a></li>
+                </ul>
+              </li>
+              <li class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="company-toggle">${t.company} <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu" id="company-dropdown">
+                  <li><a href="/${this.language}/about" class="dropdown-link">${t.about}</a></li>
+                  <li><a href="/${this.language}/portfolio" class="dropdown-link">${t.portfolio}</a></li>
+                </ul>
+              </li>
               <li><a href="/${this.language}/case-studies" class="nav-link">${t.caseStudies}</a></li>
               <li><a href="/${this.language}/success-stories" class="nav-link">${t.successStories}</a></li>
-              <li><a href="/${this.language}/blog" class="nav-link">${t.blog}</a></li>
-              <li><a href="/${this.language}/resources" class="nav-link">${t.resources}</a></li>
-              <li><a href="/${this.language}/about" class="nav-link">${t.about}</a></li>
               <li><a href="/${this.language}/contact" class="btn btn-nav">${t.contact}</a></li>
               <li class="currency-switcher" id="currency-switcher">
                 <span class="currency-label">USD</span>
@@ -120,6 +137,9 @@ class Header {
 
     // Currency switcher
     this.attachCurrencyListeners();
+    
+    // Dropdown menus
+    this.attachDropdownListeners();
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
@@ -197,6 +217,39 @@ class Header {
         option.classList.add('active');
       } else {
         option.classList.remove('active');
+      }
+    });
+  }
+
+  attachDropdownListeners() {
+    const resourcesToggle = document.getElementById('resources-toggle');
+    const resourcesDropdown = document.getElementById('resources-dropdown');
+    const companyToggle = document.getElementById('company-toggle');
+    const companyDropdown = document.getElementById('company-dropdown');
+
+    // Resources dropdown
+    if (resourcesToggle && resourcesDropdown) {
+      resourcesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        resourcesDropdown.classList.toggle('active');
+        companyDropdown?.classList.remove('active');
+      });
+    }
+
+    // Company dropdown
+    if (companyToggle && companyDropdown) {
+      companyToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        companyDropdown.classList.toggle('active');
+        resourcesDropdown?.classList.remove('active');
+      });
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        resourcesDropdown?.classList.remove('active');
+        companyDropdown?.classList.remove('active');
       }
     });
   }

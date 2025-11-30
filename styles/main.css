@@ -22,15 +22,15 @@
   --text-color: #1f2937;
   --text-light: #6b7280;
   --bg-color: #ffffff;
-  --bg-light: #f9fafb;
+  --bg-light: #f8fafc;
   --bg-dark: #111827;
   --footer-bg: #0f172a;
   --border-color: #e5e7eb;
-  --border-light: #f3f4f6;
+  --border-light: #f1f5f9;
   --max-width: 1280px;
   --spacing-unit: 1rem;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -44,7 +44,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -193,11 +193,23 @@ img {
 
 /* Sections */
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0;
+  background-color: #ffffff;
 }
 
 .section-alt {
-  background-color: var(--bg-light);
+  background-color: #f8fafc;
+  position: relative;
+}
+
+.section-alt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
 }
 
 .section-dark {
@@ -231,35 +243,64 @@ img {
 
 /* Hero Section */
 .hero {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
+  padding: 8rem 0 6rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  color: var(--text-color);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
-  color: #ffffff;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .hero p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  opacity: 0.95;
+  color: var(--text-light);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Cards */
 .card {
   background: #ffffff;
   border-radius: 12px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-light);
   transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  border-color: var(--border-color);
 }
 
 /* Mobile Styles */
@@ -285,11 +326,15 @@ img {
   }
 
   .section {
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
 
   .hero {
-    padding: 4rem 0;
+    padding: 5rem 0 4rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
   }
 
   .grid-2,

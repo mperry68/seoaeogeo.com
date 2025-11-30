@@ -17,7 +17,8 @@ class Footer {
         quickLinks: 'Quick Links',
         services: 'Services',
         company: 'Company',
-        resources: 'Resources',
+        insights: 'Insights',
+        portfolio: 'Portfolio',
         legal: 'Legal',
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
@@ -26,7 +27,8 @@ class Footer {
         about: 'About',
         pricing: 'Pricing',
         blog: 'Blog',
-        resources: 'Resources',
+        insights: 'Insights',
+        portfolio: 'Portfolio',
         successStories: 'Success Stories',
         caseStudies: 'Case Studies',
         contact: 'Contact',
@@ -39,7 +41,8 @@ class Footer {
         quickLinks: 'Liens rapides',
         services: 'Services',
         company: 'Entreprise',
-        resources: 'Ressources',
+        insights: 'Aperçus',
+        portfolio: 'Portfolio',
         legal: 'Légal',
         privacy: 'Politique de confidentialité',
         terms: 'Conditions d\'utilisation',
@@ -48,7 +51,8 @@ class Footer {
         about: 'À propos',
         pricing: 'Tarification',
         blog: 'Blog',
-        resources: 'Ressources',
+        insights: 'Aperçus',
+        portfolio: 'Portfolio',
         successStories: 'Histoires de succès',
         caseStudies: 'Études de cas',
         contact: 'Contact',
@@ -89,9 +93,9 @@ class Footer {
               <h3 class="footer-title">${t.company}</h3>
               <ul class="footer-links">
                 <li><a href="/${this.language}/about">${t.about}</a></li>
+                <li><a href="/${this.language}/portfolio">${t.portfolio}</a></li>
                 <li><a href="/${this.language}/case-studies">${t.caseStudies}</a></li>
                 <li><a href="/${this.language}/success-stories">${t.successStories}</a></li>
-                <li><a href="/${this.language}/contact">${t.contact}</a></li>
               </ul>
             </div>
             
@@ -99,7 +103,7 @@ class Footer {
               <h3 class="footer-title">${t.resources}</h3>
               <ul class="footer-links">
                 <li><a href="/${this.language}/blog">${t.blog}</a></li>
-                <li><a href="/${this.language}/resources">${t.resources}</a></li>
+                <li><a href="/${this.language}/insights">${t.insights}</a></li>
                 <li><a href="/${this.language}/pricing">${t.pricing}</a></li>
               </ul>
             </div>

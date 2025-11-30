@@ -122,7 +122,7 @@ class PricingPage {
       'seo-classic': 'SEO Classic Plans',
       'aeo-classic': 'AEO Classic Plans',
       'geo-classic': 'GEO Classic Plans',
-      'ai-visibility': 'AI Visibility Plans',
+      'free-website': 'Free Website Plans',
       'local': 'Local Plans',
       'social': 'Social Plans'
     };
@@ -186,15 +186,16 @@ class PricingPage {
         ],
         learnMoreLink: '/en/what-is-geo.html'
       },
-      'ai-visibility': {
-        title: 'AI Visibility',
-        description: 'Advanced AI search optimization for ChatGPT, Google AI Overview, and emerging AI platforms.',
+      'free-website': {
+        title: 'Free Website Redesign',
+        description: 'Get a professional website redesign at no cost when you subscribe to any of our optimization services. Transform your online presence while growing your search visibility.',
         highlights: [
-          'Multi-platform AI optimization strategy',
-          'AI content parsing and structure optimization',
-          'Real-time AI recommendation tracking'
+          'Professional website redesign included',
+          'Available with any optimization service subscription',
+          'Modern, responsive design tailored to your brand'
         ],
-        learnMoreLink: '/en/what-is-aeo.html'
+        learnMoreLink: '/en/what-is-seo.html',
+        note: 'Conditions apply. Contact us for more information.'
       },
       'local': {
         title: 'Local',
@@ -221,50 +222,99 @@ class PricingPage {
     const currentToolkit = toolkitData[toolkit] || toolkitData['seo-classic'];
     const cycleText = this.billingCycle === 'yearly' ? 'annually' : 'monthly';
 
-    // Render 2 tiles: Selected toolkit + Bundle
-    plansContainer.innerHTML = `
-      <!-- Selected Toolkit Tile -->
-      <div class="pricing-plan-card">
-        <div class="pricing-plan-header">
-          <h3 class="pricing-plan-title">${currentToolkit.title}</h3>
-          <p class="pricing-plan-description">${currentToolkit.description}</p>
+    // Special handling for Free Website section
+    if (toolkit === 'free-website') {
+      plansContainer.innerHTML = `
+        <!-- Free Website Redesign Tile -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-header">
+            <h3 class="pricing-plan-title">Free Website Redesign</h3>
+            <p class="pricing-plan-description">Get a professional website redesign at no cost when you subscribe to any of our optimization services. Transform your online presence while growing your search visibility.</p>
+          </div>
+          <div class="pricing-plan-price">
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">Free with Subscription</div>
+            <div class="pricing-plan-price-period">when you subscribe to any optimization service</div>
+          </div>
+          <ul class="pricing-plan-features">
+            <li>Professional website redesign included</li>
+            <li>Available with any optimization service subscription</li>
+            <li>Modern, responsive design tailored to your brand</li>
+          </ul>
+          <p style="font-size: 0.8125rem; color: #6b7280; margin: 0.75rem 0; font-style: italic;">Conditions apply. Contact us for more information.</p>
+          <div class="pricing-plan-cta">
+            <a href="${currentToolkit.learnMoreLink}" class="btn btn-secondary">Learn More</a>
+            <a href="/en/contact.html" class="btn btn-primary">Contact Us</a>
+          </div>
         </div>
-        <div class="pricing-plan-price">
-          <div class="pricing-plan-price-amount" data-toolkit="${toolkit}" data-cycle="${this.billingCycle}">Loading...</div>
-          <div class="pricing-plan-price-period">billed ${cycleText}</div>
-        </div>
-        <ul class="pricing-plan-features">
-          <li>${currentToolkit.highlights[0]}</li>
-          <li>${currentToolkit.highlights[1]}</li>
-          <li>${currentToolkit.highlights[2]}</li>
-        </ul>
-        <div class="pricing-plan-cta">
-          <a href="${currentToolkit.learnMoreLink}" class="btn btn-secondary">Learn More</a>
-          <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
-        </div>
-      </div>
 
-      <!-- Bundle Tile -->
-      <div class="pricing-plan-card popular">
-        <div class="pricing-plan-header">
-          <h3 class="pricing-plan-title">Complete Bundle</h3>
-          <p class="pricing-plan-description">SEO + AEO + GEO combined for comprehensive digital visibility across all search platforms.</p>
+        <!-- Website Redesign Tile -->
+        <div class="pricing-plan-card popular">
+          <div class="pricing-plan-header">
+            <h3 class="pricing-plan-title">Website Redesign</h3>
+            <p class="pricing-plan-description">Professional website development and redesign services tailored to your business needs and goals.</p>
+          </div>
+          <div class="pricing-plan-price">
+            <div class="pricing-plan-price-amount" style="font-size: 1.5rem;">Contact Us</div>
+            <div class="pricing-plan-price-period">for personalized quote</div>
+          </div>
+          <ul class="pricing-plan-features">
+            <li>Custom development solutions</li>
+            <li>WordPress website design</li>
+            <li>Shopify e-commerce setup</li>
+            <li>E-commerce platform integration</li>
+          </ul>
+          <div class="pricing-plan-cta">
+            <a href="/en/contact.html" class="btn btn-secondary">Get Quote</a>
+            <a href="/en/contact.html" class="btn btn-primary">Contact Us</a>
+          </div>
         </div>
-        <div class="pricing-plan-price">
-          <div class="pricing-plan-price-amount" data-toolkit="bundle" data-cycle="${this.billingCycle}">Loading...</div>
-          <div class="pricing-plan-price-period">billed ${cycleText}</div>
+      `;
+    } else {
+      // Standard toolkit tiles
+      plansContainer.innerHTML = `
+        <!-- Selected Toolkit Tile -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-header">
+            <h3 class="pricing-plan-title">${currentToolkit.title}</h3>
+            <p class="pricing-plan-description">${currentToolkit.description}</p>
+          </div>
+          <div class="pricing-plan-price">
+            <div class="pricing-plan-price-amount" data-toolkit="${toolkit}" data-cycle="${this.billingCycle}">Loading...</div>
+            <div class="pricing-plan-price-period">billed ${cycleText}</div>
+          </div>
+          <ul class="pricing-plan-features">
+            <li>${currentToolkit.highlights[0]}</li>
+            <li>${currentToolkit.highlights[1]}</li>
+            <li>${currentToolkit.highlights[2]}</li>
+          </ul>
+          <div class="pricing-plan-cta">
+            <a href="${currentToolkit.learnMoreLink}" class="btn btn-secondary">Learn More</a>
+            <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
+          </div>
         </div>
-        <ul class="pricing-plan-features">
-          <li>Full SEO, AEO, and GEO optimization</li>
-          <li>Unified strategy across all search platforms</li>
-          <li>Maximum visibility and conversion potential</li>
-        </ul>
-        <div class="pricing-plan-cta">
-          <a href="/en/what-is-seo.html" class="btn btn-secondary">Learn More</a>
-          <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
+
+        <!-- Bundle Tile -->
+        <div class="pricing-plan-card popular">
+          <div class="pricing-plan-header">
+            <h3 class="pricing-plan-title">Complete Bundle</h3>
+            <p class="pricing-plan-description">All three optimization services combined for comprehensive digital visibility across traditional search, AI platforms, and local markets.</p>
+          </div>
+          <div class="pricing-plan-price">
+            <div class="pricing-plan-price-amount" data-toolkit="bundle" data-cycle="${this.billingCycle}">Loading...</div>
+            <div class="pricing-plan-price-period">billed ${cycleText}</div>
+          </div>
+          <ul class="pricing-plan-features">
+            <li>Full SEO, AEO, and GEO optimization</li>
+            <li>Unified strategy across all search platforms</li>
+            <li>Maximum visibility and conversion potential</li>
+          </ul>
+          <div class="pricing-plan-cta">
+            <a href="/en/what-is-seo.html" class="btn btn-secondary">Learn More</a>
+            <a href="/en/contact.html" class="btn btn-primary">Subscribe</a>
+          </div>
         </div>
-      </div>
-    `;
+      `;
+    }
 
     // Update prices if pricing manager is available
     if (this.pricingManager) {

@@ -17,12 +17,7 @@
 :root {
   --primary-color: #3b82f6;
   --primary-dark: #2563eb;
-  --primary-light: #60a5fa;
-  --secondary-color: #1e40af;
-  --accent-color: #0ea5e9;
   --logo-blue: #3b82f6;
-  --logo-gray: #4b5563;
-  --logo-dark-gray: #1f2937;
   --text-color: #1f2937;
   --text-light: #6b7280;
   --bg-color: #ffffff;
@@ -32,11 +27,8 @@
   --border-color: #e5e7eb;
   --border-light: #f1f5f9;
   --max-width: 1280px;
-  --spacing-unit: 1rem;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 html {
@@ -72,12 +64,6 @@ main {
 
 .container-narrow {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.container-wide {
-  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -154,7 +140,6 @@ a:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   text-decoration: none;
-  background-color: #2563eb;
 }
 
 .btn:active {
@@ -280,12 +265,12 @@ img {
 .section-automation {
   position: relative;
   overflow: hidden;
-  border-radius: 40px 40px 0 0;
-  margin-top: -40px;
+  border-radius: 60px 60px 0 0;
+  margin-top: -60px;
 }
 
 .hero-section {
-  border-radius: 0 0 40px 40px;
+  border-radius: 0 0 60px 60px;
 }
 
 .toolkit-grid {
@@ -318,10 +303,6 @@ img {
   z-index: 0;
 }
 
-.section-colored {
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
-}
-
 /* Toolkit Buttons */
 .toolkit-btn {
   display: flex;
@@ -331,7 +312,7 @@ img {
   background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
   color: #ffffff;
   border: 2px solid transparent;
-  border-radius: 10px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9375rem;
@@ -392,17 +373,6 @@ img {
   position: relative;
   overflow: hidden;
   margin-bottom: -1px;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(180deg, rgba(30, 58, 138, 0.4) 0%, rgba(30, 58, 138, 0.2) 50%, transparent 100%);
-  pointer-events: none;
 }
 
 .hero::before {
@@ -569,13 +539,13 @@ img {
   }
 
   .section-automation {
-    border-radius: 30px 30px 0 0;
-    margin-top: -30px;
+    border-radius: 40px 40px 0 0;
+    margin-top: -40px;
     padding: 5rem 0 !important;
   }
 
   .hero-section {
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 40px 40px;
   }
 
   .section-automation h2 {
@@ -584,21 +554,6 @@ img {
 
   .section-automation p {
     font-size: 1.125rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    letter-spacing: -0.03em;
-  }
-
-  h2 {
-    font-size: 2rem;
-    letter-spacing: -0.02em;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    letter-spacing: -0.01em;
   }
 
   .hero p {

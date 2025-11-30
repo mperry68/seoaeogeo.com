@@ -491,6 +491,28 @@ body.pricing-page .section {
   .pricing-sidebar-menu a {
     text-align: center;
   }
+
+  .pricing-header h1 {
+    font-size: 2rem !important;
+  }
+
+  .pricing-header-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .pricing-toggle-switch {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-toggle-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
 }
 
 /* Service Details Section */
@@ -651,15 +673,20 @@ body.pricing-page .section {
 
   .pricing-service-details-table th,
   .pricing-service-details-table td {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .pricing-service-details-col-included {
-    width: 80px;
+    width: 70px;
   }
 
   .pricing-service-details-checkmark {
-    font-size: 1.125rem;
+    font-size: 1rem;
+  }
+
+  .pricing-service-details-service {
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 
   .pricing-addon-section {

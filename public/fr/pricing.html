@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Transparent pricing for SEO, AEO, and GEO services. Choose the plan that fits your business needs.">
+  <title>Pricing - Digital Relevance</title>
+  
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/price.css">
+  <link rel="stylesheet" href="/styles/pricing.css">
+  <script>
+    console.log('[Pricing Page] HTML loaded, current URL:', window.location.href);
+    console.log('[Pricing Page] Document ready state:', document.readyState);
+  </script>
+</head>
+<body class="pricing-page">
+  <script>
+    console.log('[Pricing Page] Body loaded');
+  </script>
+  <div id="header"></div>
+  
+  <main>
+    <section class="section" style="padding-top: 3rem;">
+      <div class="container">
+        <div class="pricing-layout">
+          <!-- Left Sidebar -->
+          <aside class="pricing-sidebar">
+            <ul class="pricing-sidebar-menu">
+              <li><a href="javascript:void(0)" class="active" data-toolkit="seo-classic">SEO Classic</a></li>
+              <li><a href="javascript:void(0)" data-toolkit="aeo-classic">AEO Classic</a></li>
+              <li><a href="javascript:void(0)" data-toolkit="geo-classic">GEO Classic</a></li>
+              <li><a href="javascript:void(0)" data-toolkit="free-website" class="pricing-promo">Free Website <span class="pricing-promo-badge">PROMO</span></a></li>
+              <li><a href="javascript:void(0)" data-toolkit="local">Local</a></li>
+              <li><a href="javascript:void(0)" data-toolkit="social">Social</a></li>
+            </ul>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="pricing-content">
+            <div class="pricing-header">
+              <div class="pricing-header-row">
+                <h1 id="pricing-title">SEO Classic Plans</h1>
+                <div class="pricing-toggle-switch">
+                  <button class="pricing-toggle-btn" data-cycle="monthly">Monthly</button>
+                  <button class="pricing-toggle-btn active" data-cycle="yearly" id="pricing-annually-btn">
+                    <span>Annually</span>
+                    <span class="pricing-save-badge" id="pricing-save-badge">Save 10%</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Plans Grid -->
+            <div class="pricing-plans-grid" id="pricing-plans">
+              <!-- Plans will be dynamically loaded here -->
+            </div>
+
+            <!-- Service Details Section -->
+            <div id="pricing-service-details" class="pricing-service-details">
+              <!-- Service details will be dynamically loaded here -->
+            </div>
+
+            <!-- Add-On Backlinks Section -->
+            <div class="pricing-addon-section">
+              <h2>Improve your plan with Backlinks</h2>
+              <p class="pricing-addon-price">$70 USD/month per backlink</p>
+              <p class="pricing-addon-description">Enhance your SEO strategy with high-quality, reputable backlinks. Each backlink is carefully selected and placed on authoritative sites to boost your domain authority and search rankings.</p>
+              <a href="/en/contact.html" class="btn btn-primary">Request Backlinks</a>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="pricing-faq-section">
+              <h2 class="pricing-faq-title">Frequently Asked Questions About Our Pricing</h2>
+              <p class="pricing-faq-subtitle">Get answers to common questions about our SEO, AEO, and GEO service pricing, payment options, and subscription management.</p>
+              <div class="pricing-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+                <div class="pricing-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  <button class="pricing-faq-question" aria-expanded="false">
+                    <span itemprop="name">Can I cancel my subscription anytime?</span>
+                    <span class="pricing-faq-icon">+</span>
+                  </button>
+                  <div class="pricing-faq-answer-wrapper" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="pricing-faq-answer" itemprop="text">Yes, you have complete flexibility with your subscription. You can cancel your subscription, downgrade to a lower tier, or upgrade to a higher plan at any time. Changes take effect at the end of your current billing cycle, ensuring you receive the full value of your current plan.</p>
+                  </div>
+                </div>
+                <div class="pricing-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  <button class="pricing-faq-question" aria-expanded="false">
+                    <span itemprop="name">What is Digital Relevance's refund policy?</span>
+                    <span class="pricing-faq-icon">+</span>
+                  </button>
+                  <div class="pricing-faq-answer-wrapper" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="pricing-faq-answer" itemprop="text">We require a 30-day notice for subscription cancellations. This allows us to properly wrap up your current optimization work and ensures a smooth transition. We do not provide refunds for the current ongoing month, as services are delivered throughout the billing period. All work completed during your active subscription period remains yours.</p>
+                  </div>
+                </div>
+                <div class="pricing-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  <button class="pricing-faq-question" aria-expanded="false">
+                    <span itemprop="name">What payment methods do you accept?</span>
+                    <span class="pricing-faq-icon">+</span>
+                  </button>
+                  <div class="pricing-faq-answer-wrapper" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="pricing-faq-answer" itemprop="text">We accept multiple payment methods for your convenience, including major credit cards (Visa, Mastercard, American Express), electronic bank transfers (EFT), and wire transfers. All payment methods are secure and processed through our trusted payment partners.</p>
+                  </div>
+                </div>
+                <div class="pricing-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  <button class="pricing-faq-question" aria-expanded="false">
+                    <span itemprop="name">Am I charged immediately when I enter my credit card information?</span>
+                    <span class="pricing-faq-icon">+</span>
+                  </button>
+                  <div class="pricing-faq-answer-wrapper" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="pricing-faq-answer" itemprop="text">No, you are not charged immediately. We send you secure payment links along with detailed invoices. This allows you to review your subscription details and payment amount before completing the transaction. Payment is only processed when you click the payment link in your invoice.</p>
+                  </div>
+                </div>
+                <div class="pricing-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  <button class="pricing-faq-question" aria-expanded="false">
+                    <span itemprop="name">What currency are prices displayed in?</span>
+                    <span class="pricing-faq-icon">+</span>
+                  </button>
+                  <div class="pricing-faq-answer-wrapper" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="pricing-faq-answer" itemprop="text">Prices are automatically displayed in your local currency based on your geographic location. Canadian customers see prices in CAD (Canadian Dollars), while customers from other countries see prices in USD (US Dollars). Our system uses advanced geolocation technology to detect your location and display the appropriate currency.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer"></div>
+  
+  <script src="/scripts/i18n.js"></script>
+  <script src="/scripts/currency.js"></script>
+  <script src="/scripts/pricing.js"></script>
+  <script src="/components/Header.js"></script>
+  <script src="/components/Footer.js"></script>
+  <script src="/components/PriceDisplay.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/pricing-page.js"></script>
+</body>
+</html>
+

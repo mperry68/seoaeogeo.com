@@ -25,19 +25,20 @@ body.pricing-page .section {
 .pricing-sidebar {
   width: 250px;
   flex-shrink: 0;
-  background: #374151;
+  background: #ffffff;
   border-radius: 12px;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   height: fit-content;
   position: sticky;
   top: 100px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .pricing-sidebar h3 {
   padding: 0 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.125rem;
-  color: #ffffff;
+  color: #1f2937;
   font-weight: 600;
 }
 
@@ -49,26 +50,27 @@ body.pricing-page .section {
 
 .pricing-sidebar-menu li {
   margin: 0;
+  padding: 0 0.75rem;
 }
 
 .pricing-sidebar-menu a {
   display: block;
-  padding: 0.875rem 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1rem;
+  color: #1f2937;
   text-decoration: none;
   transition: all 0.2s ease;
-  border-left: 3px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
 }
 
 .pricing-sidebar-menu a:hover {
-  background: rgba(31, 41, 55, 0.5);
-  color: #ffffff;
+  background: #f3f4f6;
+  color: #1f2937;
 }
 
 .pricing-sidebar-menu a.active {
-  background: #1f2937;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #e5e7eb;
+  color: #374151;
   font-weight: 600;
 }
 
@@ -78,41 +80,36 @@ body.pricing-page .section {
 }
 
 .pricing-header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .pricing-header h1 {
   font-size: 2.75rem;
-  margin-bottom: 1.5rem;
+  margin: 0;
   color: var(--text-color);
-}
-
-.pricing-toggle {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.pricing-toggle-label {
-  font-size: 0.9375rem;
-  color: var(--text-light);
-  font-weight: 500;
 }
 
 .pricing-toggle-switch {
   display: flex;
-  background: #374151;
+  background: #e5e7eb;
   border-radius: 8px;
   padding: 4px;
   gap: 4px;
 }
 
 .pricing-toggle-btn {
-  padding: 0.625rem 1.25rem;
+  padding: 0.5rem 1rem;
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  color: #6b7280;
   font-size: 0.9375rem;
   font-weight: 500;
   border-radius: 6px;
@@ -121,13 +118,15 @@ body.pricing-page .section {
 }
 
 .pricing-toggle-btn:hover {
-  color: #ffffff;
+  color: #1f2937;
+  background: #f3f4f6;
 }
 
 .pricing-toggle-btn.active {
-  background: #1f2937;
-  color: #60a5fa;
+  background: #ffffff;
+  color: #1f2937;
   font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .pricing-plans-grid {
@@ -141,7 +140,7 @@ body.pricing-page .section {
   background: #ffffff;
   border: 2px solid #d1d5db;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -176,28 +175,28 @@ body.pricing-page .section {
 }
 
 .pricing-plan-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .pricing-plan-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   color: var(--text-color);
 }
 
 .pricing-plan-description {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: var(--text-light);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .pricing-plan-price {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .pricing-plan-price-amount {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #1f2937;
   line-height: 1;
@@ -205,23 +204,23 @@ body.pricing-page .section {
 }
 
 .pricing-plan-price-period {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: var(--text-light);
 }
 
 .pricing-plan-features {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.25rem 0;
   flex: 1;
 }
 
 .pricing-plan-features li {
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   display: flex;
   align-items: start;
-  gap: 0.75rem;
-  font-size: 0.9375rem;
+  gap: 0.5rem;
+  font-size: 0.875rem;
   color: var(--text-color);
   border-bottom: 1px solid var(--border-light);
 }
@@ -368,14 +367,12 @@ body.pricing-page .section {
 
   .pricing-sidebar-menu a {
     text-align: center;
-    border-left: none;
-    border-bottom: 3px solid transparent;
+    border-radius: 8px;
     padding: 0.75rem 1rem;
   }
 
   .pricing-sidebar-menu a.active {
-    border-left: none;
-    border-bottom-color: #60a5fa;
+    background: #e5e7eb;
   }
 }
 

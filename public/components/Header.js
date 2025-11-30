@@ -83,6 +83,7 @@ class Header {
                 <ul class="dropdown-menu" id="resources-dropdown">
                   <li><a href="/${this.language}/blog" class="dropdown-link">${t.blog}</a></li>
                   <li><a href="/${this.language}/insights" class="dropdown-link">${t.insights}</a></li>
+                  <li><a href="/${this.language}/case-studies" class="dropdown-link">${t.caseStudies}</a></li>
                 </ul>
               </li>
               <li class="nav-dropdown">
@@ -90,10 +91,9 @@ class Header {
                 <ul class="dropdown-menu" id="company-dropdown">
                   <li><a href="/${this.language}/about" class="dropdown-link">${t.about}</a></li>
                   <li><a href="/${this.language}/portfolio" class="dropdown-link">${t.portfolio}</a></li>
+                  <li><a href="/${this.language}/success-stories" class="dropdown-link">${t.successStories}</a></li>
                 </ul>
               </li>
-              <li><a href="/${this.language}/case-studies" class="nav-link">${t.caseStudies}</a></li>
-              <li><a href="/${this.language}/success-stories" class="nav-link">${t.successStories}</a></li>
               <li><a href="/${this.language}/contact" class="btn btn-nav">${t.contact}</a></li>
               <li class="currency-switcher" id="currency-switcher">
                 <span class="currency-label">USD</span>

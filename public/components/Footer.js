@@ -90,21 +90,21 @@ class Footer {
             </div>
             
             <div class="footer-section">
-              <h3 class="footer-title">${t.company}</h3>
-              <ul class="footer-links">
-                <li><a href="/${this.language}/about">${t.about}</a></li>
-                <li><a href="/${this.language}/portfolio">${t.portfolio}</a></li>
-                <li><a href="/${this.language}/case-studies">${t.caseStudies}</a></li>
-                <li><a href="/${this.language}/success-stories">${t.successStories}</a></li>
-              </ul>
-            </div>
-            
-            <div class="footer-section">
               <h3 class="footer-title">${t.resources}</h3>
               <ul class="footer-links">
                 <li><a href="/${this.language}/blog">${t.blog}</a></li>
                 <li><a href="/${this.language}/insights">${t.insights}</a></li>
+                <li><a href="/${this.language}/case-studies">${t.caseStudies}</a></li>
                 <li><a href="/${this.language}/pricing">${t.pricing}</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-section">
+              <h3 class="footer-title">${t.company}</h3>
+              <ul class="footer-links">
+                <li><a href="/${this.language}/about">${t.about}</a></li>
+                <li><a href="/${this.language}/portfolio">${t.portfolio}</a></li>
+                <li><a href="/${this.language}/success-stories">${t.successStories}</a></li>
               </ul>
             </div>
             

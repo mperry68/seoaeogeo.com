@@ -309,29 +309,25 @@ img {
   align-items: center;
   justify-content: center;
   padding: 0.875rem 1.25rem;
-  background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
+  background: #1e3a8a;
   color: #ffffff;
-  border: 2px solid transparent;
+  border: none;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9375rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .toolkit-btn:hover {
-  background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
+  background: #1e40af;
 }
 
 .toolkit-btn.active {
   background: #ffffff;
   color: #1e3a8a;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 4px 12px rgba(255, 255, 255, 0.2);
+  border: none;
   font-weight: 600;
 }
 
@@ -373,6 +369,16 @@ img {
   position: relative;
   overflow: hidden;
   margin-bottom: -1px;
+}
+
+.hero-unified {
+  background: #1e3a8a !important;
+  padding: 4rem 0 6rem !important;
+}
+
+.hero-unified::before,
+.hero-unified::after {
+  display: none;
 }
 
 .hero::before {

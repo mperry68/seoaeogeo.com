@@ -3,17 +3,17 @@
  * Layout with sidebar navigation and pricing plans
  */
 
-/* Pricing page background */
+/* Pricing page background - light charcoal tint matching logo palette */
 body.pricing-page {
-  background-color: #f9fafb;
+  background-color: #e8eaed;
 }
 
 body.pricing-page main {
-  background-color: #f9fafb;
+  background-color: #e8eaed;
 }
 
 body.pricing-page .section {
-  background-color: #f9fafb;
+  background-color: #e8eaed;
 }
 
 .pricing-layout {
@@ -139,12 +139,13 @@ body.pricing-page .section {
 
 .pricing-plan-card {
   background: #ffffff;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #d1d5db;
   border-radius: 12px;
   padding: 2rem;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 3px rgba(55, 65, 81, 0.1);
 }
 
 .pricing-plan-card:hover {

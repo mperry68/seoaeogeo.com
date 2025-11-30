@@ -602,7 +602,6 @@ class PricingPage {
     const details = serviceDetails[toolkit] || serviceDetails['seo-classic'];
     
     detailsContainer.innerHTML = `
-      <h2 class="pricing-service-details-title">${details.title}</h2>
       <table class="pricing-service-details-table">
         <thead>
           <tr>

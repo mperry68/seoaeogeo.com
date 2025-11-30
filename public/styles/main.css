@@ -277,6 +277,30 @@ img {
   z-index: 0;
 }
 
+.section-automation {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px 40px 0 0;
+  margin-top: -40px;
+}
+
+.hero-section {
+  border-radius: 0 0 40px 40px;
+}
+
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .toolkit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+  }
+}
+
 .section-light-to-dark {
   position: relative;
   overflow: hidden;
@@ -303,30 +327,30 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem 1.5rem;
+  padding: 0.875rem 1.25rem;
   background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
   color: #ffffff;
   border: 2px solid transparent;
-  border-radius: 12px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .toolkit-btn:hover {
   background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
 }
 
 .toolkit-btn.active {
   background: #ffffff;
   color: #1e3a8a;
-  border-color: #ffffff;
-  box-shadow: 0 0 0 2px #ffffff, 0 10px 25px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 4px 12px rgba(255, 255, 255, 0.2);
   font-weight: 600;
 }
 
@@ -537,6 +561,29 @@ img {
   .hero h1 {
     font-size: 2.5rem;
     letter-spacing: -0.03em;
+  }
+
+  .toolkit-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .section-automation {
+    border-radius: 30px 30px 0 0;
+    margin-top: -30px;
+    padding: 5rem 0 !important;
+  }
+
+  .hero-section {
+    border-radius: 0 0 30px 30px;
+  }
+
+  .section-automation h2 {
+    font-size: 2rem;
+  }
+
+  .section-automation p {
+    font-size: 1.125rem;
   }
 
   h1 {

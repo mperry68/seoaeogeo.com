@@ -65,14 +65,14 @@
     </section>
 
     <!-- Services Toolkits -->
-    <section class="section section-dark-to-light" style="background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 30%, #1e3a8a 70%, #172554 100%); color: #ffffff; position: relative; overflow: hidden; padding: 6rem 0;">
+    <section class="section section-dark-to-light" style="background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 30%, #1e3a8a 70%, #172554 100%); color: #ffffff; position: relative; overflow: hidden; padding: 5rem 0; border-radius: 0 0 40px 40px;">
       <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%); pointer-events: none;"></div>
-      <div class="container" style="position: relative; z-index: 2;">
-        <div style="text-align: center; margin-bottom: 4rem;">
-          <h2 style="font-size: 2.75rem; margin-bottom: 1rem; color: #ffffff; font-weight: 600;">Toolkits to make your brand seen, trusted and unstoppable</h2>
+      <div class="container" style="position: relative; z-index: 2; max-width: 1000px;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2 style="font-size: 2.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 600;">Toolkits to make your brand seen, trusted and unstoppable</h2>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 3rem;">
+        <div class="toolkit-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
           <a href="/en/services#seo" class="toolkit-btn active">
             <span>SEO</span>
           </a>
@@ -100,25 +100,48 @@
         </div>
 
         <!-- Selected Toolkit Detail -->
-        <div class="card" style="background: #ffffff; border: 2px solid #ffffff; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);">
+        <div class="card" style="background: #ffffff; border: 2px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2); max-width: 700px; margin: 0 auto;">
           <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
             <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
               <img src="/assets/icons/discover.png" alt="SEO" style="width: 28px; height: 28px;" />
             </div>
-            <h3 style="margin: 0; font-size: 1.75rem; font-weight: 600; color: #1e3a8a;">SEO</h3>
+            <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: #1e3a8a;">SEO</h3>
             <span style="font-size: 1.5rem;">✨</span>
           </div>
-          <div style="margin-bottom: 1.5rem;">
-            <img src="/assets/images/SEODashboard.jpg" alt="SEO Dashboard" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);" />
+          <div style="margin-bottom: 1.5rem; text-align: center;">
+            <img src="/assets/images/SEODashboard.jpg" alt="SEO Dashboard" style="max-width: 600px; width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg); margin: 0 auto;" />
           </div>
-          <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.7;">Search Engine Optimization to improve your visibility and rankings on Google and other search engines. Drive organic traffic and increase conversions.</p>
-          <a href="/en/services#seo" class="btn" style="background: #1e3a8a;">Learn More</a>
+          <p style="font-size: 1rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.7; text-align: center;">Search Engine Optimization to improve your visibility and rankings on Google and other search engines. Drive organic traffic and increase conversions.</p>
+          <div style="text-align: center;">
+            <a href="/en/services#seo" class="btn" style="background: #1e3a8a;">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Trust Badge -->
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+          <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.125rem; font-weight: 500;">Most trusted by local professionals across North America</p>
         </div>
       </div>
     </section>
 
+    <!-- Automation Section with Digital Globe -->
+    <section class="section section-automation" style="background: linear-gradient(180deg, #172554 0%, #1e3a8a 50%, #1e40af 100%); color: #ffffff; position: relative; overflow: hidden; padding: 8rem 0;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('/assets/images/digitalglobe.jpg'); background-size: cover; background-position: center; opacity: 0.15; z-index: 0;"></div>
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(23, 37, 84, 0.9) 0%, rgba(30, 58, 138, 0.85) 50%, rgba(30, 64, 175, 0.9) 100%); z-index: 1;"></div>
+      <div class="container" style="position: relative; z-index: 2; text-align: center; max-width: 900px;">
+        <h2 style="font-size: 3rem; margin-bottom: 1.5rem; color: #ffffff; font-weight: 600; line-height: 1.2;">
+          Automate SEO Growth.<br />
+          Optimize AEO.
+        </h2>
+        <p style="font-size: 1.5rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2.5rem; line-height: 1.6;">
+          Streamline your digital marketing with automated workflows and AI-powered optimization tools.
+        </p>
+        <a href="/en/services" class="btn" style="background: #60a5fa; color: #ffffff; padding: 1.125rem 2.5rem; font-size: 1.125rem; box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);">Discover</a>
+      </div>
+    </section>
+
     <!-- Why Choose Us -->
-    <section class="section section-alt section-transition-top">
+    <section class="section section-alt">
       <div class="container">
         <div style="text-align: center; margin-bottom: 5rem;">
           <h2 style="font-size: 2.75rem; margin-bottom: 1rem;">Why Digital Relevance?</h2>

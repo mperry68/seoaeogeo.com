@@ -432,13 +432,13 @@ body.pricing-page .section {
 }
 
 .pricing-service-details-list li {
-  padding: 0.75rem 0;
+  padding: 0.375rem 0;
   border-bottom: 1px solid #f1f5f9;
   color: #374151;
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.5;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
 }
 
 .pricing-service-details-list li:last-child {
@@ -446,13 +446,13 @@ body.pricing-page .section {
 }
 
 .pricing-service-details-list li::before {
-  content: '•';
+  content: '✓';
   position: absolute;
   left: 0;
   color: #60a5fa;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Add-On Backlinks Section */

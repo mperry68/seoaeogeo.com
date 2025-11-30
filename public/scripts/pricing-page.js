@@ -603,9 +603,22 @@ class PricingPage {
     
     detailsContainer.innerHTML = `
       <h2 class="pricing-service-details-title">${details.title}</h2>
-      <ul class="pricing-service-details-list">
-        ${details.services.map(service => `<li>${service}</li>`).join('')}
-      </ul>
+      <table class="pricing-service-details-table">
+        <thead>
+          <tr>
+            <th class="pricing-service-details-col-details">Details</th>
+            <th class="pricing-service-details-col-included">Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${details.services.map(service => `
+            <tr>
+              <td class="pricing-service-details-service">${service}</td>
+              <td class="pricing-service-details-checkmark">✓</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
     `;
   }
 

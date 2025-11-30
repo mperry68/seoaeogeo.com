@@ -508,36 +508,67 @@ body.pricing-page .section {
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.pricing-service-details-list {
-  list-style: none;
-  padding: 0;
+.pricing-service-details-table {
+  width: 100%;
+  border-collapse: collapse;
   margin: 0;
 }
 
-.pricing-service-details-list li {
-  padding: 0.375rem 0;
-  border-bottom: 1px solid #f1f5f9;
-  color: #374151;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  position: relative;
-  padding-left: 1.75rem;
+.pricing-service-details-table thead {
+  background-color: #f8fafc;
+  border-bottom: 2px solid #e5e7eb;
 }
 
-.pricing-service-details-list li:last-child {
+.pricing-service-details-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-service-details-col-details {
+  width: auto;
+}
+
+.pricing-service-details-col-included {
+  width: 120px;
+  text-align: right !important;
+}
+
+.pricing-service-details-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.pricing-service-details-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.pricing-service-details-table tbody tr:last-child {
   border-bottom: none;
 }
 
-.pricing-service-details-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
+.pricing-service-details-service {
+  padding: 1rem 1.5rem;
+  color: #374151;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.pricing-service-details-checkmark {
+  padding: 1rem 1.5rem;
+  text-align: right;
   color: #60a5fa;
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.25rem;
+  vertical-align: top;
 }
 
 /* Add-On Backlinks Section */
@@ -612,6 +643,23 @@ body.pricing-page .section {
 
   .pricing-service-details-title {
     font-size: 1.5rem;
+  }
+
+  .pricing-service-details-table {
+    font-size: 0.875rem;
+  }
+
+  .pricing-service-details-table th,
+  .pricing-service-details-table td {
+    padding: 0.75rem 1rem;
+  }
+
+  .pricing-service-details-col-included {
+    width: 80px;
+  }
+
+  .pricing-service-details-checkmark {
+    font-size: 1.125rem;
   }
 
   .pricing-addon-section {

@@ -16,6 +16,7 @@ class Footer {
         followUs: 'Follow Us',
         quickLinks: 'Quick Links',
         services: 'Services',
+        resources: 'Resources',
         company: 'Company',
         insights: 'Insights',
         portfolio: 'Portfolio',
@@ -27,8 +28,6 @@ class Footer {
         about: 'About',
         pricing: 'Pricing',
         blog: 'Blog',
-        insights: 'Insights',
-        portfolio: 'Portfolio',
         successStories: 'Success Stories',
         caseStudies: 'Case Studies',
         contact: 'Contact',
@@ -40,6 +39,7 @@ class Footer {
         followUs: 'Suivez-nous',
         quickLinks: 'Liens rapides',
         services: 'Services',
+        resources: 'Ressources',
         company: 'Entreprise',
         insights: 'Aperçus',
         portfolio: 'Portfolio',
@@ -51,8 +51,6 @@ class Footer {
         about: 'À propos',
         pricing: 'Tarification',
         blog: 'Blog',
-        insights: 'Aperçus',
-        portfolio: 'Portfolio',
         successStories: 'Histoires de succès',
         caseStudies: 'Études de cas',
         contact: 'Contact',
@@ -82,6 +80,7 @@ class Footer {
             <div class="footer-section">
               <h3 class="footer-title">${t.services}</h3>
               <ul class="footer-links">
+                <li><a href="/${this.language}/pricing.html">${t.pricing}</a></li>
                 <li><a href="/${this.language}/what-is-seo.html">What is SEO?</a></li>
                 <li><a href="/${this.language}/what-is-aeo.html">What is AEO?</a></li>
                 <li><a href="/${this.language}/what-is-geo.html">What is GEO?</a></li>
@@ -94,7 +93,6 @@ class Footer {
                 <li><a href="/${this.language}/blog.html">${t.blog}</a></li>
                 <li><a href="/${this.language}/insights.html">${t.insights}</a></li>
                 <li><a href="/${this.language}/case-studies.html">${t.caseStudies}</a></li>
-                <li><a href="/${this.language}/pricing.html">${t.pricing}</a></li>
               </ul>
             </div>
             

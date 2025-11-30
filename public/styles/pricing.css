@@ -3,6 +3,19 @@
  * Layout with sidebar navigation and pricing plans
  */
 
+/* Pricing page background */
+body.pricing-page {
+  background-color: #f9fafb;
+}
+
+body.pricing-page main {
+  background-color: #f9fafb;
+}
+
+body.pricing-page .section {
+  background-color: #f9fafb;
+}
+
 .pricing-layout {
   display: flex;
   gap: 3rem;

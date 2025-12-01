@@ -989,19 +989,6 @@ class PricingPage {
     
     if (!this.pricingManager) {
       console.warn('[PricingPage] PricingManager not available, skipping price updates');
-      // Retry after a delay if pricing manager isn't ready yet
-      setTimeout(() => {
-        if (window.PricingManager && !this.pricingManager) {
-          console.log('[PricingPage] Retrying price update after PricingManager initialization...');
-          this.pricingManager = new PricingManager();
-          if (this.currencyDetector) {
-            this.pricingManager.setCurrencyDetector(this.currencyDetector);
-          }
-          this.pricingManager.loadPricingData().then(() => {
-            this.updatePrices();
-          });
-        }
-      }, 500);
       return;
     }
 
@@ -1019,37 +1006,16 @@ class PricingPage {
           const price = await this.pricingManager.getFormattedPrice(toolkit, cycle);
           
           console.log('[PricingPage] Got price for', toolkit, ':', price);
-          if (price && price !== 'N/A' && price !== 'Loading...') {
+          if (price && price !== 'N/A') {
             element.textContent = price;
-            element.style.display = 'block';
-            element.style.visibility = 'visible';
-            element.style.opacity = '1';
             console.log('[PricingPage] Updated price element');
           } else {
-            // If price is still loading or invalid, show a fallback but keep trying
-            if (price === 'Loading...') {
-              // Keep showing loading, will retry
-              element.textContent = this.t('loading');
-            } else {
-              // Try to get a fallback price or show contact
-              const fallbackPrice = await this.pricingManager.getFormattedPrice(toolkit, cycle);
-              if (fallbackPrice && fallbackPrice !== 'N/A' && fallbackPrice !== 'Loading...') {
-                element.textContent = fallbackPrice;
-              } else {
-                element.textContent = this.language === 'fr' ? 'Nous contacter' : 'Contact Sales';
-              }
-            }
-            element.style.display = 'block';
-            element.style.visibility = 'visible';
-            element.style.opacity = '1';
-            console.warn('[PricingPage] Invalid price returned, using fallback');
+            element.textContent = 'Contact Sales';
+            console.warn('[PricingPage] Invalid price returned, using Contact Sales');
           }
         } catch (error) {
           console.error('[PricingPage] Error updating price for', toolkit, ':', error);
-          element.textContent = this.language === 'fr' ? 'Nous contacter' : 'Contact Sales';
-          element.style.display = 'block';
-          element.style.visibility = 'visible';
-          element.style.opacity = '1';
+          element.textContent = 'Contact Sales';
         }
       } else {
         console.warn('[PricingPage] Missing toolkit or cycle:', { toolkit, cycle });
@@ -1252,24 +1218,22 @@ class PricingPage {
     const details = serviceDetails[toolkit] || serviceDetails['seo-classic'];
     
     detailsContainer.innerHTML = `
-      <div class="pricing-service-details-table-wrapper">
-        <table class="pricing-service-details-table">
-          <thead>
+      <table class="pricing-service-details-table">
+        <thead>
+          <tr>
+            <th class="pricing-service-details-col-details">${this.language === 'fr' ? 'Détails' : 'Details'}</th>
+            <th class="pricing-service-details-col-included">${this.language === 'fr' ? 'Inclus' : 'Included'}</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${details.services.map(service => `
             <tr>
-              <th class="pricing-service-details-col-details">${this.language === 'fr' ? 'Détails' : 'Details'}</th>
-              <th class="pricing-service-details-col-included">${this.language === 'fr' ? 'Inclus' : 'Included'}</th>
+              <td class="pricing-service-details-service">${service}</td>
+              <td class="pricing-service-details-checkmark">✓</td>
             </tr>
-          </thead>
-          <tbody>
-            ${details.services.map(service => `
-              <tr>
-                <td class="pricing-service-details-service">${service}</td>
-                <td class="pricing-service-details-checkmark">✓</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
+          `).join('')}
+        </tbody>
+      </table>
     `;
   }
 

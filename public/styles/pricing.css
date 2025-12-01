@@ -6,14 +6,29 @@
 /* Pricing page background - light charcoal tint matching logo palette */
 body.pricing-page {
   background-color: #e8eaed;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 body.pricing-page main {
   background-color: #e8eaed;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 body.pricing-page .section {
   background-color: #e8eaed;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body.pricing-page .container {
+  width: 100%;
+  max-width: var(--max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Ensure pricing section is visible on mobile */
@@ -40,6 +55,8 @@ body.pricing-page .section {
   display: flex;
   gap: 3rem;
   min-height: calc(100vh - 200px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .pricing-sidebar {
@@ -51,16 +68,6 @@ body.pricing-page .section {
   height: fit-content;
   position: sticky;
   top: 100px;
-}
-
-.pricing-sidebar h3 {
-  padding: 0 22px;
-  margin-bottom: 8px;
-  font-size: 12px;
-  color: #8A8A8A;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .pricing-sidebar-menu {
@@ -138,7 +145,9 @@ body.pricing-page .section {
 
 .pricing-content {
   flex: 1;
+  min-width: 0;
   max-width: 1000px;
+  box-sizing: border-box;
 }
 
 .pricing-header {
@@ -248,6 +257,7 @@ body.pricing-page .section {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
+  box-sizing: border-box;
 }
 
 .pricing-plan-card {
@@ -259,6 +269,8 @@ body.pricing-page .section {
   display: flex;
   flex-direction: column;
   box-shadow: 0 1px 3px rgba(55, 65, 81, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .pricing-plan-card:hover {
@@ -395,94 +407,6 @@ body.pricing-page .section {
   border-color: #1f2937;
 }
 
-.pricing-whats-included {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-.pricing-whats-included h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--text-color);
-}
-
-.pricing-comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid #e5e7eb;
-}
-
-.pricing-comparison-table thead {
-  background: #374151;
-}
-
-.pricing-comparison-table th {
-  padding: 1rem;
-  text-align: left;
-  font-weight: 600;
-  color: #ffffff;
-  border-bottom: 2px solid #1f2937;
-}
-
-.pricing-comparison-table th:first-child {
-  width: 40%;
-}
-
-.pricing-comparison-table td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--border-light);
-  color: var(--text-color);
-}
-
-.pricing-comparison-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.pricing-comparison-table .checkmark {
-  color: #374151;
-  font-weight: 700;
-  font-size: 1.125rem;
-}
-
-.pricing-bundled-plan {
-  margin-top: 4rem;
-  padding: 3rem;
-  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%);
-  border-radius: 16px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.pricing-bundled-plan h2 {
-  color: #ffffff;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.pricing-bundled-plan p {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pricing-bundled-plan .btn {
-  background: #60a5fa;
-  color: #ffffff;
-  font-weight: 600;
-  border: none;
-}
-
-.pricing-bundled-plan .btn:hover {
-  background: #3b82f6;
-}
-
 @media (max-width: 1024px) {
   .pricing-layout {
     flex-direction: column;
@@ -554,6 +478,8 @@ body.pricing-page .section {
   border-radius: 8px;
   padding: 1.25rem;
   border: 1px solid #e5e7eb;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .pricing-service-details-title {
@@ -569,22 +495,21 @@ body.pricing-page .section {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   max-height: 600px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .pricing-service-details-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   margin: 0;
-  table-layout: fixed;
+  table-layout: auto;
+  box-sizing: border-box;
 }
 
 .pricing-service-details-table thead {
   background-color: #f8fafc;
   border-bottom: 2px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 .pricing-service-details-table th {
@@ -595,11 +520,14 @@ body.pricing-page .section {
   color: #374151;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .pricing-service-details-col-details {
   width: auto;
   min-width: 0;
+  box-sizing: border-box;
 }
 
 .pricing-service-details-col-included {
@@ -607,10 +535,7 @@ body.pricing-page .section {
   min-width: 80px;
   max-width: 80px;
   text-align: center !important;
-  position: sticky;
-  right: 0;
-  background-color: #f8fafc;
-  z-index: 9;
+  box-sizing: border-box;
 }
 
 .pricing-service-details-table tbody .pricing-service-details-col-included {
@@ -630,7 +555,6 @@ body.pricing-page .section {
   background-color: #f8fafc;
 }
 
-
 .pricing-service-details-table tbody tr:last-child {
   border-bottom: none;
 }
@@ -643,6 +567,9 @@ body.pricing-page .section {
   vertical-align: top;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pricing-service-details-checkmark {
@@ -652,10 +579,10 @@ body.pricing-page .section {
   font-weight: 700;
   font-size: 1.25rem;
   vertical-align: top;
-  position: sticky;
-  right: 0;
-  background-color: #ffffff;
-  z-index: 8;
+  box-sizing: border-box;
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
 }
 
 /* Add-On Backlinks Section */
@@ -711,8 +638,15 @@ body.pricing-page .section {
 }
 
 @media (max-width: 768px) {
+  body.pricing-page .container {
+    padding: 0 1rem;
+  }
+
   .pricing-layout {
     gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .pricing-sidebar {
@@ -778,6 +712,8 @@ body.pricing-page .section {
     width: 100%;
     max-width: 100%;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .pricing-plans-grid {
@@ -827,19 +763,14 @@ body.pricing-page .section {
     opacity: 1 !important;
   }
 
-  .pricing-comparison-table {
-    font-size: 0.875rem;
-  }
-
-  .pricing-comparison-table th,
-  .pricing-comparison-table td {
-    padding: 0.75rem 0.5rem;
-  }
-
   .pricing-service-details {
     padding: 1rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .pricing-service-details-title {
@@ -851,12 +782,17 @@ body.pricing-page .section {
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .pricing-service-details-table {
     font-size: 0.875rem;
     display: table;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .pricing-service-details-table th,

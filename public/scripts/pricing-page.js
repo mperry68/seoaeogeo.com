@@ -235,8 +235,16 @@ class PricingPage {
         // Create FormData and submit via fetch for better UX
         const formData = new FormData(form);
         
+        // Set redirect URL to stay on same page
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set('submitted', 'true');
+        const nextInput = document.getElementById('form-next');
+        if (nextInput) {
+          nextInput.value = nextUrl.toString();
+        }
+        
         try {
-          // Try FormSubmit.co AJAX endpoint first
+          // Try AJAX submission first (most reliable)
           const response = await fetch('https://formsubmit.co/ajax/marc@infradevconsulting.com', {
             method: 'POST',
             headers: {
@@ -249,16 +257,16 @@ class PricingPage {
             try {
               const data = await response.json();
               if (data.success !== false) {
-                // Show success message and close modal after delay
+                // Success!
                 this.showSubscribeSuccess();
                 setTimeout(() => {
                   this.closeSubscribeModal();
-                }, 3000); // Close after 3 seconds
+                }, 3000);
                 return;
               }
             } catch (jsonError) {
-              // If JSON parsing fails but response is OK, assume success
-              console.log('Response OK but JSON parse failed, assuming success');
+              // Response OK but not JSON - assume success
+              console.log('Response OK, assuming success');
               this.showSubscribeSuccess();
               setTimeout(() => {
                 this.closeSubscribeModal();
@@ -267,43 +275,56 @@ class PricingPage {
             }
           }
           
-          // If we get here, the response wasn't OK or success was false
-          throw new Error('Form submission failed');
-        } catch (error) {
-          console.error('Error submitting form:', error);
+          // If response not OK, try fallback
+          throw new Error('AJAX response not OK');
           
-          // Try alternative submission method using no-cors
+        } catch (error) {
+          console.error('AJAX submission failed, trying fallback:', error);
+          
+          // Fallback: Use form's native submission with iframe target
           try {
-            // Use FormSubmit.co direct submission as fallback
-            // Create a new form data with all required fields
-            const formDataAlt = new FormData();
-            formDataAlt.append('name', formData.get('name') || '');
-            formDataAlt.append('email', formData.get('email') || '');
-            formDataAlt.append('phone', formData.get('phone') || '');
-            formDataAlt.append('plan', formData.get('plan') || '');
-            formDataAlt.append('message', formData.get('message') || '');
-            formDataAlt.append('_subject', formData.get('_subject') || 'New Subscription Request');
-            formDataAlt.append('_captcha', 'false');
-            formDataAlt.append('_template', 'table');
+            // Create hidden iframe for form submission
+            const iframe = document.createElement('iframe');
+            iframe.name = 'formsubmit-iframe-' + Date.now();
+            iframe.style.display = 'none';
+            iframe.style.width = '0';
+            iframe.style.height = '0';
+            iframe.style.border = 'none';
+            document.body.appendChild(iframe);
             
-            // Use no-cors mode - we can't read response but submission should work
-            await fetch('https://formsubmit.co/marc@infradevconsulting.com', {
-              method: 'POST',
-              mode: 'no-cors',
-              body: formDataAlt
-            });
+            // Set form target to iframe
+            const originalTarget = form.target;
+            form.target = iframe.name;
             
-            // With no-cors, we assume success since we can't check
-            this.showSubscribeSuccess();
+            // Submit form
+            form.submit();
+            
+            // Restore original target
+            form.target = originalTarget;
+            
+            // Wait for submission, then show success
             setTimeout(() => {
-              this.closeSubscribeModal();
-            }, 3000);
+              // Remove iframe
+              if (iframe.parentNode) {
+                iframe.parentNode.removeChild(iframe);
+              }
+              
+              // Show success (assume it worked)
+              this.showSubscribeSuccess();
+              setTimeout(() => {
+                this.closeSubscribeModal();
+              }, 3000);
+            }, 1500);
+            
           } catch (fallbackError) {
-            console.error('Fallback submission also failed:', fallbackError);
-            // Show error message
-            this.showSubscribeError(this.language === 'fr' 
-              ? 'Impossible d\'envoyer le message. Veuillez réessayer plus tard ou nous contacter directement.' 
-              : 'Unable to send message. Please try again later or contact us directly.');
+            console.error('All submission methods failed:', fallbackError);
+            
+            // Show error message with email contact
+            const errorMsg = this.language === 'fr' 
+              ? 'Désolé, nous n\'avons pas pu envoyer votre message. Veuillez nous envoyer un courriel directement à <a href="mailto:marc@infradevconsulting.com" style="color: #ef4444; text-decoration: underline;">marc@infradevconsulting.com</a>'
+              : 'Sorry, we couldn\'t send your message. Please email us directly at <a href="mailto:marc@infradevconsulting.com" style="color: #ef4444; text-decoration: underline;">marc@infradevconsulting.com</a>';
+            
+            this.showSubscribeError(errorMsg);
             
             // Re-enable submit button
             submitBtn.disabled = false;
@@ -473,13 +494,22 @@ class PricingPage {
     
     if (!modal || !form) return;
 
-    // Show error message above form
+    // Hide form and show error message
+    form.style.display = 'none';
+    
+    // Remove any existing success messages
+    const existingSuccess = modal.querySelector('.subscribe-success');
+    if (existingSuccess) {
+      existingSuccess.remove();
+    }
+    
+    // Show error message
     const errorHTML = `
       <div class="subscribe-error">
         <div class="subscribe-error-icon">⚠</div>
         <h3>${this.language === 'fr' ? 'Erreur' : 'Error'}</h3>
         <p>${errorMessage}</p>
-        <button type="button" class="btn btn-secondary" id="subscribe-error-close">
+        <button type="button" class="btn btn-primary" id="subscribe-error-close">
           ${this.language === 'fr' ? 'Fermer' : 'Close'}
         </button>
       </div>
@@ -491,16 +521,13 @@ class PricingPage {
       if (existingError) {
         existingError.remove();
       }
-      content.insertAdjacentHTML('afterbegin', errorHTML);
+      content.insertAdjacentHTML('beforeend', errorHTML);
       
       // Add click handler to close error button
       const closeBtn = document.getElementById('subscribe-error-close');
       if (closeBtn) {
         closeBtn.addEventListener('click', () => {
-          const errorDiv = content.querySelector('.subscribe-error');
-          if (errorDiv) {
-            errorDiv.remove();
-          }
+          this.closeSubscribeModal();
         });
       }
     }

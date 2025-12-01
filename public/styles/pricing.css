@@ -1132,6 +1132,17 @@ body.pricing-page .section {
   line-height: 1.6;
 }
 
+.subscribe-error p a {
+  color: #ef4444;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.subscribe-error p a:hover {
+  color: #dc2626;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .pricing-faq-section {
     padding: 1.5rem;

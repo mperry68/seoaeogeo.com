@@ -208,8 +208,7 @@ class PricingPage {
 
     // Close modal handlers
     const closeModal = () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
+      this.closeSubscribeModal();
     };
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -233,30 +232,83 @@ class PricingPage {
         submitBtn.disabled = true;
         submitBtn.textContent = this.language === 'fr' ? 'Envoi...' : 'Sending...';
 
-        // Set the redirect URL to current page with success parameter
-        const nextUrl = new URL(window.location.href);
-        nextUrl.searchParams.set('submitted', 'true');
-        document.getElementById('form-next').value = nextUrl.toString();
-
         // Create FormData and submit via fetch for better UX
         const formData = new FormData(form);
         
         try {
+          // Try FormSubmit.co AJAX endpoint first
           const response = await fetch('https://formsubmit.co/ajax/marc@infradevconsulting.com', {
             method: 'POST',
+            headers: {
+              'Accept': 'application/json'
+            },
             body: formData
           });
 
           if (response.ok) {
-            // Show success message
-            this.showSubscribeSuccess();
-          } else {
-            throw new Error('Form submission failed');
+            try {
+              const data = await response.json();
+              if (data.success !== false) {
+                // Show success message and close modal after delay
+                this.showSubscribeSuccess();
+                setTimeout(() => {
+                  this.closeSubscribeModal();
+                }, 3000); // Close after 3 seconds
+                return;
+              }
+            } catch (jsonError) {
+              // If JSON parsing fails but response is OK, assume success
+              console.log('Response OK but JSON parse failed, assuming success');
+              this.showSubscribeSuccess();
+              setTimeout(() => {
+                this.closeSubscribeModal();
+              }, 3000);
+              return;
+            }
           }
+          
+          // If we get here, the response wasn't OK or success was false
+          throw new Error('Form submission failed');
         } catch (error) {
           console.error('Error submitting form:', error);
-          // Fallback to regular form submission
-          form.submit();
+          
+          // Try alternative submission method using no-cors
+          try {
+            // Use FormSubmit.co direct submission as fallback
+            // Create a new form data with all required fields
+            const formDataAlt = new FormData();
+            formDataAlt.append('name', formData.get('name') || '');
+            formDataAlt.append('email', formData.get('email') || '');
+            formDataAlt.append('phone', formData.get('phone') || '');
+            formDataAlt.append('plan', formData.get('plan') || '');
+            formDataAlt.append('message', formData.get('message') || '');
+            formDataAlt.append('_subject', formData.get('_subject') || 'New Subscription Request');
+            formDataAlt.append('_captcha', 'false');
+            formDataAlt.append('_template', 'table');
+            
+            // Use no-cors mode - we can't read response but submission should work
+            await fetch('https://formsubmit.co/marc@infradevconsulting.com', {
+              method: 'POST',
+              mode: 'no-cors',
+              body: formDataAlt
+            });
+            
+            // With no-cors, we assume success since we can't check
+            this.showSubscribeSuccess();
+            setTimeout(() => {
+              this.closeSubscribeModal();
+            }, 3000);
+          } catch (fallbackError) {
+            console.error('Fallback submission also failed:', fallbackError);
+            // Show error message
+            this.showSubscribeError(this.language === 'fr' 
+              ? 'Impossible d\'envoyer le message. Veuillez réessayer plus tard ou nous contacter directement.' 
+              : 'Unable to send message. Please try again later or contact us directly.');
+            
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
         }
       });
     }
@@ -378,6 +430,12 @@ class PricingPage {
     // Hide form and show success message
     form.style.display = 'none';
     
+    // Remove any existing error messages
+    const existingError = modal.querySelector('.subscribe-error');
+    if (existingError) {
+      existingError.remove();
+    }
+    
     const successHTML = `
       <div class="subscribe-success">
         <div class="subscribe-success-icon">✓</div>
@@ -385,7 +443,7 @@ class PricingPage {
         <p>${this.language === 'fr' 
           ? 'Merci pour votre intérêt! Nous vous contacterons sous peu.' 
           : 'Thank you for your interest! We\'ll reach out to you shortly.'}</p>
-        <button type="button" class="btn btn-primary" onclick="window.location.reload()">
+        <button type="button" class="btn btn-primary" id="subscribe-close-btn">
           ${this.language === 'fr' ? 'Fermer' : 'Close'}
         </button>
       </div>
@@ -394,8 +452,86 @@ class PricingPage {
     const content = modal.querySelector('.subscribe-modal-content');
     if (content) {
       const existingSuccess = content.querySelector('.subscribe-success');
-      if (!existingSuccess) {
-        content.insertAdjacentHTML('beforeend', successHTML);
+      if (existingSuccess) {
+        existingSuccess.remove();
+      }
+      content.insertAdjacentHTML('beforeend', successHTML);
+      
+      // Add click handler to close button
+      const closeBtn = document.getElementById('subscribe-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          this.closeSubscribeModal();
+        });
+      }
+    }
+  }
+
+  showSubscribeError(errorMessage) {
+    const modal = document.getElementById('subscribe-modal');
+    const form = document.getElementById('subscribe-form');
+    
+    if (!modal || !form) return;
+
+    // Show error message above form
+    const errorHTML = `
+      <div class="subscribe-error">
+        <div class="subscribe-error-icon">⚠</div>
+        <h3>${this.language === 'fr' ? 'Erreur' : 'Error'}</h3>
+        <p>${errorMessage}</p>
+        <button type="button" class="btn btn-secondary" id="subscribe-error-close">
+          ${this.language === 'fr' ? 'Fermer' : 'Close'}
+        </button>
+      </div>
+    `;
+    
+    const content = modal.querySelector('.subscribe-modal-content');
+    if (content) {
+      const existingError = content.querySelector('.subscribe-error');
+      if (existingError) {
+        existingError.remove();
+      }
+      content.insertAdjacentHTML('afterbegin', errorHTML);
+      
+      // Add click handler to close error button
+      const closeBtn = document.getElementById('subscribe-error-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          const errorDiv = content.querySelector('.subscribe-error');
+          if (errorDiv) {
+            errorDiv.remove();
+          }
+        });
+      }
+    }
+  }
+
+  closeSubscribeModal() {
+    const modal = document.getElementById('subscribe-modal');
+    const form = document.getElementById('subscribe-form');
+    
+    if (!modal) return;
+
+    // Remove modal active class
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Reset form
+    if (form) {
+      form.style.display = 'block';
+      form.reset();
+      
+      // Remove success/error messages
+      const successDiv = modal.querySelector('.subscribe-success');
+      const errorDiv = modal.querySelector('.subscribe-error');
+      if (successDiv) successDiv.remove();
+      if (errorDiv) errorDiv.remove();
+      
+      // Reset submit button
+      const submitBtn = document.getElementById('subscribe-submit');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = this.language === 'fr' ? 'Envoyer' : 'Send';
       }
     }
   }

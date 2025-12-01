@@ -16,6 +16,26 @@ body.pricing-page .section {
   background-color: #e8eaed;
 }
 
+/* Ensure pricing section is visible on mobile */
+@media (max-width: 768px) {
+  body.pricing-page .section {
+    padding: 2rem 0;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  body.pricing-page main {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  #pricing-plans {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
 .pricing-layout {
   display: flex;
   gap: 3rem;
@@ -466,6 +486,7 @@ body.pricing-page .section {
 @media (max-width: 1024px) {
   .pricing-layout {
     flex-direction: column;
+    gap: 2rem;
   }
 
   .pricing-sidebar {
@@ -490,6 +511,11 @@ body.pricing-page .section {
 
   .pricing-sidebar-menu a {
     text-align: center;
+  }
+
+  .pricing-content {
+    width: 100%;
+    max-width: 100%;
   }
 
   .pricing-header h1 {
@@ -646,8 +672,50 @@ body.pricing-page .section {
 }
 
 @media (max-width: 768px) {
+  .pricing-layout {
+    gap: 1.5rem;
+  }
+
+  .pricing-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
   .pricing-plans-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    display: grid !important;
+    visibility: visible !important;
+  }
+
+  .pricing-plan-card {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    padding: 1.25rem;
+    margin: 0;
+  }
+
+  .pricing-plan-price {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .pricing-plan-price-amount {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 1.75rem !important;
+    color: #1f2937 !important;
+  }
+
+  .pricing-plan-price-period {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .pricing-comparison-table {
@@ -661,6 +729,8 @@ body.pricing-page .section {
 
   .pricing-service-details {
     padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .pricing-service-details-title {
@@ -709,6 +779,27 @@ body.pricing-page .section {
   .pricing-save-badge {
     font-size: 0.6875rem;
     padding: 0.2rem 0.4rem;
+  }
+
+  .pricing-plan-header {
+    margin-bottom: 1rem;
+  }
+
+  .pricing-plan-title {
+    font-size: 1.125rem;
+  }
+
+  .pricing-plan-description {
+    font-size: 0.8125rem;
+  }
+
+  .pricing-plan-features {
+    margin-bottom: 1rem;
+  }
+
+  .pricing-plan-features li {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0;
   }
 }
 

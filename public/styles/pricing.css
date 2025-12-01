@@ -14,6 +14,13 @@ body.pricing-page main {
 
 body.pricing-page .section {
   background-color: #e8eaed;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+body.pricing-page .container {
+  margin-right: 0;
+  padding-right: 2rem;
 }
 
 /* Ensure pricing section is visible on mobile */
@@ -40,6 +47,8 @@ body.pricing-page .section {
   display: flex;
   gap: 3rem;
   min-height: calc(100vh - 200px);
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .pricing-sidebar {
@@ -139,6 +148,8 @@ body.pricing-page .section {
 .pricing-content {
   flex: 1;
   max-width: 1000px;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .pricing-header {
@@ -521,6 +532,8 @@ body.pricing-page .section {
   .pricing-content {
     width: 100%;
     max-width: 100%;
+    margin-right: 0;
+    padding-right: 0;
   }
 
   .pricing-header h1 {
@@ -755,6 +768,8 @@ body.pricing-page .section {
     width: 100%;
     max-width: 100%;
     padding: 0;
+    margin-right: 0;
+    padding-right: 0;
   }
 
   .pricing-plans-grid {

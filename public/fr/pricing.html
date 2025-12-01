@@ -132,6 +132,52 @@
   
   <div id="footer"></div>
   
+  <!-- Subscribe Modal -->
+  <div id="subscribe-modal" class="subscribe-modal">
+    <div class="subscribe-modal-overlay"></div>
+    <div class="subscribe-modal-content">
+      <button class="subscribe-modal-close" aria-label="Fermer">&times;</button>
+      <h2 id="subscribe-modal-title">Commencer</h2>
+      <p id="subscribe-modal-subtitle" style="color: #6b7280; margin-bottom: 1.5rem;">Remplissez le formulaire ci-dessous et nous vous contacterons sous peu.</p>
+      <form id="subscribe-form" action="https://formsubmit.co/marc@infradevconsulting.com" method="POST">
+        <input type="hidden" name="_subject" id="form-subject" value="Nouvelle demande d'abonnement de Digital Relevance">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" id="form-next" value="">
+        <input type="hidden" name="_template" value="table">
+        
+        <div class="form-group">
+          <label for="subscribe-name">Nom *</label>
+          <input type="text" id="subscribe-name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subscribe-email">Courriel *</label>
+          <input type="email" id="subscribe-email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subscribe-phone">Téléphone</label>
+          <input type="tel" id="subscribe-phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+          <label for="subscribe-plan">Forfait sélectionné</label>
+          <input type="text" id="subscribe-plan" name="plan" readonly>
+        </div>
+        
+        <div class="form-group">
+          <label for="subscribe-message">Message (optionnel)</label>
+          <textarea id="subscribe-message" name="message" rows="3"></textarea>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="subscribe-cancel">Annuler</button>
+          <button type="submit" class="btn btn-primary" id="subscribe-submit">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
   <script src="/scripts/i18n.js"></script>
   <script src="/scripts/currency.js"></script>
   <script src="/scripts/pricing.js"></script>

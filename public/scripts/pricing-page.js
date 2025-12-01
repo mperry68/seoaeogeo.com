@@ -157,6 +157,9 @@ class PricingPage {
       
       // Initialize FAQ accordion
       setTimeout(() => this.initFAQ(), 100);
+      
+      // Initialize subscribe modal
+      this.initSubscribeModal();
     } catch (error) {
       console.error('[PricingPage] Error in init:', error);
       console.error('[PricingPage] Error stack:', error.stack);
@@ -194,6 +197,207 @@ class PricingPage {
       });
     });
     console.log('[PricingPage] Event listeners attached');
+  }
+
+  initSubscribeModal() {
+    const modal = document.getElementById('subscribe-modal');
+    const closeBtn = document.querySelector('.subscribe-modal-close');
+    const cancelBtn = document.getElementById('subscribe-cancel');
+    const overlay = document.querySelector('.subscribe-modal-overlay');
+    const form = document.getElementById('subscribe-form');
+
+    // Close modal handlers
+    const closeModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Form submission
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('subscribe-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = this.language === 'fr' ? 'Envoi...' : 'Sending...';
+
+        // Set the redirect URL to current page with success parameter
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set('submitted', 'true');
+        document.getElementById('form-next').value = nextUrl.toString();
+
+        // Create FormData and submit via fetch for better UX
+        const formData = new FormData(form);
+        
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/marc@infradevconsulting.com', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (response.ok) {
+            // Show success message
+            this.showSubscribeSuccess();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          // Fallback to regular form submission
+          form.submit();
+        }
+      });
+    }
+
+    // Check for success parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('submitted') === 'true') {
+      setTimeout(() => {
+        this.showSubscribeSuccess();
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }, 100);
+    }
+
+    // Delegate Subscribe button clicks (since buttons are dynamically created)
+    document.addEventListener('click', (e) => {
+      const subscribeBtn = e.target.closest('.btn-primary[data-subscribe]');
+      if (subscribeBtn) {
+        e.preventDefault();
+        const planName = subscribeBtn.getAttribute('data-plan') || subscribeBtn.textContent.trim();
+        this.openSubscribeModal(planName);
+      }
+    });
+  }
+
+  openSubscribeModal(planName) {
+    const modal = document.getElementById('subscribe-modal');
+    const planInput = document.getElementById('subscribe-plan');
+    const form = document.getElementById('subscribe-form');
+    const successDiv = modal?.querySelector('.subscribe-success');
+    
+    if (!modal) return;
+
+    // Remove success message if present
+    if (successDiv) {
+      successDiv.remove();
+    }
+
+    // Show form again
+    if (form) {
+      form.style.display = 'block';
+      const submitBtn = document.getElementById('subscribe-submit');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = this.language === 'fr' ? 'Envoyer' : 'Send';
+      }
+    }
+
+    // Set plan name
+    if (planInput) {
+      planInput.value = planName;
+    }
+
+    // Set form subject with plan info
+    const subjectInput = document.getElementById('form-subject');
+    if (subjectInput) {
+      const subject = this.language === 'fr' 
+        ? `Nouvelle demande d'abonnement: ${planName} - Digital Relevance`
+        : `New Subscription Request: ${planName} - Digital Relevance`;
+      subjectInput.value = subject;
+    }
+
+    // Reset form
+    if (form) {
+      form.reset();
+      if (planInput) planInput.value = planName; // Restore plan name after reset
+    }
+
+    // Update modal text based on language
+    const titleEl = document.getElementById('subscribe-modal-title');
+    const subtitleEl = document.getElementById('subscribe-modal-subtitle');
+    const cancelBtn = document.getElementById('subscribe-cancel');
+    const submitBtn = document.getElementById('subscribe-submit');
+    const nameLabel = document.querySelector('label[for="subscribe-name"]');
+    const emailLabel = document.querySelector('label[for="subscribe-email"]');
+    const phoneLabel = document.querySelector('label[for="subscribe-phone"]');
+    const planLabel = document.querySelector('label[for="subscribe-plan"]');
+    const messageLabel = document.querySelector('label[for="subscribe-message"]');
+
+    if (this.language === 'fr') {
+      if (titleEl) titleEl.textContent = 'Commencer';
+      if (subtitleEl) subtitleEl.textContent = 'Remplissez le formulaire ci-dessous et nous vous contacterons sous peu.';
+      if (cancelBtn) cancelBtn.textContent = 'Annuler';
+      if (submitBtn) submitBtn.textContent = 'Envoyer';
+      if (nameLabel) nameLabel.textContent = 'Nom *';
+      if (emailLabel) emailLabel.textContent = 'Courriel *';
+      if (phoneLabel) phoneLabel.textContent = 'Téléphone';
+      if (planLabel) planLabel.textContent = 'Forfait sélectionné';
+      if (messageLabel) messageLabel.textContent = 'Message (optionnel)';
+    } else {
+      if (titleEl) titleEl.textContent = 'Get Started';
+      if (subtitleEl) subtitleEl.textContent = 'Fill out the form below and we\'ll reach out to you shortly.';
+      if (cancelBtn) cancelBtn.textContent = 'Cancel';
+      if (submitBtn) submitBtn.textContent = 'Send';
+      if (nameLabel) nameLabel.textContent = 'Name *';
+      if (emailLabel) emailLabel.textContent = 'Email *';
+      if (phoneLabel) phoneLabel.textContent = 'Phone';
+      if (planLabel) planLabel.textContent = 'Selected Plan';
+      if (messageLabel) messageLabel.textContent = 'Message (Optional)';
+    }
+
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Focus on first input
+    setTimeout(() => {
+      const firstInput = document.getElementById('subscribe-name');
+      if (firstInput) firstInput.focus();
+    }, 100);
+  }
+
+  showSubscribeSuccess() {
+    const modal = document.getElementById('subscribe-modal');
+    const form = document.getElementById('subscribe-form');
+    
+    if (!modal || !form) return;
+
+    // Hide form and show success message
+    form.style.display = 'none';
+    
+    const successHTML = `
+      <div class="subscribe-success">
+        <div class="subscribe-success-icon">✓</div>
+        <h3>${this.language === 'fr' ? 'Message envoyé!' : 'Message Sent!'}</h3>
+        <p>${this.language === 'fr' 
+          ? 'Merci pour votre intérêt! Nous vous contacterons sous peu.' 
+          : 'Thank you for your interest! We\'ll reach out to you shortly.'}</p>
+        <button type="button" class="btn btn-primary" onclick="window.location.reload()">
+          ${this.language === 'fr' ? 'Fermer' : 'Close'}
+        </button>
+      </div>
+    `;
+    
+    const content = modal.querySelector('.subscribe-modal-content');
+    if (content) {
+      const existingSuccess = content.querySelector('.subscribe-success');
+      if (!existingSuccess) {
+        content.insertAdjacentHTML('beforeend', successHTML);
+      }
+    }
   }
 
   switchToolkit(toolkit) {
@@ -485,7 +689,7 @@ class PricingPage {
           </ul>
           <div class="pricing-plan-cta">
             <a href="${this.language === 'fr' ? '/fr' : '/en'}/what-is-seo.html" class="btn btn-secondary">${this.t('buttons.learnMore')}</a>
-            <a href="${this.language === 'fr' ? '/fr' : '/en'}/contact.html" class="btn btn-primary">${this.t('buttons.getStarted')}</a>
+            <button type="button" class="btn btn-primary" data-subscribe data-plan="${this.t('social.oneTime.title')}">${this.t('buttons.getStarted')}</button>
           </div>
         </div>
 
@@ -507,7 +711,7 @@ class PricingPage {
           </ul>
           <div class="pricing-plan-cta">
             <a href="${this.language === 'fr' ? '/fr' : '/en'}/what-is-seo.html" class="btn btn-secondary">${this.t('buttons.learnMore')}</a>
-            <a href="${this.language === 'fr' ? '/fr' : '/en'}/contact.html" class="btn btn-primary">${this.t('buttons.subscribe')}</a>
+            <button type="button" class="btn btn-primary" data-subscribe data-plan="${this.t('social.management.title')}">${this.t('buttons.subscribe')}</button>
           </div>
         </div>
       `;
@@ -531,7 +735,7 @@ class PricingPage {
           <p style="font-size: 0.8125rem; color: #6b7280; margin: 0.75rem 0; font-style: italic;">${this.t('freeWebsite.note')}</p>
           <div class="pricing-plan-cta">
             <a href="${currentToolkit.learnMoreLink}" class="btn btn-secondary">${this.t('buttons.learnMore')}</a>
-            <a href="${this.language === 'fr' ? '/fr' : '/en'}/contact.html" class="btn btn-primary">${this.t('buttons.contactUs')}</a>
+            <button type="button" class="btn btn-primary" data-subscribe data-plan="${this.t('freeWebsite.title')}">${this.t('buttons.contactUs')}</button>
           </div>
         </div>
 
@@ -577,7 +781,7 @@ class PricingPage {
           </ul>
           <div class="pricing-plan-cta">
             <a href="${currentToolkit.learnMoreLink}" class="btn btn-secondary">${this.t('buttons.learnMore')}</a>
-            <a href="${this.language === 'fr' ? '/fr' : '/en'}/contact.html" class="btn btn-primary">${this.t('buttons.subscribe')}</a>
+            <button type="button" class="btn btn-primary" data-subscribe data-plan="${currentToolkit.title}">${this.t('buttons.subscribe')}</button>
           </div>
         </div>
 
@@ -598,7 +802,7 @@ class PricingPage {
           </ul>
           <div class="pricing-plan-cta">
             <a href="${this.language === 'fr' ? '/fr' : '/en'}/what-is-seo.html" class="btn btn-secondary">${this.t('buttons.learnMore')}</a>
-            <a href="${this.language === 'fr' ? '/fr' : '/en'}/contact.html" class="btn btn-primary">${this.t('buttons.subscribe')}</a>
+            <button type="button" class="btn btn-primary" data-subscribe data-plan="${this.t('bundle.title')}">${this.t('buttons.subscribe')}</button>
           </div>
         </div>
       `;

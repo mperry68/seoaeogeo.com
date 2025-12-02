@@ -1,0 +1,72 @@
+{
+  "site": {
+    "name": "Digital Relevance",
+    "url": "https://seoaeogeo.com",
+    "defaultLanguage": "en",
+    "logo": "https://seoaeogeo.com/assets/images/Logo20-full.png",
+    "description": "Expert SEO, AEO (Answer Engine Optimization), and GEO (Geographic Engine Optimization) services to grow your online presence and drive measurable results."
+  },
+  "pages": {
+    "/en/index.html": {
+      "title": "Digital Relevance - Expert SEO, AEO & GEO Services | Search Optimization Experts",
+      "description": "Digital Relevance - Expert SEO, AEO (Answer Engine Optimization), and GEO (Geographic Engine Optimization) services. Grow your online presence, dominate local search, and get recommended by AI systems. Drive measurable results with comprehensive search optimization.",
+      "keywords": "SEO services, Answer Engine Optimization, AEO, Geographic Engine Optimization, GEO, local SEO, AI search optimization, search engine optimization, digital marketing, online visibility, search rankings"
+    },
+    "/en/what-is-seo.html": {
+      "title": "What is SEO? Complete Guide to Search Engine Optimization | Digital Relevance",
+      "description": "What is SEO? Learn how Search Engine Optimization works, why 93% of online experiences begin with search, and how SEO drives qualified traffic and revenue growth for your business.",
+      "keywords": "what is SEO, search engine optimization, SEO explained, how SEO works, SEO services, organic search, Google ranking, SEO strategy, search visibility, SEO benefits"
+    },
+    "/en/what-is-aeo.html": {
+      "title": "What is AEO? Answer Engine Optimization Guide for AI Search | Digital Relevance",
+      "description": "What is AEO? Answer Engine Optimization helps your business get recommended by AI systems like ChatGPT and Google AI Overview. Learn how AEO works and why 40% of searches now use AI-powered results.",
+      "keywords": "what is AEO, Answer Engine Optimization, AEO explained, AI search optimization, ChatGPT optimization, Google AI Overview, voice search optimization, AI-powered search, AEO services, generative engine optimization"
+    },
+    "/en/what-is-geo.html": {
+      "title": "What is GEO? Geographic Engine Optimization for Local Businesses | Digital Relevance",
+      "description": "What is GEO? Geographic Engine Optimization helps local businesses dominate \"near me\" searches and Google Maps. Learn how GEO drives 76% of local searches to visit within 24 hours and captures high-intent local customers.",
+      "keywords": "what is GEO, Geographic Engine Optimization, local SEO, Google Maps optimization, near me search, local search optimization, Google Business Profile, local pack ranking, GEO services, location-based SEO"
+    },
+    "/en/pricing.html": {
+      "title": "SEO, AEO & GEO Pricing Plans | Transparent Search Optimization Pricing | Digital Relevance",
+      "description": "Transparent SEO, AEO, and GEO pricing plans. Monthly and annual options available. Choose the search optimization plan that fits your business needs. Save 10% with annual billing.",
+      "keywords": "SEO pricing, AEO pricing, GEO pricing, search engine optimization cost, SEO services pricing, local SEO pricing, AI search optimization pricing, SEO plans, affordable SEO"
+    },
+    "/en/about.html": {
+      "title": "About Us - SEO, AEO & GEO Experts | Digital Relevance",
+      "description": "About Digital Relevance - Expert SEO, AEO, and GEO specialists helping businesses achieve digital marketing success. Learn about our team, expertise, and proven results in search optimization.",
+      "keywords": "about Digital Relevance, SEO experts, AEO specialists, GEO professionals, search optimization team, digital marketing agency, SEO company, search engine optimization experts"
+    },
+    "/en/contact.html": {
+      "title": "Contact Us - Get SEO, AEO & GEO Consultation | Digital Relevance",
+      "description": "Contact Digital Relevance for SEO, AEO, and GEO services. Get a free consultation and discuss how we can help grow your online presence and drive measurable results.",
+      "keywords": "contact Digital Relevance, SEO consultation, AEO services contact, GEO services, get SEO quote, free SEO consultation, contact SEO experts"
+    },
+    "/en/blog.html": {
+      "title": "SEO, AEO & GEO Blog - Digital Marketing Insights & Strategies | Digital Relevance",
+      "description": "Digital Relevance Blog - Latest insights, strategies, and tips on SEO, AEO (Answer Engine Optimization), GEO (Geographic Engine Optimization), and digital marketing. Learn how to improve your search rankings and online visibility.",
+      "keywords": "SEO blog, AEO blog, GEO blog, search engine optimization tips, digital marketing blog, SEO strategies, local SEO tips, AI search optimization, search optimization blog"
+    },
+    "/en/case-studies.html": {
+      "title": "SEO, AEO & GEO Case Studies - Real Results & Success Stories | Digital Relevance",
+      "description": "SEO, AEO, and GEO case studies - Real results from Digital Relevance clients. See how businesses achieved 500% traffic increases, improved rankings, and captured local customers through comprehensive search optimization.",
+      "keywords": "SEO case studies, AEO case studies, GEO case studies, SEO results, local SEO success stories, search optimization results, SEO before and after, SEO success examples"
+    },
+    "/en/portfolio.html": {
+      "title": "SEO, AEO & GEO Portfolio - Client Work & Success Examples | Digital Relevance",
+      "description": "Digital Relevance Portfolio - See our SEO, AEO, and GEO optimization work. Browse client projects, success stories, and real results from businesses we've helped achieve digital relevance.",
+      "keywords": "SEO portfolio, AEO portfolio, GEO portfolio, search optimization portfolio, SEO work examples, digital marketing portfolio, SEO agency portfolio"
+    },
+    "/en/success-stories.html": {
+      "title": "SEO, AEO & GEO Success Stories - Client Results & Testimonials | Digital Relevance",
+      "description": "Success stories from Digital Relevance clients - Real results from SEO, AEO, and GEO services. See how businesses achieved 500% traffic increases, improved rankings, and captured more customers.",
+      "keywords": "SEO success stories, AEO success stories, GEO success stories, SEO results, search optimization success, local SEO results, SEO testimonials, SEO client results"
+    },
+    "/en/insights.html": {
+      "title": "SEO, AEO & GEO Insights - Free Guides & Optimization Tools | Digital Relevance",
+      "description": "Free SEO, AEO, and GEO insights, guides, and tools from Digital Relevance. Learn search optimization strategies, best practices, and actionable tips to improve your online visibility.",
+      "keywords": "SEO insights, AEO insights, GEO insights, SEO guides, search optimization tips, SEO tools, digital marketing insights, SEO best practices, local SEO guides"
+    }
+  }
+}
+

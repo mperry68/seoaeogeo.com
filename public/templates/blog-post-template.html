@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[BLOG_EXCERPT_EN]">
+  <meta name="keywords" content="[BLOG_TAGS]">
+  <title>[BLOG_TITLE_EN] | Digital Relevance</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://seoaeogeo.com/en/blog/[BLOG_SLUG].html">
+  <meta property="og:title" content="[BLOG_TITLE_EN]">
+  <meta property="og:description" content="[BLOG_EXCERPT_EN]">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://seoaeogeo.com/en/blog/[BLOG_SLUG].html">
+  <meta property="twitter:title" content="[BLOG_TITLE_EN]">
+  <meta property="twitter:description" content="[BLOG_EXCERPT_EN]">
+  
+  <link rel="canonical" href="https://seoaeogeo.com/en/blog/[BLOG_SLUG].html">
+  
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/blog.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[BLOG_TITLE_EN]",
+    "description": "[BLOG_EXCERPT_EN]",
+    "datePublished": "[BLOG_DATE]",
+    "dateModified": "[BLOG_DATE]",
+    "author": {
+      "@type": "Organization",
+      "name": "Digital Relevance"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital Relevance",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://seoaeogeo.com/assets/images/Logo20-full.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://seoaeogeo.com/en/blog/[BLOG_SLUG].html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="header"></div>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero blog-hero">
+      <div class="container">
+        <div class="blog-header">
+          <!-- Category and Date -->
+          <div class="blog-meta" style="display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center;">
+            <span class="blog-category" style="padding: 0.5rem 1rem; background: var(--logo-bright-blue); color: #ffffff; border-radius: 20px; font-size: 0.875rem; font-weight: 600;">[BLOG_CATEGORY]</span>
+            <time datetime="[BLOG_DATE]" style="color: #ffffff; font-size: 0.875rem;">[BLOG_DATE_FORMATTED]</time>
+          </div>
+          
+          <!-- Title -->
+          <h1 style="font-size: 3rem; margin-bottom: 2rem; color: #ffffff; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em;">[BLOG_TITLE_EN]</h1>
+          
+          <!-- Excerpt -->
+          <p class="blog-intro" style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.95); margin-bottom: 0; line-height: 1.7; max-width: 800px; margin-left: auto; margin-right: auto;">[BLOG_EXCERPT_EN]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content -->
+    <article class="section blog-content-section">
+      <div class="container">
+        <div class="blog-content-wrapper" style="max-width: 800px; margin: 0 auto;">
+          <!-- Blog Image (if using URL type) -->
+          [BLOG_IMAGE_IF_URL]
+          
+          <!-- Blog Content -->
+          <div class="blog-content" style="font-size: 1.125rem; line-height: 1.8; color: var(--text-color);">
+            <!-- 
+              ADD YOUR BLOG CONTENT HERE
+              Use standard HTML tags: <p>, <h2>, <h3>, <ul>, <ol>, <li>, <strong>, <em>, <a>, etc.
+              The styling is already handled by the CSS.
+            -->
+            
+            <p>Start writing your blog post content here...</p>
+            
+            <h2>Section Heading</h2>
+            <p>Your paragraph content goes here.</p>
+            
+            <h3>Subsection Heading</h3>
+            <p>More content here.</p>
+            
+            <!-- Example list -->
+            <ul>
+              <li>First point</li>
+              <li>Second point</li>
+              <li>Third point</li>
+            </ul>
+            
+          </div>
+
+          <!-- Tags -->
+          <div class="blog-tags" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Replace [BLOG_TAGS_HTML] with your tags, e.g.:
+              <span class="blog-tag">SEO</span>
+              <span class="blog-tag">Strategy</span>
+              <span class="blog-tag">Tips</span>
+              -->
+              [BLOG_TAGS_HTML]
+            </div>
+          </div>
+
+          <!-- Back to Blog Link -->
+          <div class="blog-back-link" style="margin-top: 3rem; text-align: center;">
+            <a href="/en/blog.html" class="btn btn-secondary">← Back to Blog</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  
+  <div id="footer"></div>
+  
+  <script src="/scripts/i18n.js"></script>
+  <script src="/scripts/currency.js"></script>
+  <script src="/components/Header.js"></script>
+  <script src="/components/Footer.js"></script>
+  <script src="/components/PriceDisplay.js"></script>
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
+

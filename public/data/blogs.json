@@ -1,0 +1,143 @@
+{
+  "blogs": [
+    {
+      "id": "future-of-seo-2024",
+      "slug": "future-of-seo-2024",
+      "title": {
+        "en": "The Future of SEO: What to Expect in 2024",
+        "fr": "L'avenir du SEO : À quoi s'attendre en 2024"
+      },
+      "excerpt": {
+        "en": "Discover the latest trends and changes in search engine optimization that will shape your digital strategy this year.",
+        "fr": "Découvrez les dernières tendances et changements en optimisation pour les moteurs de recherche qui façonneront votre stratégie numérique cette année."
+      },
+      "date": "2024-01-15",
+      "author": "Digital Relevance Team",
+      "category": "SEO",
+      "tags": ["SEO", "Trends", "2024"],
+      "image": {
+        "type": "gradient",
+        "gradient": "135deg, #667eea 0%, #764ba2 100%",
+        "emoji": "📈"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "aeo-optimization",
+      "slug": "aeo-optimization",
+      "title": {
+        "en": "AEO: Optimizing for AI-Powered Search",
+        "fr": "AEO : Optimiser pour la recherche alimentée par l'IA"
+      },
+      "excerpt": {
+        "en": "Learn how Answer Engine Optimization can help your content appear in AI search results and voice assistants.",
+        "fr": "Apprenez comment l'optimisation pour les moteurs de réponse peut aider votre contenu à apparaître dans les résultats de recherche IA et les assistants vocaux."
+      },
+      "date": "2024-01-10",
+      "author": "Digital Relevance Team",
+      "category": "AEO",
+      "tags": ["AEO", "AI", "Voice Search"],
+      "image": {
+        "type": "gradient",
+        "gradient": "135deg, #f093fb 0%, #f5576c 100%",
+        "emoji": "🤖"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "local-seo-strategies",
+      "slug": "local-seo-strategies",
+      "title": {
+        "en": "Local SEO: Dominating Your Geographic Market",
+        "fr": "SEO local : Dominer votre marché géographique"
+      },
+      "excerpt": {
+        "en": "Essential strategies for local businesses to rank higher in \"near me\" searches and Google Maps.",
+        "fr": "Stratégies essentielles pour les entreprises locales pour mieux se classer dans les recherches \"près de moi\" et Google Maps."
+      },
+      "date": "2024-01-05",
+      "author": "Digital Relevance Team",
+      "category": "GEO",
+      "tags": ["GEO", "Local SEO", "Google Maps"],
+      "image": {
+        "type": "gradient",
+        "gradient": "135deg, #4facfe 0%, #00f2fe 100%",
+        "emoji": "📍"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "seo-metrics",
+      "slug": "seo-metrics",
+      "title": {
+        "en": "Measuring SEO Success: Key Metrics to Track",
+        "fr": "Mesurer le succès SEO : Métriques clés à suivre"
+      },
+      "excerpt": {
+        "en": "Understanding which metrics matter most when evaluating your SEO performance and ROI.",
+        "fr": "Comprendre quelles métriques comptent le plus lors de l'évaluation de vos performances SEO et de votre ROI."
+      },
+      "date": "2023-12-28",
+      "author": "Digital Relevance Team",
+      "category": "SEO",
+      "tags": ["SEO", "Analytics", "Metrics"],
+      "image": {
+        "type": "gradient",
+        "gradient": "135deg, #fa709a 0%, #fee140 100%",
+        "emoji": "📊"
+      },
+      "published": true,
+      "featured": false
+    },
+    {
+      "id": "content-strategy",
+      "slug": "content-strategy",
+      "title": {
+        "en": "Content Strategy for Modern SEO",
+        "fr": "Stratégie de contenu pour le SEO moderne"
+      },
+      "excerpt": {
+        "en": "How to create content that ranks well in both traditional search and AI-powered search engines.",
+        "fr": "Comment créer du contenu qui se classe bien dans les moteurs de recherche traditionnels et alimentés par l'IA."
+      },
+      "date": "2023-12-20",
+      "author": "Digital Relevance Team",
+      "category": "SEO",
+      "tags": ["SEO", "Content", "Strategy"],
+      "image": {
+        "type": "gradient",
+        "gradient": "135deg, #30cfd0 0%, #330867 100%",
+        "emoji": "🎯"
+      },
+      "published": true,
+      "featured": false
+    },
+    {
+      "id": "technical-seo",
+      "slug": "technical-seo",
+      "title": {
+        "en": "Technical SEO: The Foundation of Success",
+        "fr": "SEO technique : La fondation du succès"
+      },
+      "excerpt": {
+        "en": "Essential technical SEO elements that every website needs for optimal search engine performance.",
+        "fr": "Éléments SEO techniques essentiels dont chaque site web a besoin pour des performances optimales des moteurs de recherche."
+      },
+      "date": "2023-12-15",
+      "author": "Digital Relevance Team",
+      "category": "SEO",
+      "tags": ["SEO", "Technical", "Performance"],
+      "image": {
+        "type": "gradient",
+        "gradient": "135deg, #a8edea 0%, #fed6e3 100%",
+        "emoji": "🚀"
+      },
+      "published": true,
+      "featured": false
+    }
+  ]
+}
+

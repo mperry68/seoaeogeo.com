@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/styles/header.css">
   <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/price.css">
+  <link rel="stylesheet" href="/styles/blog.css">
 </head>
 <body>
   <div id="header"></div>
@@ -26,81 +27,13 @@
     <!-- Blog Posts -->
     <section class="section">
       <div class="container">
-        <div class="grid grid-3" style="gap: 2rem;">
-          <!-- Blog Post 1 -->
-          <article class="card">
-            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-              📈
-            </div>
-            <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">January 15, 2024</div>
-            <h3 style="margin-bottom: 1rem;">The Future of SEO: What to Expect in 2024</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Discover the latest trends and changes in search engine optimization that will shape your digital strategy this year.</p>
-            <a href="/en/blog/future-of-seo-2024" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <!-- Blog Post 2 -->
-          <article class="card">
-            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-              🤖
-            </div>
-            <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">January 10, 2024</div>
-            <h3 style="margin-bottom: 1rem;">AEO: Optimizing for AI-Powered Search</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Learn how Answer Engine Optimization can help your content appear in AI search results and voice assistants.</p>
-            <a href="/en/blog/aeo-optimization" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <!-- Blog Post 3 -->
-          <article class="card">
-            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-              📍
-            </div>
-            <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">January 5, 2024</div>
-            <h3 style="margin-bottom: 1rem;">Local SEO: Dominating Your Geographic Market</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Essential strategies for local businesses to rank higher in "near me" searches and Google Maps.</p>
-            <a href="/en/blog/local-seo-strategies" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <!-- Blog Post 4 -->
-          <article class="card">
-            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-              📊
-            </div>
-            <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">December 28, 2023</div>
-            <h3 style="margin-bottom: 1rem;">Measuring SEO Success: Key Metrics to Track</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Understanding which metrics matter most when evaluating your SEO performance and ROI.</p>
-            <a href="/en/blog/seo-metrics" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <!-- Blog Post 5 -->
-          <article class="card">
-            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-              🎯
-            </div>
-            <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">December 20, 2023</div>
-            <h3 style="margin-bottom: 1rem;">Content Strategy for Modern SEO</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">How to create content that ranks well in both traditional search and AI-powered search engines.</p>
-            <a href="/en/blog/content-strategy" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <!-- Blog Post 6 -->
-          <article class="card">
-            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-              🚀
-            </div>
-            <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">December 15, 2023</div>
-            <h3 style="margin-bottom: 1rem;">Technical SEO: The Foundation of Success</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Essential technical SEO elements that every website needs for optimal search engine performance.</p>
-            <a href="/en/blog/technical-seo" class="btn btn-secondary">Read More</a>
-          </article>
+        <div class="grid grid-3" id="blog-posts-container" style="gap: 2rem;">
+          <!-- Blog posts will be loaded dynamically here -->
         </div>
 
         <!-- Pagination -->
-        <div style="text-align: center; margin-top: 3rem;">
-          <div style="display: inline-flex; gap: 0.5rem; align-items: center;">
-            <button class="btn btn-secondary" disabled>Previous</button>
-            <span style="padding: 0 1rem; color: var(--text-light);">Page 1 of 3</span>
-            <a href="/en/blog?page=2" class="btn btn-secondary">Next</a>
-          </div>
+        <div id="blog-pagination">
+          <!-- Pagination will be loaded dynamically here -->
         </div>
       </div>
     </section>
@@ -114,6 +47,7 @@
   <script src="/components/Footer.js"></script>
   <script src="/components/PriceDisplay.js"></script>
   <script src="/scripts/main.js"></script>
+  <script src="/scripts/blog.js"></script>
 </body>
 </html>
 

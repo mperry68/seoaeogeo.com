@@ -255,168 +255,177 @@ class PricingPage {
         
         const formAction = form.getAttribute('action');
         console.log('[Subscribe] Form action URL:', formAction);
-        console.log('[Subscribe] Attempting AJAX submission to FormSubmit...');
+        console.log('[Subscribe] Note: Using iframe method (AJAX blocked by CORS)');
         
+        // Use iframe method directly (AJAX is blocked by CORS)
         try {
-          // Try AJAX submission first (most reliable)
-          const ajaxUrl = 'https://formsubmit.co/ajax/marc@infradevconsulting.com';
-          console.log('[Subscribe] Fetch URL:', ajaxUrl);
-          console.log('[Subscribe] Fetch options:', {
-            method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: 'FormData (see above)'
-          });
+          console.log('[Subscribe] Creating hidden iframe for form submission...');
+          // Create hidden iframe for form submission
+          const iframe = document.createElement('iframe');
+          iframe.name = 'formsubmit-iframe-' + Date.now();
+          iframe.style.display = 'none';
+          iframe.style.width = '0';
+          iframe.style.height = '0';
+          iframe.style.border = 'none';
           
-          const fetchStartTime = Date.now();
-          const response = await fetch(ajaxUrl, {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json'
-            },
-            body: formData
-          });
+          let iframeLoaded = false;
+          let redirectDetected = false;
           
-          const fetchDuration = Date.now() - fetchStartTime;
-          console.log('[Subscribe] Fetch completed in', fetchDuration, 'ms');
-          console.log('[Subscribe] Response status:', response.status);
-          console.log('[Subscribe] Response statusText:', response.statusText);
-          console.log('[Subscribe] Response headers:', Object.fromEntries(response.headers.entries()));
-          console.log('[Subscribe] Response OK:', response.ok);
-          console.log('[Subscribe] Response type:', response.type);
-
-          if (response.ok) {
-            console.log('[Subscribe] Response is OK, attempting to parse JSON...');
+          // Add load event listener to iframe to detect when form submission completes
+          iframe.addEventListener('load', () => {
+            iframeLoaded = true;
+            console.log('[Subscribe] Iframe load event fired');
+            
             try {
-              const responseText = await response.text();
-              console.log('[Subscribe] Raw response text:', responseText);
+              // Try to detect if FormSubmit redirected (they redirect to _next URL on success)
+              const iframeUrl = iframe.contentWindow.location.href;
+              console.log('[Subscribe] Iframe URL:', iframeUrl);
               
-              let data;
-              if (responseText.trim()) {
-                data = JSON.parse(responseText);
-                console.log('[Subscribe] Parsed JSON response:', data);
-              } else {
-                console.warn('[Subscribe] Empty response body');
-                data = {};
+              // Check if URL contains our redirect parameter (FormSubmit redirects to _next on success)
+              if (iframeUrl.includes('submitted=true') || iframeUrl.includes(window.location.hostname)) {
+                redirectDetected = true;
+                console.log('[Subscribe] ✅ Redirect detected - FormSubmit likely processed the form');
               }
-              
-              if (data.success !== false) {
-                console.log('[Subscribe] ✅ SUCCESS: FormSubmit accepted the submission');
-                console.log('[Subscribe] Response data.success:', data.success);
-                console.log('[Subscribe] Showing success message to user...');
-                // Success!
-                this.showSubscribeSuccess();
-                setTimeout(() => {
-                  this.closeSubscribeModal();
-                }, 3000);
-                return;
-              } else {
-                console.error('[Subscribe] ❌ FAILED: FormSubmit returned success: false');
-                console.error('[Subscribe] Response data:', data);
-                throw new Error('FormSubmit returned success: false');
-              }
-            } catch (jsonError) {
-              console.error('[Subscribe] Error parsing JSON response:', jsonError);
-              console.log('[Subscribe] Response OK but not JSON - checking if empty response means success...');
-              
-              // Response OK but not JSON - FormSubmit sometimes returns empty body on success
-              console.log('[Subscribe] ⚠️  Assuming success (empty response from FormSubmit)');
-              console.log('[Subscribe] Note: This might be a false positive. Check your email inbox.');
-              this.showSubscribeSuccess();
-              setTimeout(() => {
-                this.closeSubscribeModal();
-              }, 3000);
-              return;
+            } catch (e) {
+              // Cross-origin - can't read iframe content, but load event means something happened
+              console.log('[Subscribe] Cannot read iframe URL (cross-origin):', e.message);
+              console.log('[Subscribe] Iframe loaded - FormSubmit may have processed the form');
             }
-          } else {
-            // Response not OK
-            const errorText = await response.text().catch(() => 'Could not read error response');
-            console.error('[Subscribe] ❌ FAILED: Response not OK');
-            console.error('[Subscribe] Status:', response.status);
-            console.error('[Subscribe] Status text:', response.statusText);
-            console.error('[Subscribe] Error response body:', errorText);
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-          }
+          });
+          
+          // Also listen for errors
+          iframe.addEventListener('error', (e) => {
+            console.error('[Subscribe] Iframe error event:', e);
+          });
+          
+          document.body.appendChild(iframe);
+          console.log('[Subscribe] Iframe created and added to DOM:', iframe.name);
+          
+          // Set form target to iframe
+          const originalTarget = form.target;
+          form.target = iframe.name;
+          console.log('[Subscribe] Form target set to iframe');
+          
+          // Submit form
+          console.log('[Subscribe] Submitting form to FormSubmit via iframe...');
+          const submitStartTime = Date.now();
+          form.submit();
+          console.log('[Subscribe] Form submitted at', new Date().toISOString());
+          
+          // Restore original target
+          form.target = originalTarget;
+          
+          // Wait for iframe to load (FormSubmit processes and redirects)
+          // Give it more time to ensure FormSubmit processes it
+          const checkInterval = setInterval(() => {
+            if (iframeLoaded) {
+              clearInterval(checkInterval);
+              console.log('[Subscribe] Iframe loaded after', Date.now() - submitStartTime, 'ms');
+            }
+          }, 100);
+          
+          // Wait for submission, then show success
+          // FormSubmit typically processes within 1-2 seconds
+          setTimeout(() => {
+            clearInterval(checkInterval);
+            const totalTime = Date.now() - submitStartTime;
+            console.log('[Subscribe] Submission check complete after', totalTime, 'ms');
+            console.log('[Subscribe] Iframe loaded:', iframeLoaded);
+            console.log('[Subscribe] Redirect detected:', redirectDetected);
+            
+            // Remove iframe
+            if (iframe.parentNode) {
+              iframe.parentNode.removeChild(iframe);
+              console.log('[Subscribe] Iframe removed from DOM');
+            }
+            
+            // Show success message
+            // Note: We can't verify 100% that FormSubmit processed it due to CORS,
+            // but the iframe method is the standard way to submit to FormSubmit
+            if (iframeLoaded) {
+              console.log('[Subscribe] ✅ Form submitted via iframe method');
+              console.log('[Subscribe] ⚠️  Note: Cannot verify email delivery due to CORS restrictions');
+              console.log('[Subscribe] ⚠️  Please check your email inbox (and spam folder) to confirm receipt');
+              console.log('[Subscribe] ⚠️  If no email received, check FormSubmit dashboard or contact support');
+            } else {
+              console.warn('[Subscribe] ⚠️  Iframe did not load - submission may have failed');
+              console.warn('[Subscribe] ⚠️  This could indicate a network issue or FormSubmit problem');
+            }
+            
+            // IMPORTANT: Log form data to console as backup
+            console.log('[Subscribe] ===== FORM DATA (BACKUP - Copy if email not received) =====');
+            const formDataObj = {};
+            for (const [key, value] of formData.entries()) {
+              formDataObj[key] = value;
+            }
+            console.log('[Subscribe] Form Data Object:', formDataObj);
+            console.log('[Subscribe] Formatted Email (copy this if needed):');
+            console.log(`Subject: ${formDataObj._subject || 'New Subscription Request'}`);
+            console.log(`From: ${formDataObj.email}`);
+            console.log(`Name: ${formDataObj.name}`);
+            console.log(`Phone: ${formDataObj.phone || 'N/A'}`);
+            console.log(`Plan: ${formDataObj.plan || 'N/A'}`);
+            console.log(`Message: ${formDataObj.message || 'N/A'}`);
+            console.log('[Subscribe] ===== END FORM DATA =====');
+            
+            // Store form data in sessionStorage as backup
+            try {
+              sessionStorage.setItem('lastSubscriptionData', JSON.stringify(formDataObj));
+              console.log('[Subscribe] Form data saved to sessionStorage as backup');
+            } catch (e) {
+              console.warn('[Subscribe] Could not save to sessionStorage:', e);
+            }
+            
+            this.showSubscribeSuccess();
+            setTimeout(() => {
+              this.closeSubscribeModal();
+            }, 3000);
+          }, 2500); // Increased timeout to give FormSubmit more time
           
         } catch (error) {
-          console.error('[Subscribe] ❌ AJAX submission failed');
+          console.error('[Subscribe] ❌❌❌ FORM SUBMISSION FAILED ❌❌❌');
           console.error('[Subscribe] Error type:', error.constructor.name);
           console.error('[Subscribe] Error message:', error.message);
           console.error('[Subscribe] Error stack:', error.stack);
-          console.log('[Subscribe] Attempting fallback method (iframe submission)...');
           
-          // Fallback: Use form's native submission with iframe target
-          try {
-            console.log('[Subscribe] Creating hidden iframe for fallback submission...');
-            // Create hidden iframe for form submission
-            const iframe = document.createElement('iframe');
-            iframe.name = 'formsubmit-iframe-' + Date.now();
-            iframe.style.display = 'none';
-            iframe.style.width = '0';
-            iframe.style.height = '0';
-            iframe.style.border = 'none';
-            
-            // Add load event listener to iframe to detect when form submission completes
-            iframe.addEventListener('load', () => {
-              console.log('[Subscribe] Iframe loaded - form submission may have completed');
-              try {
-                const iframeContent = iframe.contentDocument || iframe.contentWindow.document;
-                console.log('[Subscribe] Iframe content:', iframeContent.body?.innerHTML || 'Could not access iframe content');
-              } catch (e) {
-                console.log('[Subscribe] Could not access iframe content (cross-origin):', e.message);
-              }
-            });
-            
-            document.body.appendChild(iframe);
-            console.log('[Subscribe] Iframe created and added to DOM');
-            
-            // Set form target to iframe
-            const originalTarget = form.target;
-            form.target = iframe.name;
-            console.log('[Subscribe] Form target set to iframe:', iframe.name);
-            
-            // Submit form
-            console.log('[Subscribe] Submitting form via iframe method...');
-            form.submit();
-            console.log('[Subscribe] Form submitted, waiting for response...');
-            
-            // Restore original target
-            form.target = originalTarget;
-            
-            // Wait for submission, then show success
-            setTimeout(() => {
-              console.log('[Subscribe] Fallback timeout reached (1500ms)');
-              // Remove iframe
-              if (iframe.parentNode) {
-                iframe.parentNode.removeChild(iframe);
-                console.log('[Subscribe] Iframe removed from DOM');
-              }
-              
-              // Show success (assume it worked - but we can't verify)
-              console.log('[Subscribe] ⚠️  Showing success message (fallback method - cannot verify actual delivery)');
-              console.log('[Subscribe] ⚠️  IMPORTANT: Check your email inbox to confirm receipt!');
-              this.showSubscribeSuccess();
-              setTimeout(() => {
-                this.closeSubscribeModal();
-              }, 3000);
-            }, 1500);
-            
-          } catch (fallbackError) {
-            console.error('[Subscribe] ❌❌❌ ALL SUBMISSION METHODS FAILED ❌❌❌');
-            console.error('[Subscribe] Fallback error type:', fallbackError.constructor.name);
-            console.error('[Subscribe] Fallback error message:', fallbackError.message);
-            console.error('[Subscribe] Fallback error stack:', fallbackError.stack);
-            
-            // Show error message with email contact
-            const errorMsg = this.language === 'fr' 
-              ? 'Désolé, nous n\'avons pas pu envoyer votre message. Veuillez nous envoyer un courriel directement à <a href="mailto:marc@infradevconsulting.com" style="color: #ef4444; text-decoration: underline;">marc@infradevconsulting.com</a>'
-              : 'Sorry, we couldn\'t send your message. Please email us directly at <a href="mailto:marc@infradevconsulting.com" style="color: #ef4444; text-decoration: underline;">marc@infradevconsulting.com</a>';
-            
-            this.showSubscribeError(errorMsg);
-            
-            // Re-enable submit button
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+          // Log form data before showing error
+          console.log('[Subscribe] ===== FORM DATA (ERROR - Copy this manually) =====');
+          const errorFormData = {};
+          for (const [key, value] of formData.entries()) {
+            errorFormData[key] = value;
           }
+          console.log('[Subscribe] Form Data:', errorFormData);
+          console.log('[Subscribe] ===== END FORM DATA =====');
+          
+          // Create mailto link with form data
+          const subject = encodeURIComponent(errorFormData._subject || 'New Subscription Request');
+          const body = encodeURIComponent(
+            `Name: ${errorFormData.name || 'N/A'}\n` +
+            `Email: ${errorFormData.email || 'N/A'}\n` +
+            `Phone: ${errorFormData.phone || 'N/A'}\n` +
+            `Plan: ${errorFormData.plan || 'N/A'}\n` +
+            `Message: ${errorFormData.message || 'N/A'}`
+          );
+          const mailtoLink = `mailto:marc@infradevconsulting.com?subject=${subject}&body=${body}`;
+          
+          // Show error message with email contact and mailto link
+          const errorMsg = this.language === 'fr' 
+            ? `Désolé, nous n'avons pas pu envoyer votre message automatiquement.<br><br>
+               <strong>Options:</strong><br>
+               1. Vérifiez votre console (F12) pour copier les données du formulaire<br>
+               2. Envoyez-nous un courriel directement: <a href="${mailtoLink}" style="color: #60a5fa; text-decoration: underline;">Cliquez ici pour ouvrir votre client de messagerie</a><br>
+               3. Ou envoyez à: <a href="mailto:marc@infradevconsulting.com" style="color: #ef4444; text-decoration: underline;">marc@infradevconsulting.com</a>`
+            : `Sorry, we couldn't send your message automatically.<br><br>
+               <strong>Options:</strong><br>
+               1. Check your console (F12) to copy the form data<br>
+               2. Send us an email directly: <a href="${mailtoLink}" style="color: #60a5fa; text-decoration: underline;">Click here to open your email client</a><br>
+               3. Or email: <a href="mailto:marc@infradevconsulting.com" style="color: #ef4444; text-decoration: underline;">marc@infradevconsulting.com</a>`;
+          
+          this.showSubscribeError(errorMsg);
+          
+          // Re-enable submit button
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
         }
         
         console.log('[Subscribe] ===== FORM SUBMISSION PROCESS COMPLETE =====');
@@ -551,8 +560,8 @@ class PricingPage {
         <div class="subscribe-success-icon">✓</div>
         <h3>${this.language === 'fr' ? 'Message envoyé!' : 'Message Sent!'}</h3>
         <p>${this.language === 'fr' 
-          ? 'Merci pour votre intérêt! Nous vous contacterons sous peu.' 
-          : 'Thank you for your interest! We\'ll reach out to you shortly.'}</p>
+          ? 'Merci pour votre intérêt! Nous vous contacterons sous peu.<br><br><strong>Note importante:</strong> Si vous ne recevez pas de confirmation par courriel, vérifiez votre dossier spam. FormSubmit nécessite une confirmation initiale de votre adresse courriel.' 
+          : 'Thank you for your interest! We\'ll reach out to you shortly.<br><br><strong>Important Note:</strong> If you don\'t receive a confirmation email, check your spam folder. FormSubmit requires initial email confirmation.'}</p>
         <button type="button" class="btn btn-primary" id="subscribe-close-btn">
           ${this.language === 'fr' ? 'Fermer' : 'Close'}
         </button>

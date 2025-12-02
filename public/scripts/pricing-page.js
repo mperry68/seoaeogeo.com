@@ -227,6 +227,9 @@ class PricingPage {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
+        console.log('[Subscribe] ===== FORM SUBMISSION STARTED =====');
+        console.log('[Subscribe] Timestamp:', new Date().toISOString());
+        
         const submitBtn = document.getElementById('subscribe-submit');
         const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
@@ -235,54 +238,115 @@ class PricingPage {
         // Create FormData and submit via fetch for better UX
         const formData = new FormData(form);
         
+        // Log all form data for debugging
+        console.log('[Subscribe] Form data being submitted:');
+        for (const [key, value] of formData.entries()) {
+          console.log(`[Subscribe]   ${key}:`, value);
+        }
+        
         // Set redirect URL to stay on same page
         const nextUrl = new URL(window.location.href);
         nextUrl.searchParams.set('submitted', 'true');
         const nextInput = document.getElementById('form-next');
         if (nextInput) {
           nextInput.value = nextUrl.toString();
+          console.log('[Subscribe] Redirect URL set to:', nextUrl.toString());
         }
+        
+        const formAction = form.getAttribute('action');
+        console.log('[Subscribe] Form action URL:', formAction);
+        console.log('[Subscribe] Attempting AJAX submission to FormSubmit...');
         
         try {
           // Try AJAX submission first (most reliable)
-          const response = await fetch('https://formsubmit.co/ajax/marc@infradevconsulting.com', {
+          const ajaxUrl = 'https://formsubmit.co/ajax/marc@infradevconsulting.com';
+          console.log('[Subscribe] Fetch URL:', ajaxUrl);
+          console.log('[Subscribe] Fetch options:', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: 'FormData (see above)'
+          });
+          
+          const fetchStartTime = Date.now();
+          const response = await fetch(ajaxUrl, {
             method: 'POST',
             headers: {
               'Accept': 'application/json'
             },
             body: formData
           });
+          
+          const fetchDuration = Date.now() - fetchStartTime;
+          console.log('[Subscribe] Fetch completed in', fetchDuration, 'ms');
+          console.log('[Subscribe] Response status:', response.status);
+          console.log('[Subscribe] Response statusText:', response.statusText);
+          console.log('[Subscribe] Response headers:', Object.fromEntries(response.headers.entries()));
+          console.log('[Subscribe] Response OK:', response.ok);
+          console.log('[Subscribe] Response type:', response.type);
 
           if (response.ok) {
+            console.log('[Subscribe] Response is OK, attempting to parse JSON...');
             try {
-              const data = await response.json();
+              const responseText = await response.text();
+              console.log('[Subscribe] Raw response text:', responseText);
+              
+              let data;
+              if (responseText.trim()) {
+                data = JSON.parse(responseText);
+                console.log('[Subscribe] Parsed JSON response:', data);
+              } else {
+                console.warn('[Subscribe] Empty response body');
+                data = {};
+              }
+              
               if (data.success !== false) {
+                console.log('[Subscribe] ✅ SUCCESS: FormSubmit accepted the submission');
+                console.log('[Subscribe] Response data.success:', data.success);
+                console.log('[Subscribe] Showing success message to user...');
                 // Success!
                 this.showSubscribeSuccess();
                 setTimeout(() => {
                   this.closeSubscribeModal();
                 }, 3000);
                 return;
+              } else {
+                console.error('[Subscribe] ❌ FAILED: FormSubmit returned success: false');
+                console.error('[Subscribe] Response data:', data);
+                throw new Error('FormSubmit returned success: false');
               }
             } catch (jsonError) {
-              // Response OK but not JSON - assume success
-              console.log('Response OK, assuming success');
+              console.error('[Subscribe] Error parsing JSON response:', jsonError);
+              console.log('[Subscribe] Response OK but not JSON - checking if empty response means success...');
+              
+              // Response OK but not JSON - FormSubmit sometimes returns empty body on success
+              console.log('[Subscribe] ⚠️  Assuming success (empty response from FormSubmit)');
+              console.log('[Subscribe] Note: This might be a false positive. Check your email inbox.');
               this.showSubscribeSuccess();
               setTimeout(() => {
                 this.closeSubscribeModal();
               }, 3000);
               return;
             }
+          } else {
+            // Response not OK
+            const errorText = await response.text().catch(() => 'Could not read error response');
+            console.error('[Subscribe] ❌ FAILED: Response not OK');
+            console.error('[Subscribe] Status:', response.status);
+            console.error('[Subscribe] Status text:', response.statusText);
+            console.error('[Subscribe] Error response body:', errorText);
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
           }
           
-          // If response not OK, try fallback
-          throw new Error('AJAX response not OK');
-          
         } catch (error) {
-          console.error('AJAX submission failed, trying fallback:', error);
+          console.error('[Subscribe] ❌ AJAX submission failed');
+          console.error('[Subscribe] Error type:', error.constructor.name);
+          console.error('[Subscribe] Error message:', error.message);
+          console.error('[Subscribe] Error stack:', error.stack);
+          console.log('[Subscribe] Attempting fallback method (iframe submission)...');
           
           // Fallback: Use form's native submission with iframe target
           try {
+            console.log('[Subscribe] Creating hidden iframe for fallback submission...');
             // Create hidden iframe for form submission
             const iframe = document.createElement('iframe');
             iframe.name = 'formsubmit-iframe-' + Date.now();
@@ -290,26 +354,46 @@ class PricingPage {
             iframe.style.width = '0';
             iframe.style.height = '0';
             iframe.style.border = 'none';
+            
+            // Add load event listener to iframe to detect when form submission completes
+            iframe.addEventListener('load', () => {
+              console.log('[Subscribe] Iframe loaded - form submission may have completed');
+              try {
+                const iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+                console.log('[Subscribe] Iframe content:', iframeContent.body?.innerHTML || 'Could not access iframe content');
+              } catch (e) {
+                console.log('[Subscribe] Could not access iframe content (cross-origin):', e.message);
+              }
+            });
+            
             document.body.appendChild(iframe);
+            console.log('[Subscribe] Iframe created and added to DOM');
             
             // Set form target to iframe
             const originalTarget = form.target;
             form.target = iframe.name;
+            console.log('[Subscribe] Form target set to iframe:', iframe.name);
             
             // Submit form
+            console.log('[Subscribe] Submitting form via iframe method...');
             form.submit();
+            console.log('[Subscribe] Form submitted, waiting for response...');
             
             // Restore original target
             form.target = originalTarget;
             
             // Wait for submission, then show success
             setTimeout(() => {
+              console.log('[Subscribe] Fallback timeout reached (1500ms)');
               // Remove iframe
               if (iframe.parentNode) {
                 iframe.parentNode.removeChild(iframe);
+                console.log('[Subscribe] Iframe removed from DOM');
               }
               
-              // Show success (assume it worked)
+              // Show success (assume it worked - but we can't verify)
+              console.log('[Subscribe] ⚠️  Showing success message (fallback method - cannot verify actual delivery)');
+              console.log('[Subscribe] ⚠️  IMPORTANT: Check your email inbox to confirm receipt!');
               this.showSubscribeSuccess();
               setTimeout(() => {
                 this.closeSubscribeModal();
@@ -317,7 +401,10 @@ class PricingPage {
             }, 1500);
             
           } catch (fallbackError) {
-            console.error('All submission methods failed:', fallbackError);
+            console.error('[Subscribe] ❌❌❌ ALL SUBMISSION METHODS FAILED ❌❌❌');
+            console.error('[Subscribe] Fallback error type:', fallbackError.constructor.name);
+            console.error('[Subscribe] Fallback error message:', fallbackError.message);
+            console.error('[Subscribe] Fallback error stack:', fallbackError.stack);
             
             // Show error message with email contact
             const errorMsg = this.language === 'fr' 
@@ -331,6 +418,8 @@ class PricingPage {
             submitBtn.textContent = originalText;
           }
         }
+        
+        console.log('[Subscribe] ===== FORM SUBMISSION PROCESS COMPLETE =====');
       });
     }
 

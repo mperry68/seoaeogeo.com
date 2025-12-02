@@ -102,9 +102,9 @@ class Header {
               </li>
               <li><a href="/${this.language}/contact.html" class="btn btn-nav">${t.contact}</a></li>
               <li class="language-switcher">
-                <a href="/en${window.location.pathname.replace(/^\/(en|fr)/, '').replace(/\.html$/, '')}.html" class="lang-link ${this.language === 'en' ? 'active' : ''}">EN</a>
+                <a href="/en${this.getCurrentPath()}" class="lang-link ${this.language === 'en' ? 'active' : ''}">EN</a>
                 <span class="lang-separator">|</span>
-                <a href="/fr${window.location.pathname.replace(/^\/(en|fr)/, '').replace(/\.html$/, '')}.html" class="lang-link ${this.language === 'fr' ? 'active' : ''}">FR</a>
+                <a href="/fr${this.getCurrentPath()}" class="lang-link ${this.language === 'fr' ? 'active' : ''}">FR</a>
               </li>
             </ul>
           </nav>
@@ -119,6 +119,29 @@ class Header {
       headerElement.innerHTML = this.render();
       this.attachEventListeners();
     }
+  }
+
+  getCurrentPath() {
+    let path = window.location.pathname;
+    // Remove language prefix if present
+    path = path.replace(/^\/(en|fr)/, '');
+    // Handle root/index page
+    if (path === '/' || path === '' || path === '/index.html') {
+      return '/index.html';
+    }
+    // Remove trailing slash
+    if (path.endsWith('/') && path !== '/') {
+      path = path.slice(0, -1);
+    }
+    // Ensure .html extension if it doesn't have one
+    if (!path.endsWith('.html') && !path.includes('.')) {
+      path = path + '.html';
+    }
+    // If path is empty after removing language prefix, it's the index
+    if (!path || path === '/') {
+      return '/index.html';
+    }
+    return path;
   }
 
   attachEventListeners() {

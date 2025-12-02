@@ -14,12 +14,16 @@ body.pricing-page main {
 
 body.pricing-page .section {
   background-color: #e8eaed;
+  margin-left: 0;
   margin-right: 0;
+  padding-left: 0;
   padding-right: 0;
 }
 
 body.pricing-page .container {
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
   padding-right: 2rem;
 }
 
@@ -36,6 +40,11 @@ body.pricing-page .container {
     visibility: visible !important;
   }
 
+  body.pricing-page .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   #pricing-plans {
     display: grid !important;
     visibility: visible !important;
@@ -47,7 +56,9 @@ body.pricing-page .container {
   display: flex;
   gap: 3rem;
   min-height: calc(100vh - 200px);
+  margin-left: 0;
   margin-right: 0;
+  padding-left: 0;
   padding-right: 0;
 }
 
@@ -792,6 +803,7 @@ body.pricing-page .container {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    margin-bottom: 1rem !important;
   }
 
   .pricing-plan-price-amount {
@@ -800,12 +812,25 @@ body.pricing-page .container {
     opacity: 1 !important;
     font-size: 1.75rem !important;
     color: #1f2937 !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    margin-bottom: 0.25rem !important;
   }
 
   .pricing-plan-price-period {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    font-size: 0.875rem !important;
+    color: #6b7280 !important;
+  }
+
+  /* Ensure price container is always visible on mobile */
+  .pricing-plan-card .pricing-plan-price {
+    min-height: 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
   }
 
   .pricing-comparison-table {

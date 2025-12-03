@@ -49,6 +49,43 @@
   margin-top: 0.5rem;
 }
 
+.footer-description {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.footer-linkedin {
+  margin-top: 1rem;
+}
+
+.footer-linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.footer-linkedin-link:hover {
+  color: #ffffff;
+}
+
+.footer-linkedin-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.footer-linkedin-link:hover .footer-linkedin-icon {
+  opacity: 0.9;
+}
+
 .footer-section {
   display: flex;
   flex-direction: column;

@@ -33,7 +33,9 @@ class Footer {
         contact: 'Contact',
         phone: 'Phone',
         email: 'Email',
-        address: 'Address'
+        address: 'Address',
+        description: 'Expert SEO, AEO, and GEO services to enhance your digital presence and drive measurable results in the AI-driven era.',
+        linkedIn: 'LinkedIn'
       },
       fr: {
         followUs: 'Suivez-nous',
@@ -56,7 +58,9 @@ class Footer {
         contact: 'Contact',
         phone: 'Téléphone',
         email: 'Courriel',
-        address: 'Adresse'
+        address: 'Adresse',
+        description: 'Services experts SEO, AEO et GEO pour améliorer votre présence numérique et générer des résultats mesurables à l\'ère de l\'IA.',
+        linkedIn: 'LinkedIn'
       }
     };
   }
@@ -74,7 +78,13 @@ class Footer {
                 <img src="/assets/images/Logo20.png" alt="Digital Relevance" class="footer-logo-img" />
                 <span class="footer-logo-text">Digital Relevance</span>
               </div>
-              <p class="footer-tagline">SEO • AEO • GEO Services</p>
+              <p class="footer-description">${t.description}</p>
+              <div class="footer-linkedin">
+                <a href="https://www.linkedin.com/company/infra-dev-consulting" target="_blank" rel="noopener noreferrer" class="footer-linkedin-link">
+                  <img src="/assets/images/linkedin-icon-vector-png-linkedin.png" alt="LinkedIn" class="footer-linkedin-icon" />
+                  <span>${t.linkedIn}</span>
+                </a>
+              </div>
             </div>
             
             <div class="footer-section">

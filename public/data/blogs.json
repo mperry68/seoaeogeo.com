@@ -124,11 +124,10 @@
       "date": "2023-12-15",
       "author": "Digital Relevance Team",
       "category": "SEO",
-      "tags": ["SEO", "Technical", "Performance"],
+      "tags": ["SEO", "Technical", "Performance", "Core Web Vitals", "Site Speed", "Crawlability", "Structured Data", "JSON-LD", "XML Sitemap", "Mobile Optimization", "Technical Audit", "Website Architecture", "HTTPS Security"],
       "image": {
-        "type": "gradient",
-        "gradient": "135deg, #a8edea 0%, #fed6e3 100%",
-        "emoji": "🚀"
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Dashboard-2x-v2-3210195675.png"
       },
       "published": true,
       "featured": false

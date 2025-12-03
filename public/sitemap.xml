@@ -228,6 +228,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/insights.html"/>
   </url>
   
+  <url>
+    <loc>https://seoaeogeo.com/en/complete-seo-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/complete-seo-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/complete-seo-guide.html"/>
+  </url>
+  
+  <url>
+    <loc>https://seoaeogeo.com/en/technical-seo-checklist.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/technical-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/technical-seo-checklist.html"/>
+  </url>
+  
   <!-- French Pages -->
   <url>
     <loc>https://seoaeogeo.com/fr/</loc>

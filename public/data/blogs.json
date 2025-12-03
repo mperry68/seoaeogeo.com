@@ -1,6 +1,72 @@
 {
   "blogs": [
     {
+      "id": "what-is-aeo-complete-guide-2025",
+      "slug": "what-is-aeo-complete-guide-2025",
+      "title": {
+        "en": "What Is AEO (Answer Engine Optimization)? A Complete Guide for 2025",
+        "fr": "Qu'est-ce que l'AEO (Optimisation des Moteurs de Réponse) ? Guide Complet pour 2025"
+      },
+      "excerpt": {
+        "en": "What is AEO? Complete guide to Answer Engine Optimization for 2025. Learn how AEO helps your content appear in ChatGPT, Perplexity, Gemini, and AI search results.",
+        "fr": "Qu'est-ce que l'AEO ? Guide complet sur l'optimisation des moteurs de réponse pour 2025. Apprenez comment l'AEO aide votre contenu à apparaître dans ChatGPT, Perplexity, Gemini et les résultats de recherche IA."
+      },
+      "date": "2025-01-25",
+      "author": "Digital Relevance Team",
+      "category": "AEO",
+      "tags": ["AEO", "Answer Engine Optimization", "AI SEO", "ChatGPT", "Perplexity", "AI Search", "Voice Search", "2025"],
+      "image": {
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Wat-is-AEO-800x517-2078588666.jpg"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "seo-vs-aeo-vs-geo-differences",
+      "slug": "seo-vs-aeo-vs-geo-differences",
+      "title": {
+        "en": "SEO vs AEO vs GEO: What's the Difference and Which One Matters Now?",
+        "fr": "SEO vs AEO vs GEO : Quelle est la différence et lequel compte maintenant ?"
+      },
+      "excerpt": {
+        "en": "Complete comparison of SEO, AEO, and GEO. Learn the differences between traditional search optimization, Answer Engine Optimization, and Geographic Engine Optimization.",
+        "fr": "Comparaison complète du SEO, de l'AEO et du GEO. Apprenez les différences entre l'optimisation de recherche traditionnelle, l'optimisation des moteurs de réponse et l'optimisation des moteurs géographiques."
+      },
+      "date": "2025-01-20",
+      "author": "Digital Relevance Team",
+      "category": "SEO",
+      "tags": ["SEO", "AEO", "GEO", "Search Optimization", "AI SEO", "Local SEO", "Answer Engine", "Geographic SEO"],
+      "image": {
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/SEO-to-AEO-1-2778906621.png"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "how-chatgpt-chooses-sources",
+      "slug": "how-chatgpt-chooses-sources",
+      "title": {
+        "en": "How ChatGPT Chooses Sources: What Makes a Website \"Answer-Ready\"?",
+        "fr": "Comment ChatGPT choisit ses sources : Qu'est-ce qui rend un site web \"prêt à répondre\" ?"
+      },
+      "excerpt": {
+        "en": "How ChatGPT chooses sources: Learn how ChatGPT selects and cites websites, and discover what makes a website answer-ready for AI systems.",
+        "fr": "Comment ChatGPT choisit ses sources : Apprenez comment ChatGPT sélectionne et cite les sites web, et découvrez ce qui rend un site web prêt à répondre pour les systèmes IA."
+      },
+      "date": "2025-01-15",
+      "author": "Digital Relevance Team",
+      "category": "AEO",
+      "tags": ["ChatGPT", "AEO", "Answer-Ready", "AI SEO", "Source Selection", "ChatGPT Optimization", "AI Content", "Structured Data", "FAQ Schema"],
+      "image": {
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Wat-is-AEO-800x517-2078588666.jpg"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
       "id": "future-of-seo-2024",
       "slug": "future-of-seo-2024",
       "title": {

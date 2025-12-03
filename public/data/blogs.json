@@ -104,9 +104,8 @@
       "category": "SEO",
       "tags": ["SEO", "Content", "Strategy"],
       "image": {
-        "type": "gradient",
-        "gradient": "135deg, #30cfd0 0%, #330867 100%",
-        "emoji": "🎯"
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Image-1-19-23-at-731-AM-1240x812-600x392-3919658232.jpeg"
       },
       "published": true,
       "featured": false

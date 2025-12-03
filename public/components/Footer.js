@@ -80,9 +80,8 @@ class Footer {
               </div>
               <p class="footer-description">${t.description}</p>
               <div class="footer-linkedin">
-                <a href="https://www.linkedin.com/company/infra-dev-consulting" target="_blank" rel="noopener noreferrer" class="footer-linkedin-link">
+                <a href="https://www.linkedin.com/company/infra-dev-consulting" target="_blank" rel="noopener noreferrer" class="footer-linkedin-link" aria-label="LinkedIn">
                   <img src="/assets/images/linkedin-icon-vector-png-linkedin.png" alt="LinkedIn" class="footer-linkedin-icon" />
-                  <span>${t.linkedIn}</span>
                 </a>
               </div>
             </div>

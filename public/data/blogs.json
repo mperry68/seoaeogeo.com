@@ -16,9 +16,8 @@
       "category": "SEO",
       "tags": ["SEO", "Trends", "2024"],
       "image": {
-        "type": "gradient",
-        "gradient": "135deg, #667eea 0%, #764ba2 100%",
-        "emoji": "📈"
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/SEO-to-AEO-1-2778906621.png"
       },
       "published": true,
       "featured": true
@@ -39,9 +38,8 @@
       "category": "AEO",
       "tags": ["AEO", "AI", "Voice Search"],
       "image": {
-        "type": "gradient",
-        "gradient": "135deg, #f093fb 0%, #f5576c 100%",
-        "emoji": "🤖"
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Wat-is-AEO-800x517-2078588666.jpg"
       },
       "published": true,
       "featured": true

@@ -839,7 +839,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.management.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$149.00/month</div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00/month</div>
             <div class="pricing-plan-price-period">${this.t('social.management.period')}</div>
           </div>
           <ul class="pricing-plan-features">

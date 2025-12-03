@@ -1,6 +1,72 @@
 {
   "blogs": [
     {
+      "id": "entity-based-seo-llms",
+      "slug": "entity-based-seo-llms",
+      "title": {
+        "en": "Entity-Based SEO: How LLMs Interpret Topics, Brands, and Authority",
+        "fr": "SEO basé sur les entités : Comment les LLM interprètent les sujets, les marques et l'autorité"
+      },
+      "excerpt": {
+        "en": "Learn how large language models interpret topics, brands, and authority through entity-based understanding. Discover how to optimize your content for entity recognition and AI search visibility.",
+        "fr": "Apprenez comment les grands modèles de langage interprètent les sujets, les marques et l'autorité grâce à une compréhension basée sur les entités. Découvrez comment optimiser votre contenu pour la reconnaissance d'entités et la visibilité dans la recherche IA."
+      },
+      "date": "2025-10-15",
+      "author": "Digital Relevance Team",
+      "category": "SEO",
+      "tags": ["Entity-Based SEO", "LLMs", "Entity Recognition", "Semantic SEO", "Knowledge Graph", "Brand Authority", "AI SEO", "Entity Optimization", "Structured Data"],
+      "image": {
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/SEO-to-AEO-1-2778906621.png"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "chatgpt-search-optimization-businesses",
+      "slug": "chatgpt-search-optimization-businesses",
+      "title": {
+        "en": "ChatGPT Search Optimization: How Businesses Can Get Featured in AI Answers",
+        "fr": "Optimisation de recherche ChatGPT : Comment les entreprises peuvent être mises en avant dans les réponses IA"
+      },
+      "excerpt": {
+        "en": "Learn how businesses can get featured in ChatGPT answers. Discover proven ChatGPT search optimization strategies to make your business appear in AI-generated responses and drive traffic from ChatGPT-powered search.",
+        "fr": "Apprenez comment les entreprises peuvent être mises en avant dans les réponses ChatGPT. Découvrez des stratégies éprouvées d'optimisation de recherche ChatGPT pour faire apparaître votre entreprise dans les réponses générées par l'IA et générer du trafic depuis la recherche ChatGPT."
+      },
+      "date": "2025-09-15",
+      "author": "Digital Relevance Team",
+      "category": "AEO",
+      "tags": ["ChatGPT", "Business Optimization", "AI Answers", "ChatGPT SEO", "AEO", "AI Marketing", "Business Visibility", "AI Citation", "ChatGPT Optimization"],
+      "image": {
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Wat-is-AEO-800x517-2078588666.jpg"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "how-to-structure-content-for-ai-search",
+      "slug": "how-to-structure-content-for-ai-search",
+      "title": {
+        "en": "How to Structure Content for AI Search (ChatGPT, Perplexity, Gemini)",
+        "fr": "Comment structurer le contenu pour la recherche IA (ChatGPT, Perplexity, Gemini)"
+      },
+      "excerpt": {
+        "en": "Practical guide to structuring content for AI search. Learn how to optimize content for ChatGPT, Perplexity, Gemini, and other AI-powered search platforms with actionable, multi-engine strategies.",
+        "fr": "Guide pratique pour structurer le contenu pour la recherche IA. Apprenez comment optimiser le contenu pour ChatGPT, Perplexity, Gemini et d'autres plateformes de recherche alimentées par l'IA avec des stratégies actionnables multi-moteurs."
+      },
+      "date": "2025-08-15",
+      "author": "Digital Relevance Team",
+      "category": "AEO",
+      "tags": ["AI Search", "ChatGPT", "Perplexity", "Gemini", "Content Structure", "AEO", "AI Optimization", "Structured Data", "FAQ Schema"],
+      "image": {
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Wat-is-AEO-800x517-2078588666.jpg"
+      },
+      "published": true,
+      "featured": true
+    },
+    {
       "id": "what-is-aeo-complete-guide-2025",
       "slug": "what-is-aeo-complete-guide-2025",
       "title": {

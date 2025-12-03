@@ -26,10 +26,10 @@
       "name": "GEO Classic",
       "pricing": {
         "monthly": {
-          "CAD": 299
+          "CAD": 499
         },
         "yearly": {
-          "CAD": 269
+          "CAD": 449
         }
       }
     },
@@ -70,10 +70,10 @@
       "name": "Complete Bundle",
       "pricing": {
         "monthly": {
-          "CAD": 3199
+          "CAD": 2998
         },
         "yearly": {
-          "CAD": 2899
+          "CAD": 2698
         }
       }
     }

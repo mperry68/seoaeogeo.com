@@ -252,5 +252,46 @@
   .blog-content-wrapper {
     padding: 0 1rem;
   }
+
+  /* Table mobile responsiveness in blog content */
+  .blog-content table {
+    font-size: 0.875rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .blog-content table thead,
+  .blog-content table tbody,
+  .blog-content table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .blog-content table th,
+  .blog-content table td {
+    padding: 0.75rem 0.5rem !important;
+    word-wrap: break-word;
+  }
+
+  /* Large headings in blog content mobile */
+  .blog-content h2[style*="font-size: 2.75rem"] {
+    font-size: 1.75rem !important;
+  }
+
+  .blog-content h3[style*="font-size: 2rem"] {
+    font-size: 1.5rem !important;
+  }
+
+  /* Compact list spacing mobile */
+  .blog-content ul,
+  .blog-content ol {
+    padding-left: 1.5rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
 }
 

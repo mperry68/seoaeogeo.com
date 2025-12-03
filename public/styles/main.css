@@ -646,6 +646,79 @@ img {
     gap: 2rem !important;
   }
 
+  /* Case study specific mobile styles */
+  .case-study-hero h1[style*="font-size: 3rem"] {
+    font-size: 1.875rem !important;
+  }
+
+  .case-study-hero .case-study-intro[style*="font-size: 1.25rem"] {
+    font-size: 1rem !important;
+  }
+
+  h2[style*="font-size: 2.75rem"] {
+    font-size: 1.75rem !important;
+  }
+
+  /* Case study metrics grid mobile - stack to single column */
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  [style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Table mobile responsiveness */
+  table {
+    font-size: 0.875rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  table thead,
+  table tbody,
+  table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table th,
+  table td {
+    padding: 0.75rem 0.5rem !important;
+    word-wrap: break-word;
+  }
+
+  /* Large font sizes mobile */
+  p[style*="font-size: 1.25rem"] {
+    font-size: 1rem !important;
+  }
+
+  /* Container max-width mobile adjustments */
+  div[style*="max-width: 1000px"],
+  div[style*="max-width: 900px"],
+  div[style*="max-width: 800px"] {
+    max-width: 100% !important;
+  }
+
+  /* Auto-fit grid mobile - ensure single column */
+  [style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Case study hero mobile padding */
+  .case-study-hero[style*="padding: 5rem 0 4rem"] {
+    padding: 3rem 0 2.5rem !important;
+  }
+
+  /* Section padding mobile */
+  .section[style*="padding: 5rem 0"] {
+    padding: 3rem 0 !important;
+  }
+
   /* Index page specific mobile adjustments */
   .hero-unified .grid-2 {
     gap: 2rem !important;

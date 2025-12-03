@@ -291,6 +291,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/aeo-content-checklist.html"/>
   </url>
   
+  <url>
+    <loc>https://seoaeogeo.com/en/website-audit-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/website-audit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/website-audit-guide.html"/>
+  </url>
+  
   <!-- French Pages -->
   <url>
     <loc>https://seoaeogeo.com/fr/</loc>

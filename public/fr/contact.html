@@ -170,12 +170,18 @@
   <script src="/components/Footer.js"></script>
   <script src="/components/PriceDisplay.js"></script>
   <script src="/scripts/main.js"></script>
+  <script src="/scripts/emailjs.js"></script>
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // In a real implementation, you would send this to a server
-      alert('Merci pour votre message! Nous vous répondrons bientôt.');
-      this.reset();
+    // Set up the contact form with EmailJS
+    document.addEventListener('DOMContentLoaded', async function() {
+      const form = document.getElementById('contact-form');
+      if (form) {
+        await handleContactForm(form, {
+          successMessage: 'Merci pour votre message! Nous vous répondrons bientôt.',
+          errorMessage: 'Désolé, une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer plus tard.',
+          loadingText: 'Envoi...'
+        });
+      }
     });
   </script>
 </body>

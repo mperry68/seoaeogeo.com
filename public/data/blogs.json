@@ -82,9 +82,8 @@
       "category": "SEO",
       "tags": ["SEO", "Analytics", "Metrics"],
       "image": {
-        "type": "gradient",
-        "gradient": "135deg, #fa709a 0%, #fee140 100%",
-        "emoji": "📊"
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Dashboard-2x-v2-3210195675.png"
       },
       "published": true,
       "featured": false

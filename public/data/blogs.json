@@ -60,9 +60,8 @@
       "category": "GEO",
       "tags": ["GEO", "Local SEO", "Google Maps"],
       "image": {
-        "type": "gradient",
-        "gradient": "135deg, #4facfe 0%, #00f2fe 100%",
-        "emoji": "📍"
+        "type": "url",
+        "url": "/assets/images/BlogCaseStudy/Dashboard-2x-v2-3210195675.png"
       },
       "published": true,
       "featured": true

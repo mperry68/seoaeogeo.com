@@ -26,7 +26,8 @@
 const EMAILJS_CONFIG = {
   serviceId: 'service_mkrs66a', // Your EmailJS Service ID
   publicKey: 'enEsmLLLmetOUq4Sw', // EmailJS Public Key
-  templateId: 'template_j23m67n' // Contact Us template - notifications to business owner
+  templateId: 'template_j23m67n', // Contact Us template - notifications to business owner
+  autoReplyTemplateId: 'template_tie4c9q' // Auto-Reply template - confirmation email to customer
 };
 
 /**
@@ -164,8 +165,19 @@ async function handleContactForm(form, options = {}) {
       emailData.timestamp = new Date().toISOString();
       emailData.page_url = window.location.href;
 
-      // Send email
-      await sendEmail(emailData);
+      // Send notification email to business owner
+      await sendEmail(emailData, EMAILJS_CONFIG.templateId);
+      
+      // Send auto-reply email to customer (if template is configured)
+      if (EMAILJS_CONFIG.autoReplyTemplateId) {
+        try {
+          await sendEmail(emailData, EMAILJS_CONFIG.autoReplyTemplateId);
+          console.log('Auto-reply email sent to customer');
+        } catch (autoReplyError) {
+          // Log error but don't fail the form submission if auto-reply fails
+          console.warn('Failed to send auto-reply email:', autoReplyError);
+        }
+      }
 
       // Show success message
       alert(successMessage);

@@ -7,6 +7,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-3SE9GNXD80');
   </script>
   
@@ -41,10 +42,12 @@
   <meta name="twitter:description" content="Expert SEO, AEO, and GEO services to grow your online presence and drive measurable results.">
   <meta name="twitter:image" content="https://seoaeogeo.com/assets/images/Logo20-full.png">
   
-  <!-- Redirect -->
-  <meta http-equiv="refresh" content="0; url=/en/index.html">
+  <!-- Redirect (delayed to allow GA to load) -->
+  <meta http-equiv="refresh" content="1; url=/en/index.html">
   <script>
-    window.location.href = '/en/index.html';
+    setTimeout(function() {
+      window.location.href = '/en/index.html';
+    }, 1000);
   </script>
 </head>
 <body>

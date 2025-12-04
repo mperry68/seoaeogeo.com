@@ -1,8 +1,8 @@
 # Cloudflare Pages redirects
-# Serve English homepage at root (200 rewrite - no URL change, no visible redirect)
-/ /en/index.html 200
+# Redirect old English homepage paths to root (301 for SEO)
+/en/index.html / 301
+/en/ / 301
 
 # Language-specific routes
-/en /en/index.html 200
 /fr /fr/index.html 200
 

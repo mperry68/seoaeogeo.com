@@ -56,7 +56,7 @@ class Header {
       <header class="header" role="banner">
         <div class="header-container">
           <div class="header-logo">
-            <a href="/${this.language}/index.html" aria-label="${t.home}" class="logo-link">
+            <a href="${this.language === 'en' ? '/' : `/${this.language}/index.html`}" aria-label="${t.home}" class="logo-link">
               <img src="/assets/images/Logo20.png" alt="Digital Relevance" class="logo-img" />
               <span class="logo-text">Digital Relevance</span>
             </a>

@@ -226,7 +226,7 @@
   }
 
   .footer-section {
-    text-align: left;
+    text-align: center;
   }
 
   .footer-bottom-content {
@@ -241,7 +241,16 @@
   }
 
   .social-links {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .footer-linkedin {
+    display: flex;
+    justify-content: center;
   }
 }
 

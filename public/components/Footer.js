@@ -22,6 +22,7 @@ class Footer {
         portfolio: 'Portfolio',
         legal: 'Legal',
         privacy: 'Privacy Policy',
+        cookies: 'Cookies Policy',
         terms: 'Terms of Service',
         quality: 'Quality Policy',
         environmental: 'Environmental Policy',
@@ -49,6 +50,7 @@ class Footer {
         portfolio: 'Portfolio',
         legal: 'Légal',
         privacy: 'Politique de confidentialité',
+        cookies: 'Politique de cookies',
         terms: 'Conditions d\'utilisation',
         quality: 'Politique de qualité',
         environmental: 'Politique environnementale',
@@ -135,6 +137,8 @@ class Footer {
               </p>
               <div class="footer-legal">
                 <a href="/${this.language}/privacy.html">${t.privacy}</a>
+                <span class="footer-separator">|</span>
+                <a href="/${this.language}/cookies-policy.html">${t.cookies}</a>
                 <span class="footer-separator">|</span>
                 <a href="/${this.language}/terms.html">${t.terms}</a>
                 <span class="footer-separator">|</span>

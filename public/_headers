@@ -1,0 +1,39 @@
+# Cloudflare Pages Security Headers
+# These headers are applied to all pages
+# Configured to allow Google Analytics and AI bots for SEO/AEO/GEO optimization
+
+/*
+  # Content Security Policy - Allows Google Analytics and AI bots
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://*.googleapis.com https://ipapi.co https://api.country.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;
+  
+  # Security Headers
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Permissions Policy - Allows necessary features while maintaining security
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()
+  
+  # HSTS (HTTP Strict Transport Security) - Force HTTPS
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Remove server information
+  X-Powered-By: 
+  
+  # Cache control for HTML (no cache to ensure fresh content)
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Allow AI bots and search engines to access all resources
+/robots.txt
+  X-Robots-Tag: noindex
+  
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  
+/styles/*
+  Cache-Control: public, max-age=2592000
+  
+/scripts/*
+  Cache-Control: public, max-age=2592000
+

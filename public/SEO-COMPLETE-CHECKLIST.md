@@ -216,8 +216,8 @@ Each page now includes:
 
 To verify SEO implementation:
 
-1. **Check robots.txt**: Visit `https://seoaeogeo.com/robots.txt`
-2. **Check sitemap**: Visit `https://seoaeogeo.com/sitemap.xml`
+1. **Check robots.txt**: Visit `https://digitalrelevance.io/robots.txt`
+2. **Check sitemap**: Visit `https://digitalrelevance.io/sitemap.xml`
 3. **Test meta tags**: Use Facebook Debugger or Twitter Card Validator
 4. **Validate structured data**: Use Google Rich Results Test
 5. **Check page speed**: Use Google PageSpeed Insights

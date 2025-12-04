@@ -190,8 +190,8 @@ Implemented on key pages:
 
 ## 📚 Resources
 
-- Sitemap: https://seoaeogeo.com/sitemap.xml
-- Robots.txt: https://seoaeogeo.com/robots.txt
+- Sitemap: https://digitalrelevance.io/sitemap.xml
+- Robots.txt: https://digitalrelevance.io/robots.txt
 - SEO Metadata: `/public/data/seo-metadata.json`
 
 ## 🔗 Key Pages Optimized

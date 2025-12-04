@@ -78,6 +78,24 @@
         }
       }
     },
+    "social-one-time": {
+      "name": "Social One-Time Optimization",
+      "pricing": {
+        "one-time": {
+          "CAD": 199,
+          "USD": 179
+        }
+      }
+    },
+    "social-management": {
+      "name": "Social Management",
+      "pricing": {
+        "monthly": {
+          "CAD": 199,
+          "USD": 179
+        }
+      }
+    },
     "bundle": {
       "name": "Complete Bundle",
       "pricing": {

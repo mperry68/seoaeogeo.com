@@ -72,6 +72,7 @@ class PricingManager {
     
     if (!toolkit || !toolkit.pricing) return null;
 
+    // Handle special cycles like "one-time"
     return toolkit.pricing[cycleToUse]?.[currencyToUse] || null;
   }
 
@@ -94,6 +95,10 @@ class PricingManager {
       if (cycleToUse === 'yearly') {
         return `${formatted}/month`;
       }
+      // Add "/month" for monthly social-management
+      if (cycleToUse === 'monthly' && toolkitId === 'social-management') {
+        return `${formatted}/month`;
+      }
       return formatted;
     } else {
       // Fallback formatting
@@ -106,6 +111,10 @@ class PricingManager {
       }).format(price);
       // Add "/month" for yearly plans since they're per month
       if (cycleToUse === 'yearly') {
+        return `${formatted}/month`;
+      }
+      // Add "/month" for monthly social-management
+      if (cycleToUse === 'monthly' && toolkitId === 'social-management') {
         return `${formatted}/month`;
       }
       return formatted;

@@ -56,7 +56,7 @@ class PricingPage {
           },
           management: {
             title: 'Social Management',
-            description: 'Ongoing social media management to keep your accounts active, engaging, and aligned with your business goals. $199 includes 2 posts per month.',
+            description: 'Ongoing social media management to keep your accounts active, engaging, and aligned with your business goals. Includes 2 posts per month.',
             period: 'per month'
           }
         },
@@ -104,7 +104,7 @@ class PricingPage {
           },
           management: {
             title: 'Gestion sociale',
-            description: 'Gestion continue des médias sociaux pour garder vos comptes actifs, engageants et alignés avec vos objectifs commerciaux. 199 $ comprend 2 publications par mois.',
+            description: 'Gestion continue des médias sociaux pour garder vos comptes actifs, engageants et alignés avec vos objectifs commerciaux. Comprend 2 publications par mois.',
             period: 'par mois'
           }
         },
@@ -818,7 +818,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.oneTime.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00 <span class="pricing-currency-label">USD</span></div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;" data-toolkit="social-one-time" data-cycle="one-time">${this.t('loading')}</div>
             <div class="pricing-plan-price-period">${this.t('social.oneTime.period')}</div>
           </div>
           <ul class="pricing-plan-features">
@@ -839,7 +839,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.management.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00/month <span class="pricing-currency-label">USD</span></div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;" data-toolkit="social-management" data-cycle="monthly">${this.t('loading')}</div>
             <div class="pricing-plan-price-period">${this.t('social.management.period')}</div>
           </div>
           <ul class="pricing-plan-features">

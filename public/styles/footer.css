@@ -235,6 +235,11 @@
     text-align: center;
   }
 
+  .footer-legal {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .social-links {
     justify-content: flex-start;
   }

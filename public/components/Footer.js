@@ -140,8 +140,6 @@ class Footer {
                 <span class="footer-separator">|</span>
                 <a href="/${this.language}/cookies-policy.html">${t.cookies}</a>
                 <span class="footer-separator">|</span>
-                <a href="/${this.language}/terms.html">${t.terms}</a>
-                <span class="footer-separator">|</span>
                 <a href="/${this.language}/quality-policy.html">${t.quality}</a>
                 <span class="footer-separator">|</span>
                 <a href="/${this.language}/environmental-policy.html">${t.environmental}</a>

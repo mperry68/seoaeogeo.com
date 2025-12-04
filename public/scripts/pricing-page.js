@@ -123,37 +123,22 @@ class PricingPage {
   }
 
   async init() {
-    console.log('[PricingPage] Starting initialization...');
     try {
       // Wait for currency detector and pricing manager
-      console.log('[PricingPage] Checking for currencyDetector:', typeof window.currencyDetector);
       if (window.currencyDetector) {
         this.currencyDetector = window.currencyDetector;
-        console.log('[PricingPage] Currency detector found:', this.currencyDetector);
-      } else {
-        console.warn('[PricingPage] Currency detector not found');
       }
 
-      console.log('[PricingPage] Checking for PricingManager:', typeof window.PricingManager);
       if (window.PricingManager) {
-        console.log('[PricingPage] Creating PricingManager instance...');
         this.pricingManager = new PricingManager();
         if (this.currencyDetector) {
           this.pricingManager.setCurrencyDetector(this.currencyDetector);
-          console.log('[PricingPage] Currency detector set on PricingManager');
         }
-        console.log('[PricingPage] Loading pricing data...');
         await this.pricingManager.loadPricingData();
-        console.log('[PricingPage] Pricing data loaded successfully');
-      } else {
-        console.warn('[PricingPage] PricingManager not found');
       }
 
-      console.log('[PricingPage] Attaching event listeners...');
       this.attachEventListeners();
-      console.log('[PricingPage] Loading toolkit content:', this.currentToolkit);
       this.loadToolkitContent(this.currentToolkit);
-      console.log('[PricingPage] Initialization complete');
       
       // Initialize FAQ accordion
       setTimeout(() => this.initFAQ(), 100);
@@ -173,30 +158,24 @@ class PricingPage {
   }
 
   attachEventListeners() {
-    console.log('[PricingPage] Attaching event listeners...');
     // Sidebar menu clicks
     const sidebarLinks = document.querySelectorAll('.pricing-sidebar-menu a');
-    console.log('[PricingPage] Found sidebar links:', sidebarLinks.length);
     sidebarLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const toolkit = link.getAttribute('data-toolkit');
-        console.log('[PricingPage] Sidebar link clicked:', toolkit);
         this.switchToolkit(toolkit);
       });
     });
 
     // Billing cycle toggle
     const toggleButtons = document.querySelectorAll('.pricing-toggle-btn');
-    console.log('[PricingPage] Found toggle buttons:', toggleButtons.length);
     toggleButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const cycle = btn.getAttribute('data-cycle');
-        console.log('[PricingPage] Billing cycle toggle clicked:', cycle);
         this.setBillingCycle(cycle);
       });
     });
-    console.log('[PricingPage] Event listeners attached');
   }
 
   initSubscribeModal() {
@@ -227,9 +206,6 @@ class PricingPage {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        console.log('[Subscribe] ===== FORM SUBMISSION STARTED =====');
-        console.log('[Subscribe] Timestamp:', new Date().toISOString());
-        
         const submitBtn = document.getElementById('subscribe-submit');
         const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
@@ -258,41 +234,26 @@ class PricingPage {
           // Add subject for the notification email
           emailData.subject = `New Subscription Request: ${emailData.plan || 'No Plan Selected'}`;
 
-          // Log form data for debugging
-          console.log('[Subscribe] Form data being submitted:');
-          for (const [key, value] of Object.entries(emailData)) {
-            console.log(`[Subscribe]   ${key}:`, value);
-          }
-
           // Send notification email to business owner
-          console.log('[Subscribe] Sending notification email to business owner...');
           await sendEmail(emailData, EMAILJS_CONFIG.templateId);
-          console.log('[Subscribe] ✅ Notification email sent successfully');
           
           // Send auto-reply email to customer (if template is configured)
           if (EMAILJS_CONFIG.autoReplyTemplateId) {
             try {
-              console.log('[Subscribe] Sending auto-reply email to customer...');
               await sendEmail(emailData, EMAILJS_CONFIG.autoReplyTemplateId);
-              console.log('[Subscribe] ✅ Auto-reply email sent successfully');
             } catch (autoReplyError) {
-              // Log error but don't fail the form submission if auto-reply fails
-              console.warn('[Subscribe] ⚠️ Failed to send auto-reply email:', autoReplyError);
+              // Auto-reply failure doesn't fail the form submission
             }
           }
 
           // Show success message
-          console.log('[Subscribe] ✅ Form submitted successfully via EmailJS');
           this.showSubscribeSuccess();
           setTimeout(() => {
             this.closeSubscribeModal();
           }, 3000);
           
         } catch (error) {
-          console.error('[Subscribe] ❌❌❌ FORM SUBMISSION FAILED ❌❌❌');
-          console.error('[Subscribe] Error type:', error.constructor.name);
-          console.error('[Subscribe] Error message:', error.message);
-          console.error('[Subscribe] Error stack:', error.stack);
+          console.error('[Subscribe] Form submission failed:', error);
           
           // Show error message
           const errorMsg = this.language === 'fr' 
@@ -305,8 +266,6 @@ class PricingPage {
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
         }
-        
-        console.log('[Subscribe] ===== FORM SUBMISSION PROCESS COMPLETE =====');
       });
     }
 
@@ -540,17 +499,14 @@ class PricingPage {
   }
 
   switchToolkit(toolkit) {
-    console.log('[PricingPage] Switching toolkit to:', toolkit);
     this.currentToolkit = toolkit;
     
     // Update active state in sidebar
     const sidebarLinks = document.querySelectorAll('.pricing-sidebar-menu a');
-    console.log('[PricingPage] Updating sidebar active states, found links:', sidebarLinks.length);
     sidebarLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('data-toolkit') === toolkit) {
         link.classList.add('active');
-        console.log('[PricingPage] Set active on:', toolkit);
       }
     });
 
@@ -558,17 +514,14 @@ class PricingPage {
   }
 
   setBillingCycle(cycle) {
-    console.log('[PricingPage] Setting billing cycle to:', cycle);
     this.billingCycle = cycle;
     
     // Update toggle buttons
     const toggleButtons = document.querySelectorAll('.pricing-toggle-btn');
-    console.log('[PricingPage] Updating toggle buttons, found:', toggleButtons.length);
     toggleButtons.forEach(btn => {
       btn.classList.remove('active');
       if (btn.getAttribute('data-cycle') === cycle) {
         btn.classList.add('active');
-        console.log('[PricingPage] Set active on billing cycle:', cycle);
       }
     });
 
@@ -587,7 +540,6 @@ class PricingPage {
   }
 
   async loadToolkitContent(toolkit) {
-    console.log('[PricingPage] Loading toolkit content for:', toolkit);
     // Update page title
     const titles = {
       'en': {
@@ -609,13 +561,9 @@ class PricingPage {
     };
     
     const titleElement = document.getElementById('pricing-title');
-    console.log('[PricingPage] Title element found:', !!titleElement);
     if (titleElement) {
       const newTitle = titles[this.language]?.[toolkit] || (this.language === 'fr' ? 'Forfaits' : 'Pricing Plans');
       titleElement.textContent = newTitle;
-      console.log('[PricingPage] Updated title to:', newTitle);
-    } else {
-      console.error('[PricingPage] Title element not found!');
     }
 
     // Show/hide save badge for SEO, AEO, GEO (always show for these toolkits)
@@ -630,13 +578,9 @@ class PricingPage {
     }
 
     // Render plans
-    console.log('[PricingPage] Rendering plans...');
     await this.renderPlans(toolkit);
-    console.log('[PricingPage] Rendering service details...');
     this.renderServiceDetails(toolkit);
-    console.log('[PricingPage] Rendering comparison...');
     this.renderComparison(toolkit);
-    console.log('[PricingPage] Toolkit content loaded');
   }
 
   initFAQ() {
@@ -662,13 +606,10 @@ class PricingPage {
   }
 
   async renderPlans(toolkit) {
-    console.log('[PricingPage] Rendering plans for toolkit:', toolkit);
     const plansContainer = document.getElementById('pricing-plans');
     if (!plansContainer) {
-      console.error('[PricingPage] Plans container not found!');
       return;
     }
-    console.log('[PricingPage] Plans container found, rendering...');
 
     // Toolkit content data
     const lang = this.language;
@@ -953,18 +894,13 @@ class PricingPage {
       setTimeout(async () => {
         await this.updatePrices();
       }, 100);
-    } else {
-      console.warn('[PricingPage] PricingManager not available, prices will not update');
     }
   }
 
   async updatePrices() {
-    console.log('[PricingPage] Updating prices...');
     const priceElements = document.querySelectorAll('.pricing-plan-price-amount[data-toolkit]');
-    console.log('[PricingPage] Found price elements:', priceElements.length);
     
     if (!this.pricingManager) {
-      console.warn('[PricingPage] PricingManager not available, skipping price updates');
       return;
     }
 
@@ -974,14 +910,12 @@ class PricingPage {
     for (const element of priceElements) {
       const toolkit = element.getAttribute('data-toolkit');
       const cycle = element.getAttribute('data-cycle');
-      console.log('[PricingPage] Updating price for toolkit:', toolkit, 'cycle:', cycle);
       
       if (toolkit && cycle) {
         try {
           // Get price directly from toolkit data
           const price = await this.pricingManager.getFormattedPrice(toolkit, cycle);
           
-          console.log('[PricingPage] Got price for', toolkit, ':', price);
           if (price && price !== 'N/A') {
             // Get currency for label - check data-currency attribute or use detector
             let currency = 'CAD'; // Default fallback
@@ -995,27 +929,20 @@ class PricingPage {
             // Add currency label after price
             element.innerHTML = `${price} <span class="pricing-currency-label">${currencyLabel}</span>`;
             element.setAttribute('data-currency', currency);
-            console.log('[PricingPage] Updated price element with currency label:', currencyLabel);
           } else {
             element.textContent = 'Contact Sales';
-            console.warn('[PricingPage] Invalid price returned, using Contact Sales');
           }
         } catch (error) {
           console.error('[PricingPage] Error updating price for', toolkit, ':', error);
           element.textContent = 'Contact Sales';
         }
-      } else {
-        console.warn('[PricingPage] Missing toolkit or cycle:', { toolkit, cycle });
       }
     }
-    console.log('[PricingPage] Price updates complete');
   }
 
   renderServiceDetails(toolkit) {
-    console.log('[PricingPage] Rendering service details for toolkit:', toolkit);
     const detailsContainer = document.getElementById('pricing-service-details');
     if (!detailsContainer) {
-      console.warn('[PricingPage] #pricing-service-details container not found.');
       return;
     }
 
@@ -1225,13 +1152,10 @@ class PricingPage {
   }
 
   renderComparison(toolkit) {
-    console.log('[PricingPage] Rendering comparison for toolkit:', toolkit);
     const comparisonContainer = document.getElementById('pricing-comparison');
     if (!comparisonContainer) {
-      console.error('[PricingPage] Comparison container not found!');
       return;
     }
-    console.log('[PricingPage] Comparison container found, rendering...');
 
     // Placeholder comparison table
     comparisonContainer.innerHTML = `
@@ -1265,44 +1189,28 @@ class PricingPage {
 
 // Initialize when DOM is ready and all scripts are loaded
 function initPricingPage() {
-  console.log('[PricingPage] initPricingPage called');
-  console.log('[PricingPage] Document ready state:', document.readyState);
-  console.log('[PricingPage] Checking dependencies...');
-  console.log('[PricingPage] window.currencyDetector:', typeof window.currencyDetector);
-  console.log('[PricingPage] window.PricingManager:', typeof window.PricingManager);
-  
   // Wait for currency detector and other dependencies
   if (typeof window.currencyDetector === 'undefined' || typeof window.PricingManager === 'undefined') {
-    console.log('[PricingPage] Dependencies not ready, retrying in 100ms...');
     setTimeout(initPricingPage, 100);
     return;
   }
 
-  console.log('[PricingPage] All dependencies ready, creating PricingPage instance...');
   try {
     const pricingPage = new PricingPage();
-    console.log('[PricingPage] Instance created, calling init...');
     pricingPage.init().catch(error => {
       console.error('[PricingPage] Error initializing pricing page:', error);
-      console.error('[PricingPage] Error stack:', error.stack);
     });
     window.pricingPage = pricingPage;
-    console.log('[PricingPage] PricingPage initialized and stored in window.pricingPage');
   } catch (error) {
     console.error('[PricingPage] Fatal error creating PricingPage:', error);
-    console.error('[PricingPage] Error stack:', error.stack);
   }
 }
 
-console.log('[PricingPage] Script loaded, checking document state...');
 if (document.readyState === 'loading') {
-  console.log('[PricingPage] Document still loading, waiting for DOMContentLoaded...');
   document.addEventListener('DOMContentLoaded', () => {
-    console.log('[PricingPage] DOMContentLoaded fired');
     initPricingPage();
   });
 } else {
-  console.log('[PricingPage] Document already loaded, initializing immediately...');
   // If DOM is already loaded, wait a bit for scripts to load
   setTimeout(initPricingPage, 100);
 }

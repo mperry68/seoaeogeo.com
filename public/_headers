@@ -3,14 +3,25 @@
 # Configured to allow Google Analytics and AI bots for SEO/AEO/GEO optimization
 
 /*
-  # Content Security Policy - Allows Google Analytics and AI bots
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://*.googleapis.com https://ipapi.co https://api.country.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;
+  # Content Security Policy - Allows Google Analytics, Cloudflare Insights, and AI bots
+  # SECURITY NOTE: Currently uses 'unsafe-inline' and 'unsafe-eval' for Google Analytics and inline event handlers.
+  # To improve security: (1) Replace inline event handlers (onmouseover, onmouseout) with addEventListener,
+  # (2) Use CSP nonces for Google Analytics scripts, (3) Consider 'strict-dynamic' with nonces.
+  # This requires refactoring HTML pages to remove inline handlers and implement nonce-based CSP.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://static.cloudflareinsights.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://*.googleapis.com https://ipapi.co https://api.country.is https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;
   
   # Security Headers
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Cross-Origin-Opener-Policy (COOP) - Isolates top-level window from cross-origin documents
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  
+  # Trusted Types - Mitigates DOM-based XSS (report-only mode for monitoring)
+  # Note: Currently in report-only to monitor violations before enforcing
+  Content-Security-Policy-Report-Only: require-trusted-types-for 'script';
   
   # Permissions Policy - Allows necessary features while maintaining security
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()

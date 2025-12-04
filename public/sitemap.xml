@@ -382,5 +382,41 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/blog.html"/>
   </url>
   
+  <url>
+    <loc>https://seoaeogeo.com/en/quality-policy.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/quality-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/quality-policy.html"/>
+  </url>
+  
+  <url>
+    <loc>https://seoaeogeo.com/fr/quality-policy.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/quality-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/quality-policy.html"/>
+  </url>
+  
+  <url>
+    <loc>https://seoaeogeo.com/en/environmental-policy.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/environmental-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/environmental-policy.html"/>
+  </url>
+  
+  <url>
+    <loc>https://seoaeogeo.com/fr/environmental-policy.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/environmental-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/environmental-policy.html"/>
+  </url>
+  
 </urlset>
 

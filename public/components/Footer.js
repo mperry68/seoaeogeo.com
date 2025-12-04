@@ -23,6 +23,8 @@ class Footer {
         legal: 'Legal',
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
+        quality: 'Quality Policy',
+        environmental: 'Environmental Policy',
         copyright: 'All rights reserved.',
         home: 'Home',
         about: 'About',
@@ -48,6 +50,8 @@ class Footer {
         legal: 'Légal',
         privacy: 'Politique de confidentialité',
         terms: 'Conditions d\'utilisation',
+        quality: 'Politique de qualité',
+        environmental: 'Politique environnementale',
         copyright: 'Tous droits réservés.',
         home: 'Accueil',
         about: 'À propos',
@@ -133,6 +137,10 @@ class Footer {
                 <a href="/${this.language}/privacy.html">${t.privacy}</a>
                 <span class="footer-separator">|</span>
                 <a href="/${this.language}/terms.html">${t.terms}</a>
+                <span class="footer-separator">|</span>
+                <a href="/${this.language}/quality-policy.html">${t.quality}</a>
+                <span class="footer-separator">|</span>
+                <a href="/${this.language}/environmental-policy.html">${t.environmental}</a>
               </div>
             </div>
           </div>

@@ -4,10 +4,12 @@
       "name": "SEO Classic",
       "pricing": {
         "monthly": {
-          "CAD": 1099
+          "CAD": 1099,
+          "USD": 835
         },
         "yearly": {
-          "CAD": 999
+          "CAD": 999,
+          "USD": 759
         }
       }
     },
@@ -15,10 +17,12 @@
       "name": "AEO Classic",
       "pricing": {
         "monthly": {
-          "CAD": 1099
+          "CAD": 1099,
+          "USD": 835
         },
         "yearly": {
-          "CAD": 999
+          "CAD": 999,
+          "USD": 759
         }
       }
     },
@@ -26,10 +30,12 @@
       "name": "GEO Classic",
       "pricing": {
         "monthly": {
-          "CAD": 499
+          "CAD": 499,
+          "USD": 379
         },
         "yearly": {
-          "CAD": 449
+          "CAD": 449,
+          "USD": 341
         }
       }
     },
@@ -37,10 +43,12 @@
       "name": "AI Visibility",
       "pricing": {
         "monthly": {
-          "CAD": 1099
+          "CAD": 1099,
+          "USD": 835
         },
         "yearly": {
-          "CAD": 999
+          "CAD": 999,
+          "USD": 759
         }
       }
     },
@@ -48,10 +56,12 @@
       "name": "Local",
       "pricing": {
         "monthly": {
-          "CAD": 199
+          "CAD": 199,
+          "USD": 151
         },
         "yearly": {
-          "CAD": 149
+          "CAD": 149,
+          "USD": 113
         }
       }
     },
@@ -59,10 +69,12 @@
       "name": "Social",
       "pricing": {
         "monthly": {
-          "CAD": 1099
+          "CAD": 1099,
+          "USD": 835
         },
         "yearly": {
-          "CAD": 999
+          "CAD": 999,
+          "USD": 759
         }
       }
     },
@@ -70,10 +82,12 @@
       "name": "Complete Bundle",
       "pricing": {
         "monthly": {
-          "CAD": 2298
+          "CAD": 2498,
+          "USD": 1898
         },
         "yearly": {
-          "CAD": 2298
+          "CAD": 2298,
+          "USD": 1746
         }
       }
     }

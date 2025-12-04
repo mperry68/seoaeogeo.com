@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Performance: Preconnect to external domains -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SE9GNXD80"></script>
   <script>
@@ -151,11 +157,11 @@
           <div style="background: #ffffff; border-radius: 16px; padding: 2rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2); align-self: stretch;">
             <div style="margin-bottom: 2rem;">
               <h3 style="color: var(--text-color); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Share of Voice</h3>
-              <img src="/assets/images/TrafficAnalytics.png" alt="Traffic Analytics" style="width: 100%; border-radius: 8px;" />
+              <img src="/assets/images/TrafficAnalytics.png" alt="Traffic Analytics" style="width: 100%; border-radius: 8px;" fetchpriority="high" />
             </div>
             <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
               <h3 style="color: var(--text-color); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Performance Trends</h3>
-              <img src="/assets/images/Google-Analytics-SEO-Dashboard.png" alt="SEO Dashboard" style="width: 100%; border-radius: 8px;" />
+              <img src="/assets/images/Google-Analytics-SEO-Dashboard.png" alt="SEO Dashboard" style="width: 100%; border-radius: 8px;" loading="lazy" />
             </div>
           </div>
         </div>
@@ -191,13 +197,13 @@
           <div class="card" style="background: #ffffff; border: none; max-width: 700px; margin: 0 auto 3rem;">
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
               <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                <img src="/assets/icons/discover.png" alt="SEO" style="width: 28px; height: 28px;" />
+                <img src="/assets/icons/discover.png" alt="SEO" style="width: 28px; height: 28px;" fetchpriority="high" width="28" height="28" />
               </div>
               <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: #1e3a8a;">SEO</h3>
               <span style="font-size: 1.5rem;">✨</span>
             </div>
             <div style="margin-bottom: 1.5rem; text-align: center;">
-              <img src="/assets/images/SEODashboard.jpg" alt="SEO Dashboard" style="max-width: 600px; width: 100%; border-radius: 8px; margin: 0 auto;" />
+              <img src="/assets/images/SEODashboard.jpg" alt="SEO Dashboard" style="max-width: 600px; width: 100%; border-radius: 8px; margin: 0 auto;" loading="lazy" />
             </div>
             <p style="font-size: 1rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.7; text-align: center;">Search Engine Optimization to improve your visibility and rankings on Google and other search engines. Drive organic traffic and increase conversions.</p>
             <div style="text-align: center;">
@@ -241,7 +247,7 @@
             <div class="grid grid-2" style="gap: 2rem; margin-bottom: 2rem;">
               <div style="display: flex; align-items: start; gap: 1rem;">
                 <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: var(--shadow);">
-                  <img src="/assets/icons/Proven_blue.svg" alt="Proven" style="width: 28px; height: 28px;" />
+                  <img src="/assets/icons/Proven_blue.svg" alt="Proven" style="width: 28px; height: 28px;" loading="lazy" width="28" height="28" />
                 </div>
                 <div>
                   <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Proven Results</h4>
@@ -250,7 +256,7 @@
               </div>
               <div style="display: flex; align-items: start; gap: 1rem;">
                 <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: var(--shadow);">
-                  <img src="/assets/icons/Quality_blue.svg" alt="Quality" style="width: 28px; height: 28px;" />
+                  <img src="/assets/icons/Quality_blue.svg" alt="Quality" style="width: 28px; height: 28px;" loading="lazy" width="28" height="28" />
                 </div>
                 <div>
                   <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Quality Service</h4>
@@ -259,7 +265,7 @@
               </div>
               <div style="display: flex; align-items: start; gap: 1rem;">
                 <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: var(--shadow);">
-                  <img src="/assets/icons/Tailored_blue.svg" alt="Tailored" style="width: 28px; height: 28px;" />
+                  <img src="/assets/icons/Tailored_blue.svg" alt="Tailored" style="width: 28px; height: 28px;" loading="lazy" width="28" height="28" />
                 </div>
                 <div>
                   <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Tailored Solutions</h4>
@@ -268,7 +274,7 @@
               </div>
               <div style="display: flex; align-items: start; gap: 1rem;">
                 <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: var(--shadow);">
-                  <img src="/assets/icons/Consulting_blue.svg" alt="Expert" style="width: 28px; height: 28px;" />
+                  <img src="/assets/icons/Consulting_blue.svg" alt="Expert" style="width: 28px; height: 28px;" loading="lazy" width="28" height="28" />
                 </div>
                 <div>
                   <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Expert Team</h4>
@@ -279,9 +285,9 @@
             <p style="margin-top: 2rem; color: var(--text-light); font-size: 1.125rem;">Our clients see measurable improvements in search rankings, organic traffic, and conversions. We track every metric that matters.</p>
           </div>
           <div style="position: relative;">
-            <img src="/assets/images/GoogleSearchConsole.jpg" alt="Google Search Console" style="border-radius: 12px; box-shadow: var(--shadow-lg); width: 100%;" />
+            <img src="/assets/images/GoogleSearchConsole.jpg" alt="Google Search Console" style="border-radius: 12px; box-shadow: var(--shadow-lg); width: 100%;" loading="lazy" />
             <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(255, 255, 255, 0.95); padding: 0.5rem 1rem; border-radius: 8px; box-shadow: var(--shadow);">
-              <img src="/assets/images/site-audit-dashboard.jpg" alt="Site Audit" style="width: 200px; border-radius: 6px;" />
+              <img src="/assets/images/site-audit-dashboard.jpg" alt="Site Audit" style="width: 200px; border-radius: 6px;" loading="lazy" width="200" />
             </div>
           </div>
         </div>
@@ -299,7 +305,7 @@
         <div class="grid grid-3" style="margin-bottom: 2.5rem;">
           <div class="card" style="padding: 0; overflow: hidden;">
             <div style="width: 100%; height: 180px; overflow: hidden; background: #f8fafc;">
-              <img src="/assets/images/portfolio/Best-Photography-Studio-Hire-London-4157698635.jpg" alt="Local Service Business" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/images/portfolio/Best-Photography-Studio-Hire-London-4157698635.jpg" alt="Local Service Business" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
             </div>
             <div style="padding: 1.5rem;">
               <div style="display: flex; gap: 0.375rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
@@ -314,7 +320,7 @@
           
           <div class="card" style="padding: 0; overflow: hidden;">
             <div style="width: 100%; height: 180px; overflow: hidden; background: #f8fafc;">
-              <img src="/assets/images/portfolio/AD7x550.jpg" alt="Mango Spraytan" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/images/portfolio/AD7x550.jpg" alt="Mango Spraytan" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
             </div>
             <div style="padding: 1.5rem;">
               <div style="display: flex; gap: 0.375rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
@@ -330,7 +336,7 @@
           
           <div class="card">
             <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <img src="/assets/icons/Software_dualtone.png" alt="Software" style="width: 28px; height: 28px;" />
+              <img src="/assets/icons/Software_dualtone.png" alt="Software" style="width: 28px; height: 28px;" loading="lazy" width="28" height="28" />
             </div>
             <h4>AI-Powered Visibility</h4>
             <p style="color: var(--text-light); margin-bottom: 1rem;">Featured in AI search results and voice assistants</p>

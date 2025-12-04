@@ -3,7 +3,7 @@
  * Global styles and layout
  */
 
-/* Import Google Fonts */
+/* Import Google Fonts with font-display: swap for better performance */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 

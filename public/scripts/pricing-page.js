@@ -818,7 +818,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.oneTime.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;"><span class="pricing-currency-label">USD</span> $199.00</div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00 <span class="pricing-currency-label">USD</span></div>
             <div class="pricing-plan-price-period">${this.t('social.oneTime.period')}</div>
           </div>
           <ul class="pricing-plan-features">
@@ -839,7 +839,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.management.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;"><span class="pricing-currency-label">USD</span> $199.00/month</div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00/month <span class="pricing-currency-label">USD</span></div>
             <div class="pricing-plan-price-period">${this.t('social.management.period')}</div>
           </div>
           <ul class="pricing-plan-features">
@@ -992,8 +992,8 @@ class PricingPage {
             }
             const currencyLabel = currency === 'CAD' ? 'CAD' : 'USD';
             
-            // Add currency label before price
-            element.innerHTML = `<span class="pricing-currency-label">${currencyLabel}</span> ${price}`;
+            // Add currency label after price
+            element.innerHTML = `${price} <span class="pricing-currency-label">${currencyLabel}</span>`;
             element.setAttribute('data-currency', currency);
             console.log('[PricingPage] Updated price element with currency label:', currencyLabel);
           } else {

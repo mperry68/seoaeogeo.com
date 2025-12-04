@@ -1,6 +1,32 @@
 # robots.txt for seoaeogeo.com
 # Allow all search engines to crawl the site
 
+# Explicitly allow AI bots for AEO (Answer Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Allow all other bots
 User-agent: *
 Allow: /
 

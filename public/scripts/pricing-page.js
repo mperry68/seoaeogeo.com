@@ -818,7 +818,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.oneTime.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00</div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;"><span class="pricing-currency-label">USD</span> $199.00</div>
             <div class="pricing-plan-price-period">${this.t('social.oneTime.period')}</div>
           </div>
           <ul class="pricing-plan-features">
@@ -839,7 +839,7 @@ class PricingPage {
             <p class="pricing-plan-description">${this.t('social.management.description')}</p>
           </div>
           <div class="pricing-plan-price">
-            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;">$199.00/month</div>
+            <div class="pricing-plan-price-amount" style="font-size: 1.75rem;"><span class="pricing-currency-label">USD</span> $199.00/month</div>
             <div class="pricing-plan-price-period">${this.t('social.management.period')}</div>
           </div>
           <ul class="pricing-plan-features">
@@ -983,8 +983,19 @@ class PricingPage {
           
           console.log('[PricingPage] Got price for', toolkit, ':', price);
           if (price && price !== 'N/A') {
-            element.textContent = price;
-            console.log('[PricingPage] Updated price element');
+            // Get currency for label - check data-currency attribute or use detector
+            let currency = 'CAD'; // Default fallback
+            if (element.hasAttribute('data-currency')) {
+              currency = element.getAttribute('data-currency');
+            } else if (this.currencyDetector) {
+              currency = this.currencyDetector.getCurrency();
+            }
+            const currencyLabel = currency === 'CAD' ? 'CAD' : 'USD';
+            
+            // Add currency label before price
+            element.innerHTML = `<span class="pricing-currency-label">${currencyLabel}</span> ${price}`;
+            element.setAttribute('data-currency', currency);
+            console.log('[PricingPage] Updated price element with currency label:', currencyLabel);
           } else {
             element.textContent = 'Contact Sales';
             console.warn('[PricingPage] Invalid price returned, using Contact Sales');

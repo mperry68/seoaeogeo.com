@@ -337,6 +337,16 @@ body.pricing-page .container {
   color: #1f2937;
   line-height: 1;
   margin-bottom: 0.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.pricing-currency-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  opacity: 0.8;
 }
 
 .pricing-plan-price-period {

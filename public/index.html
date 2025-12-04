@@ -4,8 +4,16 @@
   <!-- Performance: Preconnect to external domains -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Load Google Fonts asynchronously (non-blocking) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+  </noscript>
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SE9GNXD80"></script>
@@ -112,11 +120,27 @@
   }
   </script>
   
-  <!-- Styles -->
+  <!-- Critical CSS: Load immediately (above-the-fold styles) -->
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="/styles/header.css">
-  <link rel="stylesheet" href="/styles/footer.css">
-  <link rel="stylesheet" href="/styles/price.css">
+  
+  <!-- Non-critical CSS: Load asynchronously using media trick -->
+  <link rel="stylesheet" href="/styles/footer.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/styles/price.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/price.css">
+  </noscript>
+  
+  <!-- Fallback script for browsers that don't support onload on link tags -->
+  <script>
+    (function() {
+      var links = document.querySelectorAll('link[media="print"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].media = 'all';
+      }
+    })();
+  </script>
 </head>
 <body>
   <div id="header"></div>

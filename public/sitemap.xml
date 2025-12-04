@@ -5,7 +5,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://seoaeogeo.com/</loc>
+    <loc>https://digitalrelevance.io/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -13,409 +13,409 @@
   
   <!-- English Pages -->
   <url>
-    <loc>https://seoaeogeo.com/en/</loc>
+    <loc>https://digitalrelevance.io/en/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seoaeogeo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://digitalrelevance.io/en/"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/index.html</loc>
+    <loc>https://digitalrelevance.io/en/index.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/index.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/what-is-seo.html</loc>
+    <loc>https://digitalrelevance.io/en/what-is-seo.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/what-is-seo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/what-is-seo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/what-is-seo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/what-is-seo.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/what-is-aeo.html</loc>
+    <loc>https://digitalrelevance.io/en/what-is-aeo.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/what-is-aeo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/what-is-aeo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/what-is-aeo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/what-is-aeo.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/what-is-geo.html</loc>
+    <loc>https://digitalrelevance.io/en/what-is-geo.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/what-is-geo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/what-is-geo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/what-is-geo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/what-is-geo.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/pricing.html</loc>
+    <loc>https://digitalrelevance.io/en/pricing.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/pricing.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/pricing.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/about.html</loc>
+    <loc>https://digitalrelevance.io/en/about.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/about.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/contact.html</loc>
+    <loc>https://digitalrelevance.io/en/contact.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/contact.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog.html</loc>
+    <loc>https://digitalrelevance.io/en/blog.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/blog.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/entity-based-seo-llms.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/entity-based-seo-llms.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/chatgpt-search-optimization-businesses.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/chatgpt-search-optimization-businesses.html</loc>
     <lastmod>2025-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/how-to-structure-content-for-ai-search.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/how-to-structure-content-for-ai-search.html</loc>
     <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/what-is-aeo-complete-guide-2025.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/what-is-aeo-complete-guide-2025.html</loc>
     <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/seo-vs-aeo-vs-geo-differences.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/seo-vs-aeo-vs-geo-differences.html</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/how-chatgpt-chooses-sources.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/how-chatgpt-chooses-sources.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/future-of-seo-2024.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/future-of-seo-2024.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/aeo-optimization.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/aeo-optimization.html</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/local-seo-strategies.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/local-seo-strategies.html</loc>
     <lastmod>2024-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/seo-metrics.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/seo-metrics.html</loc>
     <lastmod>2023-12-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/content-strategy.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/content-strategy.html</loc>
     <lastmod>2023-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/blog/technical-seo.html</loc>
+    <loc>https://digitalrelevance.io/en/blog/technical-seo.html</loc>
     <lastmod>2023-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/case-studies.html</loc>
+    <loc>https://digitalrelevance.io/en/case-studies.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/case-studies.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/case-studies.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/case-studies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/case-studies.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/case-study-mango-spraytan.html</loc>
+    <loc>https://digitalrelevance.io/en/case-study-mango-spraytan.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/case-study-local-service-business.html</loc>
+    <loc>https://digitalrelevance.io/en/case-study-local-service-business.html</loc>
     <lastmod>2025-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/portfolio.html</loc>
+    <loc>https://digitalrelevance.io/en/portfolio.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/portfolio.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/success-stories.html</loc>
+    <loc>https://digitalrelevance.io/en/success-stories.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/success-stories.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/success-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/success-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/success-stories.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/insights.html</loc>
+    <loc>https://digitalrelevance.io/en/insights.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/insights.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/insights.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/complete-seo-guide.html</loc>
+    <loc>https://digitalrelevance.io/en/complete-seo-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/complete-seo-guide.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/complete-seo-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/complete-seo-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/complete-seo-guide.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/technical-seo-checklist.html</loc>
+    <loc>https://digitalrelevance.io/en/technical-seo-checklist.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/technical-seo-checklist.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/technical-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/technical-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/technical-seo-checklist.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/seo-content-template.html</loc>
+    <loc>https://digitalrelevance.io/en/seo-content-template.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/seo-content-template.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/seo-content-template.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/seo-content-template.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/seo-content-template.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/on-page-seo-checklist.html</loc>
+    <loc>https://digitalrelevance.io/en/on-page-seo-checklist.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/on-page-seo-checklist.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/on-page-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/on-page-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/on-page-seo-checklist.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/local-seo-checklist.html</loc>
+    <loc>https://digitalrelevance.io/en/local-seo-checklist.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/local-seo-checklist.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/local-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/local-seo-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/local-seo-checklist.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/geo-content-checklist.html</loc>
+    <loc>https://digitalrelevance.io/en/geo-content-checklist.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/geo-content-checklist.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/geo-content-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/geo-content-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/geo-content-checklist.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/aeo-content-checklist.html</loc>
+    <loc>https://digitalrelevance.io/en/aeo-content-checklist.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/aeo-content-checklist.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/aeo-content-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/aeo-content-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/aeo-content-checklist.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/website-audit-guide.html</loc>
+    <loc>https://digitalrelevance.io/en/website-audit-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/website-audit-guide.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/website-audit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/website-audit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/website-audit-guide.html"/>
   </url>
   
   <!-- French Pages -->
   <url>
-    <loc>https://seoaeogeo.com/fr/</loc>
+    <loc>https://digitalrelevance.io/fr/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/index.html</loc>
+    <loc>https://digitalrelevance.io/fr/index.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/index.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/what-is-seo.html</loc>
+    <loc>https://digitalrelevance.io/fr/what-is-seo.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/what-is-seo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/what-is-seo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/what-is-seo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/what-is-seo.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/what-is-aeo.html</loc>
+    <loc>https://digitalrelevance.io/fr/what-is-aeo.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/what-is-aeo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/what-is-aeo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/what-is-aeo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/what-is-aeo.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/what-is-geo.html</loc>
+    <loc>https://digitalrelevance.io/fr/what-is-geo.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/what-is-geo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/what-is-geo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/what-is-geo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/what-is-geo.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/pricing.html</loc>
+    <loc>https://digitalrelevance.io/fr/pricing.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/pricing.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/pricing.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/about.html</loc>
+    <loc>https://digitalrelevance.io/fr/about.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/about.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/contact.html</loc>
+    <loc>https://digitalrelevance.io/fr/contact.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/contact.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/blog.html</loc>
+    <loc>https://digitalrelevance.io/fr/blog.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/blog.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/quality-policy.html</loc>
+    <loc>https://digitalrelevance.io/en/quality-policy.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/quality-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/quality-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/quality-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/quality-policy.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/quality-policy.html</loc>
+    <loc>https://digitalrelevance.io/fr/quality-policy.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/quality-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/quality-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/quality-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/quality-policy.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/en/environmental-policy.html</loc>
+    <loc>https://digitalrelevance.io/en/environmental-policy.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/environmental-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/environmental-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/environmental-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/environmental-policy.html"/>
   </url>
   
   <url>
-    <loc>https://seoaeogeo.com/fr/environmental-policy.html</loc>
+    <loc>https://digitalrelevance.io/fr/environmental-policy.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://seoaeogeo.com/fr/environmental-policy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seoaeogeo.com/en/environmental-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/environmental-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/environmental-policy.html"/>
   </url>
   
 </urlset>

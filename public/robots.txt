@@ -1,4 +1,4 @@
-# robots.txt for seoaeogeo.com
+# robots.txt for digitalrelevance.io
 # Allow all search engines to crawl the site
 
 # Explicitly allow AI bots for AEO (Answer Engine Optimization)
@@ -43,7 +43,7 @@ Allow: /assets/
 Allow: /data/pricing.json
 
 # Sitemap location
-Sitemap: https://seoaeogeo.com/sitemap.xml
+Sitemap: https://digitalrelevance.io/sitemap.xml
 
 # Crawl-delay (optional, adjust as needed)
 Crawl-delay: 1

@@ -80,6 +80,20 @@
   </url>
   
   <url>
+    <loc>https://digitalrelevance.io/en/who-we-help.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/who-we-help.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/who-we-help.html"/>
+    <image:image>
+      <image:loc>https://digitalrelevance.io/assets/images/Logo20-full.png</image:loc>
+      <image:title>Who We Help - Local Businesses & National Expansion</image:title>
+      <image:caption>Digital Relevance helps local businesses, professionals, and firms expand their reach</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
     <loc>https://digitalrelevance.io/en/contact.html</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -356,6 +370,15 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/about.html"/>
+  </url>
+  
+  <url>
+    <loc>https://digitalrelevance.io/fr/who-we-help.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/who-we-help.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/who-we-help.html"/>
   </url>
   
   <url>

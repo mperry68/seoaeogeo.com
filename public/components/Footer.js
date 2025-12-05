@@ -115,6 +115,7 @@ class Footer {
               <h3 class="footer-title">${t.company}</h3>
               <ul class="footer-links">
                 <li><a href="/${this.language}/about.html">${t.about}</a></li>
+                <li><a href="/${this.language}/who-we-help.html">Who We Help</a></li>
                 <li><a href="/${this.language}/portfolio.html">${t.portfolio}</a></li>
                 <li><a href="/${this.language}/success-stories.html">${t.successStories}</a></li>
               </ul>

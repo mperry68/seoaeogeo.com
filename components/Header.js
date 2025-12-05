@@ -89,6 +89,7 @@ class Header {
                 <a href="#" class="nav-link dropdown-toggle" id="company-toggle">${t.company} <span class="dropdown-arrow">▼</span></a>
                 <ul class="dropdown-menu" id="company-dropdown">
                   <li><a href="/${this.language}/about" class="dropdown-link">${t.about}</a></li>
+                  <li><a href="/${this.language}/who-we-help" class="dropdown-link">Who We Help</a></li>
                   <li><a href="/${this.language}/portfolio" class="dropdown-link">${t.portfolio}</a></li>
                 </ul>
               </li>

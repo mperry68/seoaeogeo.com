@@ -124,6 +124,13 @@ class PricingPage {
 
   async init() {
     try {
+      // Check for toolkit preference in sessionStorage
+      const savedToolkit = sessionStorage.getItem('pricingToolkit');
+      if (savedToolkit) {
+        this.currentToolkit = savedToolkit;
+        sessionStorage.removeItem('pricingToolkit'); // Clear after reading
+      }
+
       // Wait for currency detector and pricing manager
       if (window.currencyDetector) {
         this.currencyDetector = window.currencyDetector;
@@ -138,7 +145,13 @@ class PricingPage {
       }
 
       this.attachEventListeners();
-      this.loadToolkitContent(this.currentToolkit);
+      
+      // Use switchToolkit if we have a saved toolkit to properly update sidebar
+      if (savedToolkit) {
+        this.switchToolkit(savedToolkit);
+      } else {
+        this.loadToolkitContent(this.currentToolkit);
+      }
       
       // Initialize FAQ accordion
       setTimeout(() => this.initFAQ(), 100);

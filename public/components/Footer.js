@@ -37,7 +37,7 @@ class Footer {
         phone: 'Phone',
         email: 'Email',
         address: 'Address',
-        description: 'Expert SEO, AEO, and GEO services to enhance your digital presence and drive measurable results in the AI-driven era.',
+        description: 'ISO-aligned expert SEO, AEO, and GEO services to enhance your digital presence and drive measurable results in the AI-driven era.',
         linkedIn: 'LinkedIn'
       },
       fr: {
@@ -65,7 +65,7 @@ class Footer {
         phone: 'Téléphone',
         email: 'Courriel',
         address: 'Adresse',
-        description: 'Services experts SEO, AEO et GEO pour améliorer votre présence numérique et générer des résultats mesurables à l\'ère de l\'IA.',
+        description: 'Services experts SEO, AEO et GEO alignés ISO pour améliorer votre présence numérique et générer des résultats mesurables à l\'ère de l\'IA.',
         linkedIn: 'LinkedIn'
       }
     };

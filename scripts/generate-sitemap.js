@@ -55,6 +55,7 @@ const urlToFileMap = {
 
 // Blog posts
 const blogPosts = [
+  'en/blog/ai-search-revolution-seo-2025.html',
   'en/blog/entity-based-seo-llms.html',
   'en/blog/chatgpt-search-optimization-businesses.html',
   'en/blog/how-to-structure-content-for-ai-search.html',

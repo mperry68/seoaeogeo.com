@@ -88,7 +88,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/who-we-help.html"/>
     <image:image>
       <image:loc>https://digitalrelevance.io/assets/images/Logo20-full.png</image:loc>
-      <image:title>Who We Help - Local Businesses & National Expansion</image:title>
+      <image:title>Who We Help - Local Businesses &amp; National Expansion</image:title>
       <image:caption>Digital Relevance helps local businesses, professionals, and firms expand their reach</image:caption>
     </image:image>
   </url>
@@ -219,6 +219,13 @@
   </url>
   
   <url>
+    <loc>https://digitalrelevance.io/en/case-study-shopexpress22.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>https://digitalrelevance.io/en/portfolio.html</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -325,6 +332,7 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/index.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://digitalrelevance.io/"/>
   </url>
   
   <url>
@@ -433,6 +441,24 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://digitalrelevance.io/fr/environmental-policy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/environmental-policy.html"/>
+  </url>
+  
+  <url>
+    <loc>https://digitalrelevance.io/en/privacy.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://digitalrelevance.io/en/privacy.html"/>
+  </url>
+  
+  <url>
+    <loc>https://digitalrelevance.io/en/cookies-policy.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalrelevance.io/en/cookies-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://digitalrelevance.io/en/cookies-policy.html"/>
   </url>
   
 </urlset>

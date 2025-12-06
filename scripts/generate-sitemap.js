@@ -73,7 +73,21 @@ const blogPosts = [
 const caseStudies = [
   'en/case-study-mango-spraytan.html',
   'en/case-study-local-service-business.html',
+  'en/case-study-shopexpress22.html',
 ];
+
+/**
+ * Escape XML special characters
+ */
+function escapeXml(text) {
+  if (!text) return '';
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
 
 /**
  * Get file modification date in YYYY-MM-DD format
@@ -113,7 +127,7 @@ function generateSitemap() {
     <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/"/>
     <image:image>
       <image:loc>${BASE_URL}/assets/images/Logo20-full.png</image:loc>
-      <image:title>Digital Relevance - Expert SEO, AEO &amp; GEO Services</image:title>
+      <image:title>${escapeXml('Digital Relevance - Expert SEO, AEO & GEO Services')}</image:title>
       <image:caption>Digital Relevance logo and branding</image:caption>
     </image:image>
   </url>
@@ -153,10 +167,12 @@ function generateSitemap() {
     
     // Add image if specified
     if (page.hasImage) {
+      const escapedTitle = escapeXml(page.imageTitle);
+      const escapedCaption = escapeXml(page.imageTitle.replace('?', '') + ' - Digital Relevance');
       xml += `    <image:image>
       <image:loc>${BASE_URL}/assets/images/Logo20-full.png</image:loc>
-      <image:title>${page.imageTitle}</image:title>
-      <image:caption>${page.imageTitle.replace('?', '')} - Digital Relevance</image:caption>
+      <image:title>${escapedTitle}</image:title>
+      <image:caption>${escapedCaption}</image:caption>
     </image:image>
 `;
     }
@@ -220,8 +236,8 @@ function generateSitemap() {
   const policyPages = [
     { url: '/en/quality-policy.html', file: 'en/quality-policy.html' },
     { url: '/en/environmental-policy.html', file: 'en/environmental-policy.html' },
-    { url: '/en/privacy.html', file: 'en/privacy.html' },
-    { url: '/en/cookies-policy.html', file: 'en/cookies-policy.html' },
+    { url: '/en/privacy.html', file: 'en/privacy.html', hasHreflang: false },
+    { url: '/en/cookies-policy.html', file: 'en/cookies-policy.html', hasHreflang: false },
   ];
 
   policyPages.forEach(page => {
@@ -237,6 +253,11 @@ function generateSitemap() {
     if (fs.existsSync(path.join(PUBLIC_DIR, frFile))) {
       xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}${page.url.replace('/en/', '/fr/')}"/>
     <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}${page.url}"/>
+`;
+    } else if (page.hasHreflang === false) {
+      // For pages without French versions, add self-referencing hreflang and x-default
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}${page.url}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${page.url}"/>
 `;
     }
     xml += `  </url>
@@ -271,6 +292,7 @@ function generateSitemap() {
       if (enUrl === '/') {
         xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}${page.url}"/>
     <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/"/>
 `;
       } else {
         xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}${page.url}"/>
